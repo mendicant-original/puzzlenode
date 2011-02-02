@@ -12,9 +12,11 @@ test:
   database: puzzlenode-test
   username: root
   host: localhost
+  min_messages: error
 
 production:
   adapter: postgresql
   database: puzzlenode-production
   username: root
   host: localhost
+  min_messages: error
