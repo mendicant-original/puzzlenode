@@ -1,0 +1,13 @@
+%h1 Puzzles
+
+%table
+  %tr
+    %th Name
+    %th Short Description
+    %th
+  - @puzzles.each do |puzzle|
+    %tr
+      %td= puzzle.name
+      %td= puzzle.short_description
+      %td= button_to "Submit solution", new_puzzle_submission_path(puzzle),
+        :method => :get
