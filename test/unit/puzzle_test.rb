@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class PuzzleTest < ActiveSupport::TestCase
-  test "Puzzle#file= should write a SHA1 fingerprint" do
+  test "must be able to create a fingerprint for a file" do
     tempfile = Tempfile.new("puzzle_sample")
     tempfile << "Sample Text"
     tempfile.rewind
@@ -14,7 +14,7 @@ class PuzzleTest < ActiveSupport::TestCase
     assert_equal expected_fingerprint, puzzle.fingerprint
   end
 
-  test "puzzle#valid_solution? should return true if contents match" do
+  test "must consider files with matching fingerprints valid" do
     seed_tempfile = Tempfile.new("puzzle_sample")
     seed_tempfile << "sample text"
     seed_tempfile.rewind
@@ -28,7 +28,7 @@ class PuzzleTest < ActiveSupport::TestCase
     assert puzzle.valid_solution?(test_tempfile)
   end 
 
-  test "puzzle#valid_solution? should return false if contents don't match" do
+  test "must consider files with non-matching fingerprints invalid" do
     seed_tempfile = Tempfile.new("puzzle_sample")
     seed_tempfile << "sample text"
     seed_tempfile.rewind
