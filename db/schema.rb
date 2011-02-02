@@ -10,12 +10,30 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110202151606) do
+ActiveRecord::Schema.define(:version => 20110202181019) do
 
   create_table "authorizations", :force => true do |t|
     t.integer  "user_id"
     t.string   "provider"
     t.string   "uid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "puzzles", :force => true do |t|
+    t.text     "name"
+    t.text     "short_description"
+    t.text     "description"
+    t.text     "fingerprint"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "submissions", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "puzzle_id"
+    t.boolean  "correct"
+    t.text     "source_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
