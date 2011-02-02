@@ -1,8 +1,7 @@
 require 'test_helper'
 
 class SubmissionTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+  test "must be able to detect when submission is correct" do
+    pending
   end
 end
