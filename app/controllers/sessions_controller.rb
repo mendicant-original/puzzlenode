@@ -1,4 +1,9 @@
 class SessionsController < ApplicationController
+  
+  def new
+    
+  end
+  
   def create
     auth = request.env['rack.auth']
 
