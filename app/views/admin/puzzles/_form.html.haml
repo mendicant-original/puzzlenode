@@ -15,6 +15,12 @@
   %br
   = f.text_area :description
 
+- unless @puzzle.fingerprint.blank?
+  %p
+    %label Fingerprint
+    %br
+    = @puzzle.fingerprint
+    
 %p
   = f.label :file, "Solution File"
   %br
@@ -22,3 +28,4 @@
   
 %p
   = f.submit
+  = link_to "Cancel", admin_puzzles_path
