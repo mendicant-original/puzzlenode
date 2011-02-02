@@ -1,0 +1,16 @@
+%h1 Admin > Puzzles
+
+%p= link_to "New puzzle", new_admin_puzzle_path
+
+%table
+  %tr
+    %th Name
+    %th Short Description
+    %th
+  - @puzzles.each do |puzzle|
+    %tr
+      %td= puzzle.name
+      %td= puzzle.short_description
+      %td= link_to "Destroy", admin_puzzle_path(puzzle),
+            :confirm => "Are you sure you wish to destroy this puzzle?",
+            :method  => "DELETE"

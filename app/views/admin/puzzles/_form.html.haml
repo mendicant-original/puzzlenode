@@ -1,0 +1,24 @@
+-# TODO Error Messages
+
+%p
+  = f.label :name
+  %br
+  = f.text_field :name
+  
+%p
+  = f.label :short_description
+  %br
+  = f.text_field :short_description
+  
+%p
+  = f.label :description
+  %br
+  = f.text_area :description
+
+%p
+  = f.label :file, "Solution File"
+  %br
+  = f.file_field :file
+  
+%p
+  = f.submit
