@@ -1,5 +1,6 @@
 class Puzzles::SubmissionsController < ApplicationController
   before_filter :find_puzzle
+  before_filter :user_required
 
   def new
     @submission = @puzzle.submissions.new

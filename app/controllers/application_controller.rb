@@ -17,4 +17,11 @@ class ApplicationController < ActionController::Base
     @current_user = user
     session[:user_id] = user.try(:id)
   end
+  
+  def user_required
+    unless signed_in?
+      flash[:error] = "You must be signed in to continue!"
+      redirect_to root_path
+    end
+  end
 end
