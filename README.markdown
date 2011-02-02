@@ -15,7 +15,6 @@ if you want to know when we've launched this service.
 
 QUESTIONS?
 
-Post them to the rmu-talk mailing list:
-http://groups.google.com/group/rmu-talk
+Post them to the [rmu-talk mailing list](http://groups.google.com/group/rmu-talk)
 
 
