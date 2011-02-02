@@ -8,6 +8,16 @@
 </head>
 <body>
 
+<div style="text-align: right; font-size: 12px">
+  <% if signed_in? %>
+    <%= current_user.name %>
+    |
+    <%= link_to "Log out", logout_path %>
+  <% else %>
+    <%= link_to "Sign up / Log in", login_path %>
+  <% end %>
+</div>
+
 <% flash.each do |type, message| %>
 <p><%= message %></p>
 <% end %>

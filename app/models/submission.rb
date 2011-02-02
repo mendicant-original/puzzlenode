@@ -6,5 +6,7 @@ class Submission < ActiveRecord::Base
 
   before_create do |record|
     record.correct = record.puzzle.valid_solution?(record.file)
+    
+    return true
   end
 end

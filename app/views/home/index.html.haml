@@ -1,5 +1,8 @@
+%h1
+  %blink Puzzlenode
+
 - if signed_in?
   = "Welcome #{current_user.name}"
-  %p= link_to "Log out", logout_path
+  %p= link_to "Puzzles", puzzles_path
 - else
   = link_to "Sign up / Log in", login_path
