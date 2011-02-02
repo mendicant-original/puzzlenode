@@ -1,7 +1,7 @@
 ## PuzzleNode
 
 This repository is for the upcoming problem solving website that we plan to use
-for both providing the community with full little puzzles, and for a way to
+for both providing the community with fun little puzzles, and for a way to
 evaluate prospective students for Ruby Mendicant University.
 
 Right now, it is being worked on by Gregory Brown and Jordan Byron, without any
