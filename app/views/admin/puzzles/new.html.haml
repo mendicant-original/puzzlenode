@@ -1,4 +1,4 @@
 %h1 Admin > Puzzles > New
 
-- form_for @puzzle, :url => admin_puzzles_path do |f|
+- form_for @puzzle, :url => admin_puzzles_path, :multipart => true do |f|
   = render :partial => "form", :locals => {:f => f}

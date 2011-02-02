@@ -9,7 +9,7 @@ class Admin::PuzzlesController < Admin::Base
     @puzzle = Puzzle.new
   end
   
-  def create
+  def create    
     @puzzle = Puzzle.new(params[:puzzle])
     
     if @puzzle.save
