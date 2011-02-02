@@ -1,2 +1,7 @@
-class Admin::PuzzlesController < ApplicationController
+class Admin::PuzzlesController < Admin::Base
+  
+  def index
+    
+  end
+  
 end
