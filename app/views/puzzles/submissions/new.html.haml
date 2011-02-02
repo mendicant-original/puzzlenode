@@ -1,0 +1,11 @@
+%h1= "#{@puzzle.name} > New Submission"
+
+- form_for @submission, :url => puzzle_submissions_path(@puzzle), 
+  :html => {:multipart => true} do |f|
+  
+  %p
+    = f.label :file, "Submission"
+    %br
+    = f.file_field :file
+  %p
+    = f.submit "Check submission"

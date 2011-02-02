@@ -1,0 +1,5 @@
+%h1= "#{current_user.name} > Submission for #{@submission.puzzle.name}"
+
+%h2
+  You got it
+  %b= @submission.correct ? "Correct" : "Wrong"
