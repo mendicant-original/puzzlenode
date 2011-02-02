@@ -1,5 +1,6 @@
 class Puzzle < ActiveRecord::Base
   has_many :submissions
+  has_many :comments
 
   def file=(tempfile)
     write_attribute :fingerprint, sha1(tempfile)
