@@ -14,11 +14,13 @@ class SessionsController < ApplicationController
     end
     # Log the authorizing user in.
     self.current_user = @auth.user
-
-    render :text => "Welcome, #{current_user.name}."
+    
+    redirect_to root_path
   end
   
   def destroy
     self.current_user = nil
+    
+    redirect_to root_path
   end
 end

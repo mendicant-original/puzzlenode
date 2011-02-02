@@ -15,6 +15,6 @@ class ApplicationController < ActionController::Base
 
   def current_user=(user)
     @current_user = user
-    session[:user_id] = user.id
+    session[:user_id] = user.try(:id)
   end
 end
