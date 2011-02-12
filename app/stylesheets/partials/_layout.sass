@@ -1,10 +1,33 @@
-@font-face
-  font-family: 'TinyBoxBlackBitA8Regular'
-  src: url('/fonts/tinybbba-webfont.eot?') format('eot'), url('/fonts/tinybbba-webfont.woff') format('woff'), url('/fonts/tinybbba-webfont.ttf') format('truetype'), url('/fonts/tinybbba-webfont.svg#webfont53HmssFB') format('svg')
-  font-weight: normal
-  font-style: normal
+html, body
+  height: 100%
 
-h1
-  font-family: 'TinyBoxBlackBitA8Regular'
-  font-size: 2em
-  color: $pn_blue
+body
+  font-family: "lucida grande", "Lucida Sans", "Helvetica", sans-serif
+  font-size: 12px
+  line-height: 1.24em
+  background-color: $pn_blue
+  color: #292929
+
+header
+  padding: 1.25em
+  background: #fff
+  
+  #logo
+    height: 139px
+    background: #fff url(/images/puzzlenode_background.png) no-repeat center
+    h1
+      font-family: 'TinyBoxBlackBitA8Regular'
+      font-size: 48px
+      line-height: 70px
+      color: $pn_blue
+      padding-top: 20px
+      text-align: center
+    
+#wrap
+  background: #fff
+  width: 970px
+  margin: 0 auto
+  +box-shadow(#000, 0px, 0px, 15px)
+  
+#content
+  padding: 1.25em

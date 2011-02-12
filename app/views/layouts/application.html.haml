@@ -13,5 +13,10 @@
     
     = yield(:header_bottom)
 
-  %body          
-    = yield
+  %body
+    #wrap
+      %header
+        #logo
+          %h1
+            Puzzle Node
+      #content= yield
