@@ -22,6 +22,38 @@ header
       color: $pn_blue
       padding-top: 20px
       text-align: center
+      
+      
+  nav
+    background: $pn_orange url(/images/nav_background.png) repeat-x
+    color: #fff
+    padding: 0.5em
+    margin: 1em 0
+    font-size: 1.25em
+    position: relative
+    
+    #node
+      position: absolute
+      background: transparent url(/images/node.png) no-repeat
+      width: 45px
+      height: 45px
+      top: -10px
+      right: -35px
+      
+    
+    ul
+      list-style: none outside none
+      li
+        display: inline
+        float: left
+        list-style-image: none
+        list-style-type: none
+        margin-right: 1em
+        white-space: nowrap
+        position: relative
+    div.clear
+      clear: both
+    
     
 #wrap
   background: #fff
@@ -31,3 +63,4 @@ header
   
 #content
   padding: 1.25em
+  min-height: 400px
