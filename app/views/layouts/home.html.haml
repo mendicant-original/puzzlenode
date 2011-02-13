@@ -16,14 +16,8 @@
   %body
     #wrap
       %header
-        %h1.logo
-          = link_to "Puzzle Node", root_path
-        %nav
-          #node
-          %ul
-            %li= link_to "Puzzles", puzzles_path
-            %li= link_to "Login", login_path
-          .clear
-          
+        #logo
+          %h1
+            Puzzle Node
         
       #content= yield
