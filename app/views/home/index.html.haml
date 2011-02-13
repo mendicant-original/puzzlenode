@@ -1,5 +1,12 @@
+%h2 Solvin Puzzles with yo Codez
+
 - if signed_in?
   = "Welcome #{current_user.name}"
-  %p= link_to "Puzzles", puzzles_path
 - else
-  = link_to "Sign up / Log in", login_path
+  = link_to login_path do
+    %div.big
+      Sign up / Log in
+
+= link_to puzzles_path do
+  %div.big
+    Puzzles
