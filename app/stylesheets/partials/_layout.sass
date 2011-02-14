@@ -5,11 +5,12 @@ body
   font-family: "lucida grande", "Lucida Sans", "Helvetica", sans-serif
   font-size: 12px
   line-height: 1.24em
-  background-color: $pn_blue
+  background-color: #eee
   color: #292929
 
 header
   padding: 1.25em
+  padding-bottom: 0
   background: #fff
   
   h1
@@ -18,6 +19,7 @@ header
   #logo
     height: 139px
     background: #fff url(/images/puzzlenode_background.png) no-repeat center
+    margin-bottom: 2em
     h1
       font-family: 'TinyBoxBlackBitA8Regular'
       font-size: 48px
@@ -33,15 +35,16 @@ header
       line-height: 40px
       color: $pn_blue
       &:hover
-        color: #4966C1
+        color: #3665AE
   nav
     background: $pn_orange
     +linear-gradient(color-stops(#FFA027,$pn_orange))
     color: #fff
     padding: 0.5em
-    margin: 0.5em 0
+    margin-top: 0.5em
     font-size: 1.25em
     position: relative
+    margin-right: -1em
     
     #node
       position: absolute
@@ -85,3 +88,5 @@ header
 #content
   padding: 1.25em
   min-height: 400px
+  background-color: $pn_blue
+  color: #fff
