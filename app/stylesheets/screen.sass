@@ -5,9 +5,12 @@ $pn_orange = #FE7F2F
 @import compass/css3/box-shadow
 @import compass/css3/text-shadow
 @import compass/css3/gradient
+@import compass/css3/border-radius
+@import blueprint/grid
 @import partials/fonts
 @import partials/layout
 @import partials/home
+@import partials/session
 
 h1, h2, h3 
   margin: 1em 0
@@ -23,6 +26,13 @@ h3
 
 a 
   text-decoration: none
+  color: #fff
+  
+  &:visited
+    color: #fff
+  &:hover
+    color: $pn_orange
+    text-decoration: underline
 
 input
   margin: 1em 0

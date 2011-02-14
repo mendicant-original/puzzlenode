@@ -2,9 +2,8 @@ html, body
   height: 100%
 
 body
-  font-family: "lucida grande", "Lucida Sans", "Helvetica", sans-serif
+  font-family: "Eurostile", "lucida grande", "Lucida Sans", "Helvetica", sans-serif
   font-size: 12px
-  line-height: 1.24em
   background-color: #eee
   color: #292929
 
@@ -36,6 +35,7 @@ header
       color: $pn_blue
       &:hover
         color: #3665AE
+        text-decoration: none
   nav
     background: $pn_orange
     +linear-gradient(color-stops(#FFA027,$pn_orange))
@@ -69,10 +69,14 @@ header
         a
           display: block
           color: #fff
-          +text-shadow(#333, 1px, 0px, 2px)
+          +text-shadow(#333, 1px, 0, 2px)
           font-family: 'TinyBoxBlackBitA8Regular'
           font-size: 1.1em
           padding-top: 0.3em
+          &:hover
+            color: $pn_blue
+            text-decoration: none
+            +text-shadow(#eee, 1px, 0, 5px)
         
         
     div.clear
@@ -90,3 +94,4 @@ header
   min-height: 400px
   background-color: $pn_blue
   color: #fff
+  font-size: 16px

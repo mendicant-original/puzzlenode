@@ -1,0 +1,26 @@
+#login
+  +container
+  margin: 0 -1.25em
+  
+  div
+    text-align: center
+    font-size: 2em
+    
+    a
+      padding: 1em 2em
+      display: inline-block
+      background-color: $pn_orange
+      color: #fff
+      +box-shadow(#333, 0px, 0px, 15px)
+      margin: 1em
+      +border-radius(10px)
+      
+      &:hover
+        text-decoration: none
+        color: $pn_blue
+        +box-shadow(#eee, 0px, 0px, 25px)
+  
+  .left
+    +column(12)
+  .right
+    +column(12, true)
