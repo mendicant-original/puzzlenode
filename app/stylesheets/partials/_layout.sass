@@ -1,11 +1,9 @@
-html, body
-  height: 100%
-
 body
   font-family: "Eurostile", "lucida grande", "Lucida Sans", "Helvetica", sans-serif
   font-size: 12px
   background-color: #eee
   color: #292929
+  background-color: $pn_blue
 
 header
   padding: 1.25em
@@ -27,15 +25,12 @@ header
       padding-top: 20px
       text-align: center
   
-  h1.logo
-    a
-      font-family: 'TinyBoxBlackBitA8Regular'
-      font-size: 36px
-      line-height: 40px
-      color: $pn_blue
-      &:hover
-        color: #3665AE
-        text-decoration: none
+      a
+        font-family: 'TinyBoxBlackBitA8Regular'
+        color: $pn_blue
+        &:hover
+          color: #3665AE
+          text-decoration: none
   nav
     background: $pn_orange
     +linear-gradient(color-stops(#FFA027,$pn_orange))
@@ -73,15 +68,21 @@ header
       clear: both
     
     
-#wrap
-  background: #fff
+.wrap
   width: 970px
   margin: 0 auto
-  +box-shadow(#000, 0px, 0px, 15px)
   
 #content
   padding: 1.25em
-  min-height: 400px
-  background-color: $pn_blue
   color: #fff
   font-size: 16px
+  
+
+::-moz-selection
+  background: $pn_orange
+  color: #fff
+  text-shadow: none
+::selection
+  background: $pn_orange
+  color: #fff
+  text-shadow: none

@@ -14,15 +14,16 @@
     = yield(:header_bottom)
 
   %body
-    #wrap
-      %header
-        %h1.logo
-          = link_to "Puzzle Node", root_path
-        %nav
+    %header
+      .wrap
+        #logo
+          %h1= link_to "Puzzle Node", root_path
+      %nav
+        .wrap
           %ul
             %li= link_to "Puzzles", puzzles_path
             %li= link_to "Login", login_path
           .clear
-          
-        
-      #content= yield
+      
+    #content
+      .wrap= yield
