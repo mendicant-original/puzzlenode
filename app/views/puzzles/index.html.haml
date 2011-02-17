@@ -1,4 +1,14 @@
 #puzzles
   - @puzzles.each do |puzzle|
-    = link_to puzzle_path(puzzle) do
-      .puzzle= puzzle.short_description
+    //= link_to puzzle_path(puzzle) do
+    .puzzle
+      .name
+        = puzzle.name
+        .links
+          - if puzzle.answered_correctly?(current_user)
+            = link_to "View Discussion", puzzle_path(puzzle)
+          - else
+            = link_to "Give it a try", puzzle_path(puzzle)
+          &rarr;
+          
+      .description= puzzle.short_description

@@ -9,6 +9,14 @@ class Puzzle < ActiveRecord::Base
   def valid_solution?(tempfile)
     fingerprint == sha1(tempfile)
   end
+  
+  def answered_correctly?(user)
+    if user && user.submissions.where(:puzzle_id => self.id, :correct => true).any?
+      true
+    else
+      false
+    end
+  end
 
   private
 
