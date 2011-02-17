@@ -22,7 +22,7 @@
         .wrap
           %ul
             %li= link_to "Puzzles", puzzles_path
-            %li= link_to "Login", login_path
+            = render :partial => "shared/user"
           .clear
       
     #content
