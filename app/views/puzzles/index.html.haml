@@ -1,3 +1,4 @@
 #puzzles
   - @puzzles.each do |puzzle|
-    .puzzle= link_to puzzle.short_description, puzzle_path(puzzle)
+    = link_to puzzle_path(puzzle) do
+      .puzzle= puzzle.short_description

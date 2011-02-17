@@ -1,10 +1,11 @@
 body
   font-family: "Eurostile", "lucida grande", "Lucida Sans", "Helvetica", sans-serif
-  font-size: 12px
-  background-color: #eee
+  font: 13px/1.231 sans-serif
+  *font-size:small
   color: #292929
-  background-color: $pn_blue
-
+  //background-color: $pn_blue
+  background-color: #333
+  
 header
   padding: 1.25em
   padding-bottom: 0
@@ -54,6 +55,7 @@ header
         
         &.right
           float: right
+          margin-right: 0
           
         a
           display: block
@@ -77,10 +79,13 @@ header
   margin: 0 auto
   
 #content
+  background-color: $pn_blue
   padding: 1.25em
   color: #fff
   font-size: 16px
-  
+  min-height: 400px
+  border-bottom: 1px solid #254980
+  border-top: 1px solid #254980
 
 ::-moz-selection
   background: $pn_orange
