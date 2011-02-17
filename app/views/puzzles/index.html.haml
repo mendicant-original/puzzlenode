@@ -3,12 +3,7 @@
     //= link_to puzzle_path(puzzle) do
     .puzzle
       .name
-        = puzzle.name
-        .links
-          - if puzzle.answered_correctly?(current_user)
-            = link_to "View Discussion", puzzle_path(puzzle)
-          - else
-            = link_to "Give it a try", puzzle_path(puzzle)
-          &rarr;
+        = link_to "#{puzzle.name} &rarr;".html_safe, puzzle_path(puzzle)
+        
           
       .description= puzzle.short_description
