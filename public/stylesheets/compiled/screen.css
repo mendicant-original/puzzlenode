@@ -245,53 +245,52 @@ header nav div.clear {
   text-shadow: #222222 1px 1px 2px;
 }
 /* line 44, ../../../app/stylesheets/partials/_puzzles.sass */
-#puzzle #description pre, #puzzle #description code {
-  padding: 0.25em;
+#puzzle #description pre {
+  padding: 1em;
   background-color: #254980;
-  line-height: 1.5em;
 }
-/* line 49, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 48, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle #action {
   margin-top: 1em;
   border-top: 5px solid #254980;
   padding-top: 1em;
 }
-/* line 53, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 52, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle #action button {
   width: auto;
   padding: 0.5em;
   font-size: 1.25em;
 }
-/* line 57, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 56, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form {
   width: 950px;
   margin: 0 auto;
   overflow: hidden;
   *zoom: 1;
 }
-/* line 60, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 59, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form input {
   font-size: 0.75em;
   margin: 1em 0;
 }
-/* line 64, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 63, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form input[type=file] {
   width: 420px;
 }
-/* line 67, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 66, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step {
   background-color: #254980;
   height: 10em;
 }
-/* line 70, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 69, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step .container {
   padding: 1em;
 }
-/* line 73, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 72, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step .container h3 {
   margin-top: 0;
 }
-/* line 75, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 74, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step.one {
   display: inline;
   float: left;
@@ -302,7 +301,7 @@ header nav div.clear {
 * html #puzzle form .step.one {
   overflow-x: hidden;
 }
-/* line 78, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 77, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step.two {
   display: inline;
   float: left;
