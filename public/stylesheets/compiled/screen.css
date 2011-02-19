@@ -435,6 +435,17 @@ header nav div.clear {
 * html #footer .bottom {
   overflow-x: hidden;
 }
+/* line 21, ../../../app/stylesheets/partials/_footer.sass */
+#footer .bottom #rmu-logo {
+  background: transparent url("/images/rmu.png") no-repeat center top;
+  height: 87px;
+  width: 120px;
+  display: inline-block;
+}
+/* line 27, ../../../app/stylesheets/partials/_footer.sass */
+#footer .bottom #rmu-logo:hover {
+  background-position: center bottom;
+}
 
 /* line 1, ../../../app/stylesheets/partials/_flash.sass */
 #flash {
