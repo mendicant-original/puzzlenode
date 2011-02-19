@@ -151,7 +151,7 @@ header nav ul li a {
 }
 /* line 66, ../../../app/stylesheets/partials/_layout.sass */
 header nav ul li a:hover {
-  color: #fff6db;
+  color: white;
   text-decoration: none;
   text-shadow: #333333 1px 1px 5px;
 }
