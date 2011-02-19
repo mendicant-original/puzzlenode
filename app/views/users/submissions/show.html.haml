@@ -5,3 +5,11 @@
   %h2
     You got it
     %b= @submission.correct ? "Correct" : "Wrong"
+    
+  #action
+    - if @submission.correct
+      %button.clean-gray{:'data-url' => puzzle_comments_path(@puzzle)}
+        View Comments
+    - else
+      %button.cupid-green{:'data-url' => new_puzzle_submission_path(@puzzle)}
+        Try again
