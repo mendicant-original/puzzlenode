@@ -1,0 +1,8 @@
+#puzzle
+  %h1= @puzzle.name
+  
+  #description
+    = @puzzle.description
+  #action
+    %button.cupid-green{:'data-url' => new_puzzle_submission_path(@puzzle)}
+      Submit my solution
