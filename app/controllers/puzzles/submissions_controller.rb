@@ -1,6 +1,4 @@
-class Puzzles::SubmissionsController < ApplicationController
-  before_filter :find_puzzle
-  before_filter :user_required
+class Puzzles::SubmissionsController < Puzzles::Base
 
   def new
     @submission = @puzzle.submissions.new
@@ -16,11 +14,5 @@ class Puzzles::SubmissionsController < ApplicationController
     else      
       render :action => :new
     end
-  end
-  
-  private
-  
-  def find_puzzle
-    @puzzle = Puzzle.find(params[:puzzle_id])
   end
 end

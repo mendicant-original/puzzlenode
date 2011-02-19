@@ -7,7 +7,7 @@ Puzzlenode::Application.routes.draw do
   
   resources :puzzles do
     resources :submissions, :controller => "Puzzles::Submissions"
-    resources :comments, :comments => "Puzzles::Comments"
+    resources :comments, :controller => "Puzzles::Comments"
   end
   
   resources :users do
