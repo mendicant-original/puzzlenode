@@ -1,5 +1,5 @@
 #puzzle
-  %h1= @puzzle.name
+  %h1= link_to @puzzle.name, puzzle_path(@puzzle)
 
   = form_for @submission, :url => puzzle_submissions_path(@puzzle), 
     :html => {:multipart => true} do |f|
