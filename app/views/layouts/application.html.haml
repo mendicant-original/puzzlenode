@@ -15,6 +15,7 @@
     = yield(:header_bottom)
 
   %body
+    = render :partial => "shared/flash", :locals => {:flash => flash}
     %header
       .wrap
         #logo
@@ -25,7 +26,6 @@
             %li= link_to "Puzzles", puzzles_path
             = render :partial => "shared/user"
           .clear
-      
     #content
       .wrap= yield
     #footer
