@@ -33,10 +33,23 @@
     a:hover
       text-decoration: none
       color: $pn_light_blue
+      
+  #description
+    h2
+      border-bottom: 2px solid #254980
+      padding-bottom: 0.25em
+      color: $pn_light_blue
+      +text-shadow(#222, 1px, 1px, 2px)
+      
+    pre, code
+      padding: 0.25em
+      background-color: $pn_dark_blue
+      line-height: 1.5em
+      
   #action
-    margin: 1em 0
+    margin-top: 1em
     border-top: 5px solid #254980
-    padding:  1em 0
+    padding-top:  1em
     button
       width: auto
       padding: 0.5em
