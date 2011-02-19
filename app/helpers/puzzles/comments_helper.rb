@@ -1,0 +1,2 @@
+module Puzzles::CommentsHelper
+end

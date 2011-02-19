@@ -6,6 +6,11 @@
       
       .description
         .action
-          %button.cupid-green{:'data-url' => new_puzzle_submission_path(puzzle)} Submit my solution
+          - if puzzle.answered_correctly? current_user
+            %button.clean-gray{:'data-url' => puzzle_comments_path(puzzle)}
+              View Comments
+          - else
+            %button.cupid-green{:'data-url' => new_puzzle_submission_path(puzzle)}
+              Submit my solution
         = puzzle.short_description
         .clearfix
