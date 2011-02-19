@@ -2,7 +2,7 @@
   %h1= @puzzle.name
   
   #description
-    = @puzzle.description
+    = md @puzzle.description
   #action
     - if @puzzle.answered_correctly? current_user
       %button.clean-gray{:'data-url' => puzzle_comments_path(@puzzle)}
