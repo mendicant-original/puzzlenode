@@ -1,2 +1,7 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+$(function(){
+  $('button[data-url]').click(function(e){
+    var button = $(this);
+    
+    window.location = button.attr('data-url');
+  });
+});

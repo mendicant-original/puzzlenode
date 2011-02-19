@@ -20,8 +20,8 @@ class ApplicationController < ActionController::Base
   
   def user_required
     unless signed_in?
-      flash[:error] = "You must be signed in to continue!"
-      redirect_to root_path
+      flash[:error] = "Please sign in to continue!"
+      redirect_to login_path
     end
   end
 end

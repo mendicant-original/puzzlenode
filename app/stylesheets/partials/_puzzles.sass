@@ -1,21 +1,26 @@
 #puzzles
   .puzzle
     margin: 1em 0
-    +box-shadow(#333, 1px, 1px, 5px)
-    .name, .description
-      padding: 0.5em
-    .name
-      +border-top-radius(5px)
-      background-color: $pn_orange
-      +linear-gradient(color-stops(#FFA027,$pn_orange))
-      font-weight: bold
-      //color: #E37029
-      color: #254980
-      a
-        color: #254980
-        &:hover
-          color: #254980
     .description
-      background-color: #254980
+      padding: 0.5em 0
+    
+    .description
+      border-top: 2px solid #254980
+      //background-color: #254980
+      //+box-shadow(#333, 1px, 1px, 5px, inset)
+    .action
+      float: right
+    
+    h3
+      margin: 0
+      font-size: 1.5em
+      a
+        color: #eee
+        +text-shadow(#222, 1px, 1px, 5px)
+        font-family: 'TinyBoxBlackBitA8Regular'
+        &:hover
+          text-decoration: none
+          color: $pn_light_blue
+      
       
     
