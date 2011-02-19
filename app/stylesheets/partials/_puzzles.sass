@@ -38,3 +38,26 @@
       width: auto
       padding: 0.5em
       font-size: 1.25em
+  form
+    +container
+    
+    input
+      font-size: 0.75em
+      margin: 1em 0
+    
+      &[type=file]
+        width: 420px
+    
+    .step
+      background-color: $pn_dark_blue
+      height: 10em
+      .container
+        padding: 1em
+        
+        h3
+          margin-top: 0
+    .step.one
+      +column(12)
+
+    .step.two
+      +column(12, true)

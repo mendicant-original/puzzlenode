@@ -92,7 +92,7 @@ button.clean-gray:active {
 
 /* cupid green (inspired by okcupid.com)
 *******************************************************************************/
-button.cupid-green {
+button.cupid-green, input[type=submit].cupid-green {
   background: #7fbf4d;
   background: -moz-linear-gradient(top, #7fbf4d 0%, #63a62f 100%);
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7fbf4d), to(#63a62f));
@@ -115,7 +115,7 @@ button.cupid-green {
   width: 150px;
 }
 
-button.cupid-green:hover {
+button.cupid-green:hover, input[type=submit].cupid-green:hover {
   background: #76b347;
   background: -moz-linear-gradient(top, #76b347 0%, #5e9e2e 100%);
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#76b347), to(#5e9e2e));
@@ -125,7 +125,7 @@ button.cupid-green:hover {
   cursor: pointer;
 }
 
-button.cupid-green:active {
+button.cupid-green:active, input[type=submit].cupid-green:active {
   border: 1px solid #5b992b;
   border-bottom: 1px solid #538c27;
   -moz-box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eee;
