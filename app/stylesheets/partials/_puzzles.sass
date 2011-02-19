@@ -6,9 +6,9 @@
     
     .description
       border-top: 2px solid #254980
-      //background-color: #254980
     .action
       float: right
+      +opacity(0.25)
     
     h3
       margin: 0
@@ -20,7 +20,8 @@
         &:hover
           text-decoration: none
           color: $pn_light_blue
-      
+    &:hover .action
+      +opacity(1)
       
 #puzzle
   h1
