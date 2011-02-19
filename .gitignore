@@ -5,4 +5,4 @@ tmp/**/*
 .rvmrc
 config/database.yml
 config/omniauth.yml
-public/stylesheets/compiled
+public/stylesheets/compileddb/schema.rb
