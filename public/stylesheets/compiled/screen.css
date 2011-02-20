@@ -206,34 +206,25 @@ header nav div.clear {
 /* line 9, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzles .puzzle .action {
   float: right;
-  opacity: 0.25;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=25);
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=25);
 }
-/* line 13, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 12, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzles .puzzle h3 {
   margin: 0;
   font-size: 1.5em;
 }
-/* line 16, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 15, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzles .puzzle h3 a {
   color: #eeeeee;
   text-shadow: #222222 1px 1px 5px;
   font-family: "TinyBoxBlackBitA8Regular";
 }
-/* line 20, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 19, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzles .puzzle h3 a:hover {
   text-decoration: none;
   color: #c8dbe6;
 }
-/* line 23, ../../../app/stylesheets/partials/_puzzles.sass */
-#puzzles .puzzle:hover .action {
-  opacity: 1;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
-}
 
-/* line 27, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 24, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle h1 {
   margin-top: 0;
   margin-bottom: 0.5em;
@@ -242,65 +233,65 @@ header nav div.clear {
   border-bottom: 5px solid #254980;
   padding-bottom: 0.25em;
 }
-/* line 34, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 31, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle h1 a:hover {
   text-decoration: none;
   color: #c8dbe6;
 }
-/* line 39, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 36, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle #description h2 {
   border-bottom: 2px solid #254980;
   padding-bottom: 0.25em;
   color: #c8dbe6;
   text-shadow: #222222 1px 1px 2px;
 }
-/* line 45, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 42, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle #description pre {
   padding: 1em;
   background-color: #254980;
 }
-/* line 49, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 46, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle #action {
   margin-top: 1em;
   border-top: 5px solid #254980;
   padding-top: 1em;
 }
-/* line 53, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 50, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle #action button {
   width: auto;
   padding: 0.5em;
   font-size: 1.25em;
 }
-/* line 57, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 54, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form {
   width: 950px;
   margin: 0 auto;
   overflow: hidden;
   *zoom: 1;
 }
-/* line 60, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 57, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form input {
   font-size: 0.75em;
   margin: 1em 0;
 }
-/* line 64, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 61, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form input[type=file] {
   width: 420px;
 }
-/* line 67, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 64, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step {
   background-color: #254980;
   height: 10em;
 }
-/* line 70, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 67, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step .container {
   padding: 1em;
 }
-/* line 73, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 70, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step .container h3 {
   margin-top: 0;
 }
-/* line 75, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 72, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step.one {
   display: inline;
   float: left;
@@ -311,7 +302,7 @@ header nav div.clear {
 * html #puzzle form .step.one {
   overflow-x: hidden;
 }
-/* line 78, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 75, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step.two {
   display: inline;
   float: left;
