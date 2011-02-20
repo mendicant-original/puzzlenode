@@ -73,8 +73,8 @@ a img {
 }
 
 @font-face {
-  font-family: "Neogrey";
-  src: url("/fonts/neogreyregular-webfont.eot?") format("eot"), url("/fonts/neogreyregular-webfont.woff") format("woff"), url("/fonts/neogreyregular-webfont.ttf") format("truetype"), url("/fonts/neogreyregular-webfont.svg#webfontTnvhYMxC") format("svg");
+  font-family: "PFTempestaSevenExtended";
+  src: url("/fonts/pf_tempesta_seven_extended-webfont.eot?") format("eot"), url("/fonts/pf_tempesta_seven_extended-webfont.woff") format("woff"), url("/fonts/pf_tempesta_seven_extended-webfont.ttf") format("truetype"), url("/fonts/pf_tempesta_seven_extended-webfont.svg#webfontvyGkTGgk") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -84,32 +84,26 @@ body {
   font: 13px/1.231 sans-serif;
   color: #292929;
   background-color: #333333;
-  font-family: "Neogrey", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
-  letter-spacing: 0.1em;
+  font-family: "PFTempestaSevenExtended", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 }
 
-/* line 9, ../../../app/stylesheets/partials/_layout.sass */
-input, button {
-  letter-spacing: 0;
-}
-
-/* line 12, ../../../app/stylesheets/partials/_layout.sass */
+/* line 8, ../../../app/stylesheets/partials/_layout.sass */
 header {
   padding: 1.25em;
   padding-bottom: 0;
   background: white;
 }
-/* line 17, ../../../app/stylesheets/partials/_layout.sass */
+/* line 13, ../../../app/stylesheets/partials/_layout.sass */
 header h1 {
   margin: 0;
 }
-/* line 20, ../../../app/stylesheets/partials/_layout.sass */
+/* line 16, ../../../app/stylesheets/partials/_layout.sass */
 header #logo {
   height: 139px;
   background: white url(/images/puzzlenode_background.png) no-repeat center;
   margin-bottom: 2em;
 }
-/* line 24, ../../../app/stylesheets/partials/_layout.sass */
+/* line 20, ../../../app/stylesheets/partials/_layout.sass */
 header #logo h1 {
   font-family: "TinyBoxBlackBitA8Regular";
   font-size: 48px;
@@ -118,17 +112,17 @@ header #logo h1 {
   padding-top: 20px;
   text-align: center;
 }
-/* line 32, ../../../app/stylesheets/partials/_layout.sass */
+/* line 28, ../../../app/stylesheets/partials/_layout.sass */
 header #logo h1 a {
   font-family: "TinyBoxBlackBitA8Regular";
   color: #305896;
 }
-/* line 35, ../../../app/stylesheets/partials/_layout.sass */
+/* line 31, ../../../app/stylesheets/partials/_layout.sass */
 header #logo h1 a:hover {
   color: #3665ae;
   text-decoration: none;
 }
-/* line 38, ../../../app/stylesheets/partials/_layout.sass */
+/* line 34, ../../../app/stylesheets/partials/_layout.sass */
 header nav {
   background: #fe7f2f;
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #ffa027), color-stop(100%, #fe7f2f));
@@ -141,11 +135,11 @@ header nav {
   position: relative;
   margin: 0 -1em;
 }
-/* line 48, ../../../app/stylesheets/partials/_layout.sass */
+/* line 44, ../../../app/stylesheets/partials/_layout.sass */
 header nav ul {
   list-style: none outside none;
 }
-/* line 50, ../../../app/stylesheets/partials/_layout.sass */
+/* line 46, ../../../app/stylesheets/partials/_layout.sass */
 header nav ul li {
   display: inline;
   float: left;
@@ -155,12 +149,12 @@ header nav ul li {
   white-space: nowrap;
   position: relative;
 }
-/* line 59, ../../../app/stylesheets/partials/_layout.sass */
+/* line 55, ../../../app/stylesheets/partials/_layout.sass */
 header nav ul li.right {
   float: right;
   margin-right: 0;
 }
-/* line 63, ../../../app/stylesheets/partials/_layout.sass */
+/* line 59, ../../../app/stylesheets/partials/_layout.sass */
 header nav ul li a {
   display: block;
   color: white;
@@ -169,24 +163,24 @@ header nav ul li a {
   font-size: 1.1em;
   padding-top: 0.3em;
 }
-/* line 70, ../../../app/stylesheets/partials/_layout.sass */
+/* line 66, ../../../app/stylesheets/partials/_layout.sass */
 header nav ul li a:hover {
   color: white;
   text-decoration: none;
   text-shadow: #333333 1px 1px 5px;
 }
-/* line 76, ../../../app/stylesheets/partials/_layout.sass */
+/* line 72, ../../../app/stylesheets/partials/_layout.sass */
 header nav div.clear {
   clear: both;
 }
 
-/* line 80, ../../../app/stylesheets/partials/_layout.sass */
+/* line 76, ../../../app/stylesheets/partials/_layout.sass */
 .wrap {
   width: 970px;
   margin: 0 auto;
 }
 
-/* line 84, ../../../app/stylesheets/partials/_layout.sass */
+/* line 80, ../../../app/stylesheets/partials/_layout.sass */
 #content {
   background-color: #305896;
   padding: 1.25em;
@@ -197,14 +191,14 @@ header nav div.clear {
   border-top: 1px solid #254980;
 }
 
-/* line 93, ../../../app/stylesheets/partials/_layout.sass */
+/* line 89, ../../../app/stylesheets/partials/_layout.sass */
 ::-moz-selection {
   background: #fe7f2f;
   color: white;
   text-shadow: none;
 }
 
-/* line 97, ../../../app/stylesheets/partials/_layout.sass */
+/* line 93, ../../../app/stylesheets/partials/_layout.sass */
 ::selection {
   background: #fe7f2f;
   color: white;
@@ -295,7 +289,7 @@ header nav div.clear {
 /* line 63, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step {
   background-color: #254980;
-  height: 10em;
+  height: 8em;
 }
 /* line 66, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step .container {
@@ -304,8 +298,9 @@ header nav div.clear {
 /* line 69, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step .container h3 {
   margin-top: 0;
+  font-size: 1.25em;
 }
-/* line 71, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 72, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step.one {
   display: inline;
   float: left;
@@ -316,7 +311,7 @@ header nav div.clear {
 * html #puzzle form .step.one {
   overflow-x: hidden;
 }
-/* line 74, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 75, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step.two {
   display: inline;
   float: left;
