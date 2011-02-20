@@ -244,37 +244,37 @@ header nav div.clear {
   font-family: "inero";
   text-shadow: #222222 1px 1px 5px;
   border-bottom: 5px solid #254980;
-  padding-bottom: 0.25em;
   font-size: 3.5em;
 }
-/* line 30, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 29, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle h1 a:hover {
   text-decoration: none;
   color: #c8dbe6;
 }
-/* line 35, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 34, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle #description h2 {
   border-bottom: 2px solid #254980;
   padding-bottom: 0.25em;
   color: #c8dbe6;
   text-shadow: #222222 1px 1px 2px;
 }
-/* line 41, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 40, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle #description pre {
   padding: 1em;
   background-color: #254980;
 }
-/* line 45, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 44, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle #action {
   margin-top: 1em;
   border-top: 5px solid #254980;
   padding-top: 1em;
 }
-/* line 49, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 48, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle #action button {
   width: auto;
   padding: 0.5em;
   font-size: 1.25em;
+  font-weight: normal;
 }
 /* line 53, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form {
@@ -394,15 +394,16 @@ header nav div.clear {
   min-height: 100px;
   padding: 1.25em 0;
   border-top: 1px solid #0f1d32;
+  line-height: 1.5em;
 }
-/* line 7, ../../../app/stylesheets/partials/_footer.sass */
+/* line 8, ../../../app/stylesheets/partials/_footer.sass */
 #footer .container {
   width: 950px;
   margin: 0 auto;
   overflow: hidden;
   *zoom: 1;
 }
-/* line 10, ../../../app/stylesheets/partials/_footer.sass */
+/* line 11, ../../../app/stylesheets/partials/_footer.sass */
 #footer .about {
   display: inline;
   float: left;
@@ -414,7 +415,7 @@ header nav div.clear {
 * html #footer .about {
   overflow-x: hidden;
 }
-/* line 13, ../../../app/stylesheets/partials/_footer.sass */
+/* line 14, ../../../app/stylesheets/partials/_footer.sass */
 #footer .contact {
   display: inline;
   float: left;
@@ -427,7 +428,7 @@ header nav div.clear {
 * html #footer .contact {
   overflow-x: hidden;
 }
-/* line 17, ../../../app/stylesheets/partials/_footer.sass */
+/* line 18, ../../../app/stylesheets/partials/_footer.sass */
 #footer .bottom {
   display: inline;
   float: left;
@@ -440,14 +441,14 @@ header nav div.clear {
 * html #footer .bottom {
   overflow-x: hidden;
 }
-/* line 21, ../../../app/stylesheets/partials/_footer.sass */
+/* line 22, ../../../app/stylesheets/partials/_footer.sass */
 #footer .bottom #rmu-logo {
   background: transparent url("/images/rmu.png") no-repeat center top;
   height: 87px;
   width: 120px;
   display: inline-block;
 }
-/* line 27, ../../../app/stylesheets/partials/_footer.sass */
+/* line 28, ../../../app/stylesheets/partials/_footer.sass */
 #footer .bottom #rmu-logo:hover {
   background-position: center bottom;
 }
