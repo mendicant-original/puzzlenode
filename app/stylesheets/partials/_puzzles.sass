@@ -1,6 +1,5 @@
 #puzzles
   .puzzle
-    margin: 1em 0
     .description
       padding: 0.5em 0
     
@@ -9,25 +8,25 @@
     .action
       float: right
     
-    h3
-      margin: 0
-      font-size: 1.5em
-      a
-        color: #eee
-        +text-shadow(#222, 1px, 1px, 5px)
-        font-family: 'TinyBoxBlackBitA8Regular'
-        &:hover
-          text-decoration: none
-          color: $pn_light_blue
+    a
+      color: #eee
+      +text-shadow(#222, 1px, 1px, 3px)
+      letter-spacing: 0.05em
+      font-family: 'inero'
+      font-size: 3em
+      &:hover
+        text-decoration: none
+        color: $pn_light_blue
       
 #puzzle
   h1
     margin-top: 0
-    margin-bottom: 0.5em
-    font-family: 'TinyBoxBlackBitA8Regular'
+    margin-bottom: 0.25em
+    font-family: 'inero'
     +text-shadow(#222, 1px, 1px, 5px)
     border-bottom: 5px solid #254980
     padding-bottom: 0.25em
+    font-size: 3.5em
     a:hover
       text-decoration: none
       color: $pn_light_blue

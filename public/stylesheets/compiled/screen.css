@@ -65,6 +65,13 @@ a img {
   font-style: normal;
 }
 
+@font-face {
+  font-family: "inero";
+  src: url("/fonts/inero-webfont.eot?") format("eot"), url("/fonts/inero-webfont.woff") format("woff"), url("/fonts/inero-webfont.ttf") format("truetype"), url("/fonts/inero-webfont.svg#webfontHpoyqXln") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* line 1, ../../../app/stylesheets/partials/_layout.sass */
 body {
   font: 13px/1.231 sans-serif;
@@ -191,107 +198,101 @@ header nav div.clear {
   text-shadow: none;
 }
 
-/* line 2, ../../../app/stylesheets/partials/_puzzles.sass */
-#puzzles .puzzle {
-  margin: 1em 0;
-}
-/* line 4, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 3, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzles .puzzle .description {
   padding: 0.5em 0;
 }
-/* line 7, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 6, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzles .puzzle .description {
   border-top: 2px solid #254980;
 }
-/* line 9, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 8, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzles .puzzle .action {
   float: right;
 }
-/* line 12, ../../../app/stylesheets/partials/_puzzles.sass */
-#puzzles .puzzle h3 {
-  margin: 0;
-  font-size: 1.5em;
-}
-/* line 15, ../../../app/stylesheets/partials/_puzzles.sass */
-#puzzles .puzzle h3 a {
+/* line 11, ../../../app/stylesheets/partials/_puzzles.sass */
+#puzzles .puzzle a {
   color: #eeeeee;
-  text-shadow: #222222 1px 1px 5px;
-  font-family: "TinyBoxBlackBitA8Regular";
+  text-shadow: #222222 1px 1px 3px;
+  letter-spacing: 0.05em;
+  font-family: "inero";
+  font-size: 3em;
 }
-/* line 19, ../../../app/stylesheets/partials/_puzzles.sass */
-#puzzles .puzzle h3 a:hover {
+/* line 17, ../../../app/stylesheets/partials/_puzzles.sass */
+#puzzles .puzzle a:hover {
   text-decoration: none;
   color: #c8dbe6;
 }
 
-/* line 24, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 22, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle h1 {
   margin-top: 0;
-  margin-bottom: 0.5em;
-  font-family: "TinyBoxBlackBitA8Regular";
+  margin-bottom: 0.25em;
+  font-family: "inero";
   text-shadow: #222222 1px 1px 5px;
   border-bottom: 5px solid #254980;
   padding-bottom: 0.25em;
+  font-size: 3.5em;
 }
-/* line 31, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 30, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle h1 a:hover {
   text-decoration: none;
   color: #c8dbe6;
 }
-/* line 36, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 35, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle #description h2 {
   border-bottom: 2px solid #254980;
   padding-bottom: 0.25em;
   color: #c8dbe6;
   text-shadow: #222222 1px 1px 2px;
 }
-/* line 42, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 41, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle #description pre {
   padding: 1em;
   background-color: #254980;
 }
-/* line 46, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 45, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle #action {
   margin-top: 1em;
   border-top: 5px solid #254980;
   padding-top: 1em;
 }
-/* line 50, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 49, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle #action button {
   width: auto;
   padding: 0.5em;
   font-size: 1.25em;
 }
-/* line 54, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 53, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form {
   width: 950px;
   margin: 0 auto;
   overflow: hidden;
   *zoom: 1;
 }
-/* line 57, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 56, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form input {
   font-size: 0.75em;
   margin: 1em 0;
 }
-/* line 61, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 60, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form input[type=file] {
   width: 420px;
 }
-/* line 64, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 63, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step {
   background-color: #254980;
   height: 10em;
 }
-/* line 67, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 66, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step .container {
   padding: 1em;
 }
-/* line 70, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 69, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step .container h3 {
   margin-top: 0;
 }
-/* line 72, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 71, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step.one {
   display: inline;
   float: left;
@@ -302,7 +303,7 @@ header nav div.clear {
 * html #puzzle form .step.one {
   overflow-x: hidden;
 }
-/* line 75, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 74, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step.two {
   display: inline;
   float: left;
