@@ -5,8 +5,10 @@
     = md @puzzle.description
   #action
     - if @puzzle.answered_correctly? current_user
-      %button.clean-gray{:'data-url' => puzzle_comments_path(@puzzle)}
+      %button.retro{:'data-url' => puzzle_comments_path(@puzzle)}
+        = image_tag "icons/comment.png"
         View Comments
     - else
-      %button.cupid-green{:'data-url' => new_puzzle_submission_path(@puzzle)}
+      %button.retro{:'data-url' => new_puzzle_submission_path(@puzzle)}
+        = image_tag "icons/upload.png"
         Submit my solution

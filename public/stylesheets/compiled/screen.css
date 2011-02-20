@@ -263,44 +263,41 @@ header nav div.clear {
   border-top: 5px solid #254980;
   padding-top: 1em;
 }
-/* line 48, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 49, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle #action button {
-  width: auto;
-  padding: 0.5em;
   font-size: 1.25em;
-  font-weight: normal;
 }
-/* line 53, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 51, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form {
   width: 950px;
   margin: 0 auto;
   overflow: hidden;
   *zoom: 1;
 }
-/* line 56, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 54, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form input {
   font-size: 0.75em;
   margin: 1em 0;
 }
-/* line 60, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 58, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form input[type=file] {
   width: 420px;
 }
-/* line 63, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 61, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step {
   background-color: #254980;
   height: 8em;
 }
-/* line 66, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 64, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step .container {
   padding: 1em;
 }
-/* line 69, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 67, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step .container h3 {
   margin-top: 0;
   font-size: 1.25em;
 }
-/* line 72, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 70, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step.one {
   display: inline;
   float: left;
@@ -311,7 +308,7 @@ header nav div.clear {
 * html #puzzle form .step.one {
   overflow-x: hidden;
 }
-/* line 75, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 73, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step.two {
   display: inline;
   float: left;
@@ -475,65 +472,79 @@ header nav div.clear {
   color: #552222;
 }
 
-/* line 21, ../../../app/stylesheets/screen.sass */
+/* line 1, ../../../app/stylesheets/partials/_buttons.sass */
+button.retro {
+  line-height: 1;
+  padding: 8px;
+  font-weight: normal;
+  font-family: "PFTempestaSevenExtended";
+  text-align: center;
+  text-shadow: #999999 1px 1px 1px;
+}
+/* line 8, ../../../app/stylesheets/partials/_buttons.sass */
+button.retro img {
+  vertical-align: middle;
+}
+
+/* line 22, ../../../app/stylesheets/screen.sass */
 h1, h2, h3 {
   margin: 1em 0;
 }
 
-/* line 24, ../../../app/stylesheets/screen.sass */
+/* line 25, ../../../app/stylesheets/screen.sass */
 h1 {
   font-size: 2em;
 }
 
-/* line 27, ../../../app/stylesheets/screen.sass */
+/* line 28, ../../../app/stylesheets/screen.sass */
 h2 {
   font-size: 1.75em;
 }
 
-/* line 30, ../../../app/stylesheets/screen.sass */
+/* line 31, ../../../app/stylesheets/screen.sass */
 h3 {
   font-size: 1.5em;
 }
 
-/* line 33, ../../../app/stylesheets/screen.sass */
+/* line 34, ../../../app/stylesheets/screen.sass */
 a {
   text-decoration: none;
   color: white;
 }
-/* line 37, ../../../app/stylesheets/screen.sass */
+/* line 38, ../../../app/stylesheets/screen.sass */
 a:visited {
   color: white;
 }
-/* line 39, ../../../app/stylesheets/screen.sass */
+/* line 40, ../../../app/stylesheets/screen.sass */
 a:hover {
   color: #fe7f2f;
   text-decoration: underline;
 }
 
-/* line 43, ../../../app/stylesheets/screen.sass */
+/* line 44, ../../../app/stylesheets/screen.sass */
 input {
   margin: 1em 0;
 }
 
-/* line 46, ../../../app/stylesheets/screen.sass */
+/* line 47, ../../../app/stylesheets/screen.sass */
 p {
   margin: 1.5em 0;
 }
 
-/* line 49, ../../../app/stylesheets/screen.sass */
+/* line 50, ../../../app/stylesheets/screen.sass */
 .clearfix {
   overflow: hidden;
   *zoom: 1;
   clear: both;
 }
 
-/* line 53, ../../../app/stylesheets/screen.sass */
+/* line 54, ../../../app/stylesheets/screen.sass */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
-/* line 57, ../../../app/stylesheets/screen.sass */
+/* line 58, ../../../app/stylesheets/screen.sass */
 pre, code {
   font-family: Monaco, "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
 }
