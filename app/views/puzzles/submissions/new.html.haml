@@ -7,11 +7,15 @@
     .step.one
       .container
         %h3 1. Select your solution file
-        = f.file_field :file
+        .action
+          = image_tag "icons/file.png"
+          = f.file_field :file
     .step.two
       .container
         %h3 2. Submit your solution
-        = f.submit "Submit my solution"
+        .action
+          = image_tag "icons/upload.png"
+          = f.submit "Submit my solution"
           
   #action
     = link_to "< Back to puzzle", puzzle_path(@puzzle)

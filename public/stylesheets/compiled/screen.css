@@ -281,23 +281,31 @@ header nav div.clear {
 }
 /* line 58, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form input[type=file] {
-  width: 420px;
+  color: #f9f9f9;
 }
 /* line 61, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step {
   background-color: #254980;
-  height: 8em;
 }
-/* line 64, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 63, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step .container {
   padding: 1em;
 }
-/* line 67, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 66, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step .container h3 {
   margin-top: 0;
   font-size: 1.25em;
 }
-/* line 70, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 69, ../../../app/stylesheets/partials/_puzzles.sass */
+#puzzle form .step .container .action {
+  margin-top: 1em;
+}
+/* line 71, ../../../app/stylesheets/partials/_puzzles.sass */
+#puzzle form .step .container .action img {
+  vertical-align: middle;
+  margin-right: 0.5em;
+}
+/* line 75, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step.one {
   display: inline;
   float: left;
@@ -308,7 +316,7 @@ header nav div.clear {
 * html #puzzle form .step.one {
   overflow-x: hidden;
 }
-/* line 73, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 78, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step.two {
   display: inline;
   float: left;
@@ -473,7 +481,7 @@ header nav div.clear {
 }
 
 /* line 1, ../../../app/stylesheets/partials/_buttons.sass */
-button.retro, input.retro {
+button.retro {
   line-height: 1;
   padding: 8px;
   font-weight: normal;
@@ -482,7 +490,7 @@ button.retro, input.retro {
   text-shadow: #999999 1px 1px 1px;
 }
 /* line 8, ../../../app/stylesheets/partials/_buttons.sass */
-button.retro img, input.retro img {
+button.retro img {
   vertical-align: middle;
 }
 
