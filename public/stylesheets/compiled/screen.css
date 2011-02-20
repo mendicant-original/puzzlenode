@@ -473,7 +473,7 @@ header nav div.clear {
 }
 
 /* line 1, ../../../app/stylesheets/partials/_buttons.sass */
-button.retro {
+button.retro, input.retro {
   line-height: 1;
   padding: 8px;
   font-weight: normal;
@@ -482,7 +482,7 @@ button.retro {
   text-shadow: #999999 1px 1px 1px;
 }
 /* line 8, ../../../app/stylesheets/partials/_buttons.sass */
-button.retro img {
+button.retro img, input.retro img {
   vertical-align: middle;
 }
 
