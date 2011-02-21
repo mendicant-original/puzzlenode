@@ -10,12 +10,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110202200034) do
+ActiveRecord::Schema.define(:version => 20110221195926) do
 
   create_table "announcements", :force => true do |t|
     t.text     "body"
     t.text     "title"
     t.integer  "author_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "attachments", :force => true do |t|
+    t.integer  "puzzle_id"
+    t.string   "file_name"
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

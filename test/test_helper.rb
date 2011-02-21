@@ -10,4 +10,17 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  
+  def build_puzzle
+    test_tempfile = Tempfile.new("puzzle_sample")
+    test_tempfile << "Sample Text"
+    test_tempfile.rewind
+
+    return Puzzle.create(:file => test_tempfile)
+  end
+  
+  def cleanup_attachment(attachment)
+    FileUtils.rm_rf(attachment.directory)
+  end
+  
 end
