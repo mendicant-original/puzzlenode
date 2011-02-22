@@ -1,7 +1,7 @@
 class PuzzlesController < ApplicationController
 
   def index
-    @puzzles = Puzzle.all
+    @puzzles = Puzzle.order("created_at").all
   end
   
   def show

@@ -2,7 +2,7 @@ class Admin::PuzzlesController < Admin::Base
   before_filter :find_puzzle, :only => [:edit, :update, :destroy]
   
   def index
-    @puzzles = Puzzle.all
+    @puzzles = Puzzle.order("created_at").all
   end
   
   def new

@@ -8,8 +8,11 @@
     
   #action
     - if @submission.correct
-      %button.clean-gray{:'data-url' => puzzle_comments_path(@puzzle)}
+      %button.retro{:'data-url' => puzzle_comments_path(@puzzle)}
+        = image_tag "icons/comment_small.png"
         View Comments
     - else
-      %button.cupid-green{:'data-url' => new_puzzle_submission_path(@puzzle)}
+      %button.retro{:'data-url' => new_puzzle_submission_path(@puzzle)}
+        = image_tag "icons/upload_small.png"
         Try again
+        
