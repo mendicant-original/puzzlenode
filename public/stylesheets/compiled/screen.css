@@ -79,6 +79,13 @@ a img {
   font-style: normal;
 }
 
+@font-face {
+  font-family: "MonkirtaPursuitNCRegular";
+  src: url("/fonts/monkirta_pursuit_nc-webfont.eot?") format("eot"), url("/fonts/monkirta_pursuit_nc-webfont.woff") format("woff"), url("/fonts/monkirta_pursuit_nc-webfont.ttf") format("truetype"), url("/fonts/monkirta_pursuit_nc-webfont.svg#webfontf8StscE9") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* line 1, ../../../app/stylesheets/partials/_layout.sass */
 body {
   font: 13px/1.231 sans-serif;
@@ -212,12 +219,15 @@ header nav div.clear {
 /* line 6, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzles .puzzle .description {
   border-top: 2px solid #254980;
+  font-family: "MonkirtaPursuitNCRegular";
+  font-size: 1.1em;
+  line-height: 1.5em;
 }
-/* line 8, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 11, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzles .puzzle .action {
   float: right;
 }
-/* line 11, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 14, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzles .puzzle a {
   color: #eeeeee;
   text-shadow: #222222 1px 1px 3px;
@@ -225,13 +235,13 @@ header nav div.clear {
   font-family: "inero";
   font-size: 3em;
 }
-/* line 17, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 20, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzles .puzzle a:hover {
   text-decoration: none;
   color: #c8dbe6;
 }
 
-/* line 22, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 25, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle h1 {
   margin-top: 0;
   margin-bottom: 0.25em;
@@ -240,72 +250,78 @@ header nav div.clear {
   border-bottom: 5px solid #254980;
   font-size: 3.5em;
 }
-/* line 29, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 32, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle h1 a:hover {
   text-decoration: none;
   color: #c8dbe6;
 }
-/* line 34, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 36, ../../../app/stylesheets/partials/_puzzles.sass */
+#puzzle #description {
+  font-family: "MonkirtaPursuitNCRegular";
+  font-size: 1.1em;
+  line-height: 1.5em;
+}
+/* line 40, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle #description h2 {
   border-bottom: 2px solid #254980;
   padding-bottom: 0.25em;
   color: #c8dbe6;
   text-shadow: #222222 1px 1px 2px;
 }
-/* line 40, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 46, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle #description pre {
   padding: 1em;
   background-color: #254980;
 }
-/* line 44, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 50, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle #action {
   margin-top: 1em;
   border-top: 5px solid #254980;
   padding-top: 1em;
 }
-/* line 49, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 55, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle #action button {
   font-size: 1.25em;
 }
-/* line 51, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 57, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form {
   width: 950px;
   margin: 0 auto;
   overflow: hidden;
   *zoom: 1;
 }
-/* line 54, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 60, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form input {
   font-size: 0.75em;
   margin: 1em 0;
 }
-/* line 58, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 64, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form input[type=file] {
   color: #f9f9f9;
 }
-/* line 61, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 67, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step {
   background-color: #254980;
 }
-/* line 63, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 69, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step .container {
   padding: 1em;
 }
-/* line 66, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 72, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step .container h3 {
   margin-top: 0;
   font-size: 1.25em;
 }
-/* line 69, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 75, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step .container .action {
   margin-top: 1em;
 }
-/* line 71, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 77, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step .container .action img {
   vertical-align: middle;
   margin-right: 0.5em;
 }
-/* line 75, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 81, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step.one {
   display: inline;
   float: left;
@@ -316,7 +332,7 @@ header nav div.clear {
 * html #puzzle form .step.one {
   overflow-x: hidden;
 }
-/* line 78, ../../../app/stylesheets/partials/_puzzles.sass */
+/* line 84, ../../../app/stylesheets/partials/_puzzles.sass */
 #puzzle form .step.two {
   display: inline;
   float: left;
