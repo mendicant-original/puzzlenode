@@ -1,6 +1,7 @@
 class Puzzles::CommentsController < Puzzles::Base
   before_filter :answered_correct_only
   before_filter :find_comment, :only => [:edit, :update, :destroy, :show]
+  before_filter :commentor_only, :only => [:edit, :update, :destroy]
   
   def index
     @comments = @puzzle.comments.paginate(:page => params[:page])
@@ -35,6 +36,7 @@ class Puzzles::CommentsController < Puzzles::Base
     @comment.destroy
     
     flash[:notice] = "Comment sucessfully destroyed."
+    redirect_to puzzle_comments_path(@puzzle)
   end
 
   private
@@ -47,6 +49,13 @@ class Puzzles::CommentsController < Puzzles::Base
   end
   
   def find_comment
-    @comment = Comment.find(params[:comment])
+    @comment = Comment.find(params[:id])
+  end
+  
+  def commentor_only
+    unless @comment.user == current_user
+      flash[:error] = "You can't access the requested comment"
+      redirect_to puzzle_comments_path(@puzzle)
+    end
   end
 end
