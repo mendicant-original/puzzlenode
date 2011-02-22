@@ -1,6 +1,6 @@
 class Puzzle < ActiveRecord::Base
   has_many :submissions
-  has_many :comments
+  has_many :comments, :order => "created_at"
   has_many :attachments
 
   accepts_nested_attributes_for :attachments, :allow_destroy => true

@@ -1,5 +1,20 @@
 #puzzle
   %h1= link_to @puzzle.name, puzzle_path(@puzzle)
-  
+
   #comments
-    TODO ....
+    - @comments.each do |comment|
+      .comment
+        .header
+          = comment.user.name
+          .info= comment.created_at
+        .description= comment.body
+    
+    = will_paginate @comments
+    
+    #new-comment
+      .description
+        %h2 Make a comment
+      = form_for Comment.new, :url => puzzle_comments_path(@puzzle) do |f|
+        = f.text_area :body
+        .action
+          = f.submit "Comment"
