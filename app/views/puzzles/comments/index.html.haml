@@ -1,28 +1,35 @@
 #puzzle
   %h1= link_to @puzzle.name, puzzle_path(@puzzle)
+  
+  #comments_container
 
-  #comments
-    - @comments.each do |comment|
-      .comment
-        .header
-          = comment.user.name
-          .info= comment.created_at
-          - if current_user == comment.user
-            .controls
-              = link_to "Edit", edit_puzzle_comment_path(@puzzle, comment)
-              |
-              = link_to "Delete", puzzle_comment_path(@puzzle, comment),
-                :method => :delete,
-                :confirm => "Are you sure you wish to delete this comment?"
+    #comments
+      - @comments.each do |comment|
+        .comment
+          .header
+            = comment.user.name
+            .info= comment.created_at
+            - if current_user == comment.user
+              .controls
+                = link_to "Edit", edit_puzzle_comment_path(@puzzle, comment)
+                |
+                = link_to "Delete", puzzle_comment_path(@puzzle, comment),
+                  :method => :delete,
+                  :confirm => "Are you sure you wish to delete this comment?"
           
-        .description= md comment.body
+          .description= md comment.body
     
-    = will_paginate @comments
+      = will_paginate @comments
     
-    #new-comment
-      .description
-        %h2 Make a comment
-      = form_for Comment.new, :url => puzzle_comments_path(@puzzle) do |f|
-        = f.text_area :body
-        .action
-          = f.submit "Comment"
+      #new-comment
+        .description
+          %h2 Make a comment
+        = form_for Comment.new, :url => puzzle_comments_path(@puzzle) do |f|
+          = f.text_area :body
+          .action
+            = f.submit "Comment"
+            
+    #solved-by
+      .header Solved by
+      - @puzzle.solved_by.each do |user|
+        .user= user.name

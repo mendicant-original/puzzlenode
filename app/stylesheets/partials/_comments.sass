@@ -1,27 +1,47 @@
-#comments
-  .comment
-    margin-bottom: 0.5em
+#comments_container
+  +container
+  
+  #solved-by
+    +column(6, true)
+    
     .header
       background-color: $pn_dark_blue
       padding: 0.5em
       padding-bottom: 0.75em
       margin-bottom: 0.5em
-      .info
-        margin-left: 1em
-        display: inline-block
-        font-size: 0.75em
-        text-align: right
-        color: #ccc
-      .controls
-        float: right
-        display: inline-block
-  // #new-comment
-  //   margin-top: 0.5em
-  //   border-top: 2px solid $pn_dark_blue
-  //   padding-top: 0.5em
+      text-align: center
+      
+    .user
+      text-align: center
+      margin-bottom: 0.5em
+      font-family: "MonkirtaPursuitNCRegular"
+      font-size: 1.1em
+  #comments
+    +column(18)
   
-  textarea
-    width: 100%
+    .comment
+      margin-bottom: 0.5em
+      .header
+        background-color: $pn_dark_blue
+        padding: 0.5em
+        padding-bottom: 0.75em
+        margin-bottom: 0.5em
+        .info
+          margin-left: 1em
+          display: inline-block
+          font-size: 0.75em
+          text-align: right
+          color: #ccc
+        .controls
+          float: right
+          display: inline-block
+    // #new-comment
+    //   margin-top: 0.5em
+    //   border-top: 2px solid $pn_dark_blue
+    //   padding-top: 0.5em
   
-  .action
-    float: right
+    textarea
+      width: 100%
+  
+    .action
+      float: right

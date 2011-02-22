@@ -20,6 +20,12 @@ class Puzzle < ActiveRecord::Base
       false
     end
   end
+  
+  def solved_by
+    User.includes(:submissions).
+      where(["submissions.puzzle_id = ? AND submissions.correct = ?",
+              self.id, true])
+  end
 
   private
 
