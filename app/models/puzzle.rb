@@ -3,6 +3,8 @@ class Puzzle < ActiveRecord::Base
   has_many :comments
   has_many :attachments
 
+  accepts_nested_attributes_for :attachments, :allow_destroy => true
+
   def file=(tempfile)
     write_attribute :fingerprint, sha1(tempfile)
   end

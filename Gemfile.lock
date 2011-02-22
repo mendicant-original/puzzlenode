@@ -49,6 +49,7 @@ GEM
     mime-types (1.16)
     multi_json (0.0.5)
     multipart-post (1.1.0)
+    nested_form (0.0.0)
     net-ldap (0.1.1)
     nokogiri (1.4.4)
     oa-basic (0.1.6)
@@ -127,6 +128,7 @@ PLATFORMS
 DEPENDENCIES
   compass (~> 0.10.6)
   haml
+  nested_form
   omniauth
   pg
   rails (~> 3.0.3)

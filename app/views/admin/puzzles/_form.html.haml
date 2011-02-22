@@ -26,6 +26,24 @@
   %br
   = f.file_field :file
   
+%hr
+
+%h3 Input Files
+
+= f.fields_for :attachments do |a|
+  %p
+    - if a.object.file_name.blank?
+      = a.label :file, "File"
+      = a.file_field :file
+    - else
+      = a.object.file_name
+
+    = a.link_to_remove "Remove"
+
+= f.link_to_add "Add an input file", :attachments
+
+%hr
+
 %p
   = f.submit
   = link_to "Cancel", admin_puzzles_path
