@@ -14,7 +14,7 @@ class Puzzle < ActiveRecord::Base
   end
   
   def answered_correctly?(user)
-    if user && user.submissions.where(:puzzle_id => self.id, :correct => true).any?
+    if user && user.solution_for(self)
       true
     else
       false
@@ -24,7 +24,8 @@ class Puzzle < ActiveRecord::Base
   def solved_by
     User.includes(:submissions).
       where(["submissions.puzzle_id = ? AND submissions.correct = ?",
-              self.id, true])
+              self.id, true]).
+      order("submissions.created_at")
   end
 
   private

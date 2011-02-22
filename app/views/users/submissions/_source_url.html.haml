@@ -1,0 +1,7 @@
+= form_for current_user.solution_for(@puzzle), 
+  :url => user_submission_path(current_user, current_user.solution_for(@puzzle)) do |f|
+  Share your solution source code with others by entering its URL here:
+  %br
+
+  = f.text_field :source_url
+  = f.submit "Update"

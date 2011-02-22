@@ -1,8 +1,10 @@
 #puzzle
   %h1= link_to @puzzle.name, puzzle_path(@puzzle)
-  
+    
   #comments_container
-
+  
+    #share-source{:class => ("blank" if current_user.solution_for(@puzzle).source_url.blank?)}
+      = render :partial => "users/submissions/source_url"
     #comments
       - @comments.each do |comment|
         .comment
@@ -20,16 +22,21 @@
           .description= md comment.body
     
       = will_paginate @comments
-    
-      #new-comment
-        .description
-          %h2 Make a comment
-        = form_for Comment.new, :url => puzzle_comments_path(@puzzle) do |f|
-          = f.text_area :body
-          .action
-            = f.submit "Comment"
             
     #solved-by
       .header Solved by
       - @puzzle.solved_by.each do |user|
-        .user= user.name
+        .user
+          - unless user.solution_for(@puzzle).source_url.blank?
+            = link_to user.name, user.solution_for(@puzzle).source_url,
+              :target => "_blank"
+          - else
+            = user.name
+            
+    #new-comment
+      .description
+        %h2 Make a comment
+      = form_for Comment.new, :url => puzzle_comments_path(@puzzle) do |f|
+        = f.text_area :body
+        .action
+          = f.submit "Comment"

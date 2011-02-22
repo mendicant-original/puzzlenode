@@ -1,6 +1,22 @@
 #comments_container
   +container
   
+  #share-source
+    +column(24, true)
+    form
+      display: block
+      margin-bottom: 1em
+        
+      input
+        font-size: 1.1em
+        margin-bottom: 0
+      input[type=text]
+        width: 800px
+    &.blank form
+      background-color: $pn_orange
+      color: #333
+      padding: 1em
+      
   #solved-by
     +column(6, true)
     
@@ -40,8 +56,12 @@
     //   border-top: 2px solid $pn_dark_blue
     //   padding-top: 0.5em
   
+  #new-comment
+    +column(24, true)
+  form.new_comment
+    width: 100%
     textarea
       width: 100%
-  
+
     .action
       float: right

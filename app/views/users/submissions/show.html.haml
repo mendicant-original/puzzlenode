@@ -5,6 +5,9 @@
   %h2
     You got it
     %b= @submission.correct ? "Correct" : "Wrong"
+  
+  - if @submission.correct
+    = render :partial => "source_url"
     
   #action
     - if @submission.correct
