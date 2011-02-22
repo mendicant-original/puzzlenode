@@ -4,7 +4,7 @@ class Puzzles::CommentsController < Puzzles::Base
   before_filter :commentor_only, :only => [:edit, :update, :destroy]
   
   def index
-    @comments = @puzzle.comments.paginate(:page => params[:page])
+    @comments = @puzzle.comments.all.paginate(:per_page => 10, :page => params[:page])
   end
   
   def new
