@@ -1,6 +1,6 @@
 class Admin::Base < ApplicationController
   before_filter :admin_required
-  
+
   private
   
   def admin_required

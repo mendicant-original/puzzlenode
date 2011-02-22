@@ -20,6 +20,10 @@ class Attachment < ActiveRecord::Base
     File.join(Rails.root, 'public', 'attachments', puzzle.id.to_s)
   end
   
+  def public_path
+    File.join('/', 'attachments', puzzle.id.to_s, file_name)
+  end
+  
   private
   
   def save_file
