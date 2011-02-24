@@ -5,6 +5,7 @@
   
     #share-source{:class => ("blank" if current_user.solution_for(@puzzle).source_url.blank?),
       :style => ("display:none;" unless current_user.solution_for(@puzzle).source_url.blank? )}
+      = toggle_source_url(current_user, "icons/close.png")
       = render :partial => "users/submissions/source_url"
     #comments
       - if @comments.empty?
@@ -36,8 +37,7 @@
           - unless user.solution_for(@puzzle).source_url.blank?
             = link_to user.name, user.solution_for(@puzzle).source_url,
               :target => "_blank"
-            = link_to_function(image_tag("icons/edit.png"), 
-              %{$('#share-source').slideToggle()}) if user == current_user
+            = toggle_source_url(user)
           - else
             = user.name
             
