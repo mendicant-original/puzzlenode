@@ -13,9 +13,9 @@
     - if @submission.correct
       %button.retro{:'data-url' => puzzle_comments_path(@puzzle)}
         = image_tag "icons/comment_small.png"
-        View Comments
+        %span View Comments
     - else
       %button.retro{:'data-url' => new_puzzle_submission_path(@puzzle)}
         = image_tag "icons/upload_small.png"
-        Try again
+        %span Try again
         

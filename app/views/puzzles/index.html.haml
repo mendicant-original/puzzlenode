@@ -9,10 +9,10 @@
           - if puzzle.answered_correctly? current_user
             %button.retro{:'data-url' => puzzle_comments_path(puzzle)}
               = image_tag "icons/comment_small.png"
-              View Comments
+              %span View Comments
           - else
-            %button.retro{:'data-url' => new_puzzle_submission_path(puzzle)}
+            %button.retro{:'data-url' => puzzle_path(puzzle)}
               = image_tag "icons/upload_small.png"
-              Submit my solution
+              %span View Puzzle
         = puzzle.short_description
         .clearfix
