@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   has_many :announcements, :foreign_key => "author_id", :dependent => :destroy
   has_many :submissions, :dependent => :destroy
   
+  attr_protected :admin
+  
   def self.create_from_hash!(hash)
     create(:name => hash['user_info']['name'])
   end
