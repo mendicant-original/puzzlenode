@@ -3,7 +3,7 @@ Puzzlenode::Application.routes.draw do
 
   match '/auth/:provider/callback', :to => 'sessions#create'
   match '/logout', :to => 'sessions#destroy'
-  match '/login',  :to => 'sessions#new'
+  match '/login' => redirect('/auth/github')
   
   resources :puzzles do
     resources :submissions, :controller => "Puzzles::Submissions"
