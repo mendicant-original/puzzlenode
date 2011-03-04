@@ -11,11 +11,9 @@
     
   #action
     - if @submission.correct
-      %button.retro{:'data-url' => puzzle_comments_path(@puzzle)}
-        = image_tag "icons/comment_small.png"
-        %span View Comments
+      %button.clean-gray.large{:'data-url' => puzzle_comments_path(@puzzle)}
+        View Comments
     - else
-      %button.retro{:'data-url' => new_puzzle_submission_path(@puzzle)}
-        = image_tag "icons/upload_small.png"
-        %span Try again
+      %button.clean-orange.large{:'data-url' => new_puzzle_submission_path(@puzzle)}
+        Try again
         

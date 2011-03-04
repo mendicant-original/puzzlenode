@@ -7,12 +7,10 @@
       .description
         .action
           - if puzzle.answered_correctly? current_user
-            %button.retro{:'data-url' => puzzle_comments_path(puzzle)}
-              = image_tag "icons/comment_small.png"
-              %span View Comments
+            %button.clean-gray{:'data-url' => puzzle_comments_path(puzzle)}
+              View Comments
           - else
-            %button.retro{:'data-url' => puzzle_path(puzzle)}
-              = image_tag "icons/upload_small.png"
-              %span View Puzzle
+            %button.clean-orange{:'data-url' => puzzle_path(puzzle)}
+              View Puzzle
         = puzzle.short_description
         .clearfix

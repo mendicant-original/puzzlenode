@@ -10,10 +10,8 @@
           = link_to file.file_name, file.public_path, :target => "_blank"
   #action
     - if @puzzle.answered_correctly? current_user
-      %button.retro{:'data-url' => puzzle_comments_path(@puzzle)}
-        = image_tag "icons/comment.png"
+      %button.clean-gray.large{:'data-url' => puzzle_comments_path(@puzzle)}
         View Comments
     - else
-      %button.retro{:'data-url' => new_puzzle_submission_path(@puzzle)}
-        = image_tag "icons/upload.png"
-        %span Submit my solution
+      %button.clean-orange.large{:'data-url' => new_puzzle_submission_path(@puzzle)}
+        Submit my solution
