@@ -6,10 +6,14 @@
     form
       display: block
       margin-bottom: 1em
-    &.blank form
-      background-color: $pn_orange
-      color: #333
-      padding: 1em
+      font-size: 1.2em
+    &.blank
+      form
+        background-color: $pn_orange
+        color: #333
+        padding: 1em
+      a img
+        display: none
     a.edit
       float: right
       
@@ -22,12 +26,14 @@
       padding-bottom: 0.75em
       margin-bottom: 0.5em
       text-align: center
+      font-family: "PFTempestaSevenExtended"
       
     .user
       text-align: center
       margin-bottom: 0.5em
       font-family: "MonkirtaPursuitNCRegular"
       font-size: 1.1em
+      color: $pn_light_blue
       
       a.edit
         float: right
@@ -41,8 +47,8 @@
       .header
         background-color: $pn_dark_blue
         padding: 0.5em
-        padding-bottom: 0.75em
-        margin-bottom: 0.5em
+        font-size: 1.1em
+        font-family: "MonkirtaPursuitNCRegular"
         .info
           margin-left: 1em
           display: inline-block
