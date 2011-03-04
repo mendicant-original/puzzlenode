@@ -12,7 +12,7 @@
   #action
     - if @submission.correct
       %button.clean-gray.large{:'data-url' => puzzle_comments_path(@puzzle)}
-        View Comments
+        View Discussion
     - else
       %button.clean-orange.large{:'data-url' => new_puzzle_submission_path(@puzzle)}
         Try again
