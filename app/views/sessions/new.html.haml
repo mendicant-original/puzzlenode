@@ -1,4 +1,9 @@
 - content_for :header_bottom do
+  :javascript
+    $(function(){
+      $('#logo').addClass('loading');
+    });
+
   :plain
     <meta http-equiv="REFRESH" content="2;url=/auth/github">
 

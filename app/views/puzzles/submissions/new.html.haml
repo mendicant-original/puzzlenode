@@ -1,3 +1,11 @@
+- content_for :header_bottom do
+  :javascript
+    $(function(){
+      $('form.new_submission').submit(function(){
+        $('#logo').addClass('loading');
+      });
+    });
+
 #puzzle
   %h1= link_to @puzzle.name, puzzle_path(@puzzle)
 
@@ -8,13 +16,11 @@
       .container
         %h3 1. Select your solution file
         .action
-          = image_tag "icons/file.png"
           = f.file_field :file
     .step.two
       .container
         %h3 2. Submit your solution
         .action
-          = image_tag "icons/upload.png"
           = f.submit "Submit my solution"
           
   #action
