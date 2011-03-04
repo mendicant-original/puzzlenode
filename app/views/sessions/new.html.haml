@@ -1,11 +1,12 @@
-#left_right
-  .center
-    Connect with these services
-  .left
-    = link_to '/auth/twitter' do
-      = image_tag("icons/login/twitter.png")
-      twitter
-  .right
-    = link_to '/auth/github' do
-      = image_tag("icons/login/github.png")
-      github
+- content_for :header_bottom do
+  :plain
+    <meta http-equiv="REFRESH" content="2;url=/auth/github">
+
+#redirect
+  %h1 Redirecting to Github for login
+  
+  %h3 You will be returned to puzzlenode after you login
+  
+  Click
+  = link_to "here", "/auth/github"
+  if you are not redirected to github
