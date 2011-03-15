@@ -1,2 +1,2 @@
 #! /bin/bash
-phd $0 puzzlenode puzzlenode.com
+phd $0 puzzlenode puzzlenode
