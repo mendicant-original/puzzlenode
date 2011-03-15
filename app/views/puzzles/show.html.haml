@@ -8,7 +8,8 @@
         - if @puzzle.created_by_url.blank?
           = @puzzle.created_by
         - else
-          = link_to @puzzle.created_by, @puzzle.created_by_url
+          = link_to @puzzle.created_by, @puzzle.created_by_url,
+            :target => "_blank"
     - unless @puzzle.released_on.blank?
       %p
         %span.label Released on:
