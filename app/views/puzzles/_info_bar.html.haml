@@ -1,0 +1,9 @@
+.info
+  %span.section
+    This puzzle was contributed by
+    = link_to @puzzle.created_by, @puzzle.created_by_url, :target => "_blank"
+    and published on
+    = @puzzle.released_on.strftime("%B %e, %Y")
+  
+  %span.right
+    = render :partial => "action_button"

@@ -38,26 +38,32 @@
     button.right
       float: right
       margin-top: 2em
+    &.main
+      border-bottom: none
+      padding-bottom: 0
   
-  #puzzle-header
-    float: right
-    width: 230px
-    margin-left: 1.5em
+  div.info
     margin-bottom: 1.5em
-    margin-top: 1.5em
-    padding: 0.5em
-    background-color: $pn_dark_blue
+    border-bottom: 5px solid #254980
+    padding-bottom: 1em
     span.label
       color: $pn_light_blue
-    p
-      margin: 0.25em 0
-    .center
-      text-align: center
-      margin-top: 0.75em
-      margin-bottom: 0.25em
-      button
-        width: 100%
-        margin: 0
+    span.section
+      margin-right: 1em
+      padding: 0.5em 0
+      display: inline-block
+    span.right
+      float: right
+      margin-top: 3px
+      
+    a
+      border-bottom: 1px solid $pn_light_blue
+      &:hover
+        text-decoration: none
+        border-color: $pn_orange
+        
+  #description
+    margin-bottom: 1.5em
   
   #description, .description
     font-size: 1.2em
