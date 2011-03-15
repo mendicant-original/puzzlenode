@@ -50,6 +50,12 @@
       color: $pn_light_blue
     p
       margin: 0.25em 0
+    .center
+      text-align: center
+      margin-top: 0.75em
+      button
+        width: 100%
+        margin: 0
   
   #description, .description
     font-size: 1.2em
@@ -107,36 +113,10 @@
     
     button
       font-size: 1.25em
+      width: 100% !important
     a
       font-size: 1.15em
-  form.new_submission
-    +container
+  form.new_submission        
     
-    font-size: 1.25em
-    
-    input
-      font-size: 0.75em
-      margin: 1em 0
-    
-      &[type=file]
-        background-color: #f9f9f9
-    
-    .step
-      background-color: $pn_dark_blue
-      .container
-        padding: 1em
-        
-        h3
-          margin-top: 0
-          font-size: 1.25em
-        .action
-          margin-top: 1em
-          img
-            vertical-align: middle
-            margin-right: 0.5em
-          
-    .step.one
-      +column(12)
-
-    .step.two
-      +column(12, true)
+    h3
+      font-size: 1.25em

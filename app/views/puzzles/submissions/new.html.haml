@@ -12,16 +12,13 @@
   = form_for @submission, :url => puzzle_submissions_path(@puzzle), 
     :html => {:multipart => true} do |f|
   
-    .step.one
-      .container
-        %h3 1. Select your solution file
-        .action
-          = f.file_field :file
-    .step.two
-      .container
-        %h3 2. Submit your solution
-        .action
-          = f.submit "Submit my solution"
+    %h3 Select & upload your solution file
+    
+    = f.file_field :file
+    = f.submit "Submit my solution", :class => "clean-orange"
           
+  %p 
+    The solution file is the output from your program, not the program source code. 
+  
   #action
     = link_to "< Back to puzzle", puzzle_path(@puzzle)

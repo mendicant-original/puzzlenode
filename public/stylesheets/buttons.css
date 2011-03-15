@@ -96,7 +96,7 @@ button.clean-gray:active {
 
 /* clean orange
 *******************************************************************************/
-button.clean-orange {
+button.clean-orange, input[type=submit].clean-orange {
   background: #FE7F2F;
   background: -moz-linear-gradient(top, #FFA027 0%, #FE7F2F 100%);
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFA027), to(#FE7F2F));
@@ -116,7 +116,7 @@ button.clean-orange {
   width: 150px;
 }
 
-button.clean-orange:hover {
+button.clean-orange:hover, input[type=submit].clean-orange:hover {
   background: #ddd;
   background: -moz-linear-gradient(top, #DF8C22 0%, #E47129 100%);
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#DF8C22), to(#E47129));
@@ -126,7 +126,7 @@ button.clean-orange:hover {
   text-shadow: 0 -1px 0 #BD670C;
 }
 
-button.clean-orange:active {
+button.clean-orange:active, input[type=submit].clean-orange:active {
   border: 1px solid #474747;
   border-bottom: 1px solid #C1C1C1;
   -moz-box-shadow: inset 0 0 5px 2px #474747, 0 1px 0 0 #C1C1C1;
