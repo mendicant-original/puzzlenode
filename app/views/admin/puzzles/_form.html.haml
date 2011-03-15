@@ -6,6 +6,21 @@
   = f.text_field :name
   
 %p
+  = f.label :created_by
+  %br
+  = f.text_field :created_by
+
+%p
+  = f.label :created_by_url
+  %br
+  = f.text_field :created_by_url
+  
+%p
+  = f.label :released_on
+  %br
+  = f.date_select :released_on
+  
+%p
   = f.label :short_description
   %br
   = f.text_area :short_description
