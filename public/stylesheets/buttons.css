@@ -56,7 +56,7 @@ button.minimal:active {
 
 /* clean gray
 *******************************************************************************/
-button.clean-gray {
+button.clean-gray, input[type=submit] {
   background: #eee;
   background: -moz-linear-gradient(top, #eee 0%, #ccc 100%);
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#eee), to(#ccc));
@@ -76,7 +76,7 @@ button.clean-gray {
   width: 150px;
 }
 
-button.clean-gray:hover {
+button.clean-gray:hover, input[type=submit]:hover {
   background: #ddd;
   background: -moz-linear-gradient(top, #ddd 0%, #bbb 100%);
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ddd), to(#bbb));
@@ -86,7 +86,7 @@ button.clean-gray:hover {
   text-shadow: 0 1px 0 #ddd;
 }
 
-button.clean-gray:active {
+button.clean-gray:active, input[type=submit]:active {
   border: 1px solid #aaa;
   border-bottom: 1px solid #888;
   -moz-box-shadow: inset 0 0 5px 2px #aaa, 0 1px 0 0 #eee;

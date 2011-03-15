@@ -53,6 +53,7 @@
     .center
       text-align: center
       margin-top: 0.75em
+      margin-bottom: 0.25em
       button
         width: 100%
         margin: 0
@@ -60,6 +61,7 @@
   #description, .description
     font-size: 1.2em
     line-height: 1.5em
+    text-align: justify
     
     a
       border-bottom: 1px solid $pn_light_blue
@@ -113,10 +115,14 @@
     
     button
       font-size: 1.25em
-      width: 100% !important
+
     a
       font-size: 1.15em
   form.new_submission        
-    
+    input[type=file]
+      padding: 0.5em
+      background-color: #fff
+      +border-radius(5px)
+      margin-right: 1em
     h3
       font-size: 1.25em
