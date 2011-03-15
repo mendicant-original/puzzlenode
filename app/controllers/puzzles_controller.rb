@@ -10,7 +10,7 @@ class PuzzlesController < ApplicationController
   
   def attachments
     path = File.join(Rails.root, "public", "attachments", params[:id], 
-                     params[:file] + '.' + params[:format])
+                     [params[:file], params[:format]].compact.join("."))
     
     send_data(File.binread(path))
   end
