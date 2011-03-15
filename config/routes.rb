@@ -10,6 +10,9 @@ Puzzlenode::Application.routes.draw do
     resources :comments, :controller => "Puzzles::Comments"
   end
   
+  match '/puzzles/:id/attachments/:file', :to => 'puzzles#attachments', 
+                                          :as => "attachment"
+  
   resources :users do
     resources :submissions, :controller => "Users::Submissions"
   end

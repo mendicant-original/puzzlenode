@@ -7,4 +7,11 @@ class PuzzlesController < ApplicationController
   def show
     @puzzle = Puzzle.find(params[:id])
   end
+  
+  def attachments
+    path = File.join(Rails.root, "public", "attachments", params[:id], 
+                     params[:file] + '.' + params[:format])
+    
+    send_file(path)
+  end
 end

@@ -21,7 +21,8 @@
       #files
         - @puzzle.attachments.map do |file|
           = link_to image_tag("icons/file_small.png") + file.file_name,
-            file.public_path, :target => "_blank"
+            file.public_path,
+            :target => "_blank"
   #action
     - if @puzzle.answered_correctly? current_user
       %button.clean-gray.large{:'data-url' => puzzle_comments_path(@puzzle)}
