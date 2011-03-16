@@ -1,4 +1,12 @@
+%p.header-information
+  Bookmark this page and visit it often to keep track of news about puzzlenode,
+  including new problems or fixes to existing problems. You can also keep track
+  of new announcements through this page's
+  = link_to "RSS feed", announcements_path(:format => "rss")
+
 #announcements
   - @announcements.each do |announcement|
     = render :partial => "announcement",
       :locals => {:announcement => announcement}
+      
+= will_paginate @announcements

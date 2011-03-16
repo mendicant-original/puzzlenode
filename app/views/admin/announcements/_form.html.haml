@@ -1,17 +1,11 @@
 %p
   = f.label :title
+  %br
   = f.text_field :title
-
-/ %p
-/   = f.label :slug
-/   = f.text_field :slug
-/ 
-/ %p
-/   = f.label :public
-/   = f.check_box :public
 
 %p
   = f.label :author_id
+  %br
   = f.select :author_id,
     User.where(:admin => true).map {|c| [c.name, c.id]}
 
