@@ -17,6 +17,8 @@ Puzzlenode::Application.routes.draw do
     resources :submissions, :controller => "Users::Submissions"
   end
   
+  resources :announcements
+  
   namespace :admin do
     resources :puzzles
     resources :users

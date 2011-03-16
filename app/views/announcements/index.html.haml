@@ -1,0 +1,4 @@
+#announcements
+  - @announcements.each do |announcement|
+    = render :partial => "announcement",
+      :locals => {:announcement => announcement}

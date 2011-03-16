@@ -1,0 +1,47 @@
+#announcements
+  margin-top: 2em
+  
+  .announcement
+    margin-bottom: 2em
+    
+    .title
+      font-size: 1.1em
+      padding: 0.25em 0.5em
+      background: $pn_dark_blue
+      a
+        font-family: "MonkirtaPursuitNCRegular"
+      
+    .body
+      color: #fff
+      padding-left: 1em
+      +markdown
+      
+    .info
+      float: right
+      font-size: 0.6em
+      color: $pn_light_blue
+      padding: 0.5em 0
+      
+      div
+        display: inline-block
+        padding: 0 0.5em
+        
+        &.author
+          border-right: 1px solid #ccc
+
+.pagination
+  margin: 1em 0
+  padding: 1em 0
+  text-align: center
+  color: #444
+  border-top: 1px solid silver
+
+
+.pagination a
+  color: #222
+
+
+.pagination em
+  font-size: 1.3em
+  color: #000
+  font-style: normal
