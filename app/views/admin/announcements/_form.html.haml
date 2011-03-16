@@ -1,0 +1,21 @@
+%p
+  = f.label :title
+  = f.text_field :title
+
+/ %p
+/   = f.label :slug
+/   = f.text_field :slug
+/ 
+/ %p
+/   = f.label :public
+/   = f.check_box :public
+
+%p
+  = f.label :author_id
+  = f.select :author_id,
+    User.where(:admin => true).map {|c| [c.name, c.id]}
+
+%p= f.text_area :body
+    
+%p
+  = f.submit

@@ -1,0 +1,2 @@
+class AnnouncementsController < ApplicationController
+end
