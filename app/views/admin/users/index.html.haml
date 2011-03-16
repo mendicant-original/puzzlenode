@@ -1,0 +1,16 @@
+%h1 Users
+
+%table
+  %tr
+    %th Name
+    %th Attempted Submissions
+    %th Solved Submissions
+    %th Member Since
+  - @users.each do |user|
+    %tr
+      %td= user.name
+      %td= user.submissions.count
+      %td= user.submissions.correct.count
+      %td= user.created_at
+      
+= will_paginate @users
