@@ -11,14 +11,14 @@ class User < ActiveRecord::Base
   end
 
   def name
-    read_attribute(:name) || nickname
+    read_attribute(:name) || nickname || "Anonymous ##{id}"
   end
 
   def refresh_names(hash)
-    return if name
+    return if nickname
 
     update_attributes(:name      => hash['user_info']['name'],
-                      :nickname  => hash['nickname'])
+                      :nickname  => hash['user_info']['nickname'])
   end
   
   def solution_for(puzzle)
