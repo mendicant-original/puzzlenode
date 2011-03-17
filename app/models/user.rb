@@ -13,6 +13,13 @@ class User < ActiveRecord::Base
   def name
     read_attribute(:name) || nickname
   end
+
+  def refresh_names(hash)
+    return if name
+
+    update_attributes(:name      => hash['user_info']['name'],
+                      :nickname  => hash['nickname'])
+  end
   
   def solution_for(puzzle)
     return if puzzle.nil?
