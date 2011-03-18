@@ -12,7 +12,7 @@
     %button#comment-button.clean-gray.right Make a comment
     
   #comments_container
-    - if current_user.solution_for(@puzzle)
+    - if false # Disabled current_user.solution_for(@puzzle)
       #share-source{:class => ("blank" if current_user.solution_for(@puzzle).source_url.blank?),
         :style => ("display:none;" unless current_user.solution_for(@puzzle).source_url.blank? )}
         = toggle_source_url(current_user, "icons/close.png")
@@ -44,7 +44,7 @@
       .header Solved by
       - @puzzle.solved_by.each do |user|
         .user
-          - unless user.solution_for(@puzzle).source_url.blank?
+          - if false # DISABLED unless user.solution_for(@puzzle).source_url.blank?
             = link_to user.name, user.solution_for(@puzzle).source_url,
               :target => "_blank"
             = toggle_source_url(user)
