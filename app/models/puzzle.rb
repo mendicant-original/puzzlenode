@@ -35,6 +35,8 @@ class Puzzle < ActiveRecord::Base
   end
 
   def normalize_file(str)
-    str.gsub("\r\n", "\n")
+    str.gsub!("\r\n", "\n")
+    str << "\n" unless str[-1] == "\n"
+    str
   end
 end
