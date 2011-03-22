@@ -4,7 +4,7 @@
 
   %h2
     You got it
-    %b= @submission.correct ? "right. Nice job!" : "wrong. Give it another try!"
+    = @submission.correct ? "right. Nice job!" : "wrong. Give it another try!"
   
   - if @submission.correct
     - # render :partial => "source_url"
