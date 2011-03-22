@@ -1,0 +1,6 @@
+%ul
+  %li= link_to "Puzzles", puzzles_path
+  %li= link_to "Announcements", announcements_path
+  %li= link_to_function "About", "PuzzleNode.about()"
+  = render :partial => "shared/user"
+.clear

@@ -26,23 +26,8 @@
           %h1= link_to "Puzzle Node", root_path
           = image_tag "loading.gif", :class => "loading"
       %nav
-        .wrap
-          %ul
-            %li= link_to "Puzzles", puzzles_path
-            %li= link_to "Announcements", announcements_path
-            = render :partial => "shared/user"
-          .clear
+        .wrap= render :partial => "shared/nav"
     #content
       .wrap= yield
     #footer
       = render :partial => "shared/footer"
-    :javascript
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-15397397-5']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();

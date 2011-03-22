@@ -4,19 +4,33 @@
   padding: 1.25em 0
   border-top: 1px solid #0F1D32
   line-height: 1.5em
+  font-size: 16px
   
-  .container
-    +container
+  .teaser
+    text-align: center
   
-  .about
-    +column(10)
-    +append(2)
-  .contact
-    +column(10, true)
-    +prepend(2)
-    text-align: right
+  &.active
+    border-top: none
+    
+    .bottom #rmu-logo
+      background-position: center bottom
+  
+  #about
+    text-align: justify
+    font-size: 1.2em
+    display: none
+    
+    h1
+      font-family: "MonkirtaPursuitNCRegular"
+      margin: 0.25em 0
+      +text-shadow(#222, 1px, 1px, 2px)
+      border-bottom: 2px solid #254980
+      padding-bottom: 0.5em
+    
+    a.close
+      float: right
+    
   .bottom
-    +column(24, true)
     text-align: center
     margin-top: 1em
     #rmu-logo
