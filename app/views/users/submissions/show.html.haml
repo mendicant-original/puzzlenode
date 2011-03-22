@@ -5,6 +5,12 @@
   %h2
     You got it
     = @submission.correct ? "right. Nice job!" : "wrong. Give it another try!"
+    
+  - unless @submission.correct
+    %p.header-information
+      If you think you have found a defect in one of our puzzles and it is not 
+      listed below, contact us at puzzlenode@gmail.com. You may also be able to 
+      find help by checking out the #rmu channel on Freenode.
   
   - if @submission.correct
     - # render :partial => "source_url"
@@ -16,4 +22,3 @@
     - else
       %button.clean-orange.large{:'data-url' => new_puzzle_submission_path(@puzzle)}
         Try again
-        

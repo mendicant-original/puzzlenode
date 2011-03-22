@@ -4,6 +4,11 @@
   of new announcements through this page's
   = link_to "RSS feed", announcements_path(:format => "rss")
 
+%p.header-information
+  If you think you have found a defect in one of our puzzles and it is not listed
+  below, contact us at puzzlenode@gmail.com. You may also be able to find help
+  by checking out the #rmu channel on Freenode.
+
 #announcements
   - @announcements.each do |announcement|
     = render :partial => "announcement",
