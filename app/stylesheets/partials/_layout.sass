@@ -58,12 +58,17 @@ header
       list-style: none outside none
       li
         display: inline
-        float: left
         list-style-image: none
         list-style-type: none
-        margin-right: 2em
+        margin-right: 1em
         white-space: nowrap
         position: relative
+        
+        &.node
+          background: transparent url(/images/node.png) no-repeat 0 0
+          display: inline-block
+          width: 14px
+          height: 14px
         
         &.right
           float: right
