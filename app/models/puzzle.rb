@@ -31,6 +31,12 @@ class Puzzle < ActiveRecord::Base
   private
 
   def sha1(tempfile)
-    Digest::SHA1.hexdigest(tempfile.read)
+    Digest::SHA1.hexdigest(normalize_file(tempfile.read))
+  end
+
+  def normalize_file(str)
+    str.gsub!("\r\n", "\n")
+    str << "\n" unless str[-1] == "\n"
+    str
   end
 end
