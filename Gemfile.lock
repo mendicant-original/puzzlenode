@@ -117,6 +117,7 @@ GEM
     ruby-openid-apps-discovery (1.2.0)
       ruby-openid (>= 2.1.7)
     rubyntlm (0.1.1)
+    test-unit (2.2.0)
     thor (0.14.6)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
@@ -134,4 +135,5 @@ DEPENDENCIES
   pg
   rails (~> 3.0.3)
   rdiscount
+  test-unit
   will_paginate

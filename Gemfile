@@ -11,3 +11,7 @@ gem 'compass', '~> 0.10.6'
 gem 'rdiscount'
 gem 'nested_form'
 gem 'will_paginate'
+
+group 'test' do
+  gem 'test-unit'
+end
