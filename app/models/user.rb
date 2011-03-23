@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_many :authorizations, :dependent => :destroy
-  has_many :announcements, :foreign_key => "author_id", :dependent => :destroy
-  has_many :submissions, :dependent => :destroy
+  has_many :announcements,  :dependent => :destroy, :foreign_key => "author_id"
+  has_many :submissions,    :dependent => :destroy
   
   attr_protected :admin
   
