@@ -4,6 +4,14 @@ class Puzzle < ActiveRecord::Base
   has_many :attachments, :dependent => :destroy
 
   accepts_nested_attributes_for :attachments, :allow_destroy => true
+  
+  def self.published(user=nil)
+    if user && user.draft_access
+      self
+    else
+      where("released_on <= ?", Date.today)
+    end
+  end
 
   def file=(tempfile)
     write_attribute :fingerprint, sha1(tempfile)
@@ -26,6 +34,10 @@ class Puzzle < ActiveRecord::Base
       where(["submissions.puzzle_id = ? AND submissions.correct = ?",
               self.id, true]).
       order("submissions.created_at")
+  end
+  
+  def published?
+    released_on <= Date.today
   end
 
   private
