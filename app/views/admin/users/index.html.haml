@@ -8,7 +8,7 @@
     %th Member Since
   - @users.each do |user|
     %tr
-      %td= user.name
+      %td= link_to user.name, edit_admin_user_path(user)
       %td= user.submissions.correct.count
       %td= user.submissions.count
       %td= user.created_at
