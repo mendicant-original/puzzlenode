@@ -1,13 +1,13 @@
 Puzzlenode::Application.routes.draw do
   root :to => 'puzzles#index'
 
-  match '/auth/:provider/callback', :to => 'sessions#create'
-  match '/logout' => 'sessions#destroy'
-  match '/login' => 'sessions#new'
+  match '/auth/:provider/callback',      :to => 'sessions#create'
+  match '/logout' => 'sessions#destroy', :as => 'logout'
+  match '/login' => 'sessions#new',      :as => 'login'
   
   resources :puzzles do
     resources :submissions, :controller => "Puzzles::Submissions"
-    resources :comments, :controller => "Puzzles::Comments"
+    resources :comments,    :controller => "Puzzles::Comments"
   end
   
   match '/puzzles/:id/attachments/:file', :to => 'puzzles#attachments', 
