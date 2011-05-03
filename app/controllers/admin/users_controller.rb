@@ -1,5 +1,6 @@
 class Admin::UsersController < Admin::Base
   before_filter :find_user, :only => [:edit, :update]
+  before_filter :update_protected_attrs, :only => [:update]
   
   def index
     order_by = []
@@ -34,6 +35,12 @@ class Admin::UsersController < Admin::Base
   
   def find_user
     @user = User.find(params[:id])
+  end
+  
+  def update_protected_attrs
+    admin = params[:user].delete(:admin)
+    
+    @user.update_attribute(:admin, admin)
   end
   
 end
