@@ -1,5 +1,9 @@
 %h1= "Users (#{@users.total_entries})"
 
+= form_tag admin_users_path, :class => "search", :method => :get do
+  = text_field_tag :search, params[:search]
+  = submit_tag "Search"
+
 %table
   %tr
     %th Name

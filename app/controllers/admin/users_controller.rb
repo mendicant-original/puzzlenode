@@ -7,7 +7,14 @@ class Admin::UsersController < Admin::Base
     order_by << "(SELECT COUNT(*) FROM submissions WHERE user_id IN (users.id)) DESC"
     order_by << "users.created_at"
     
-    @users = User.order(order_by.join(",")).paginate(:page => params[:page])
+    @users = User.order(order_by.join(","))
+    
+    if params[:search]
+      @users = @users.where(["name ILIKE ? OR nickname ILIKE ?", 
+        "%#{params[:search]}%", "%#{params[:search]}%"])
+    end
+    
+    @users = @users.paginate(:page => params[:page])
   end
   
   def edit
