@@ -6,10 +6,9 @@ module Admin
     setup do
       @admin_user = Factory(:user, :admin => true)
       @admin_user.authorizations.create(:provider => "github", :uid => "12345")
-      OmniAuth.config.add_mock(:github, {:uid => '12345', :nickname => "PN User"})
     end
     
-    test "Admin users can edit other users" do
+    test "Admin users can edit other users" do      
       other_user = Factory(:user, :admin => false, :name => "Edit Me", :nickname => "Edit Me")
       
       visit root_path

@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   
   attr_protected :admin
   
-  def self.create_from_hash!(hash)
+  def self.create_from_hash!(hash)    
     create(:name     => hash['user_info']['name'], 
            :nickname => hash['user_info']['nickname'])
   end
