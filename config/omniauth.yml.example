@@ -1,6 +1,9 @@
 twitter:
   key: <KEY>
   secret: <SECRET>
+
+# https://github.com/account/applications
+
 github:
   client: <CLIENT>
   secret: <SECRET>
