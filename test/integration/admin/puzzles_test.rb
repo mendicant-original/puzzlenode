@@ -9,7 +9,14 @@ module Admin
       OmniAuth.config.add_mock(:github, {:uid => '12345', :nickname => "PN User"})
     end
     
-    test "Admin users can create new puzzles" do          
+    teardown do
+      #Capybara.current_driver = :rack_test
+    end
+    
+    test "Admin users can create new puzzles" do
+      # Capybara.current_driver    = :selenium
+      # Capybara.default_wait_time = 5
+         
       sign_user_in
       
       visit new_admin_puzzle_path

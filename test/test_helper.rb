@@ -12,7 +12,12 @@ class ActiveSupport::TestCase
     test_tempfile << "Sample Text"
     test_tempfile.rewind
 
-    return Puzzle.create(:file => test_tempfile)
+    return Puzzle.create(
+      :name              => "test", 
+      :description       => "test",
+      :short_description => "test", 
+      :file              => test_tempfile
+    )
   end
   
   def cleanup_attachment(attachment)
