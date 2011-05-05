@@ -1,10 +1,9 @@
 class Attachment < ActiveRecord::Base
   belongs_to :puzzle
   
-  before_create :save_file
+  before_save    :save_file
   before_destroy :delete_file
   
-  validates_presence_of :puzzle_id
   validates_presence_of :file_name
   
   def file=(tempfile)
@@ -27,8 +26,10 @@ class Attachment < ActiveRecord::Base
   private
   
   def save_file
-    FileUtils.mkdir_p(directory)
-    File.open(file_path, "wb") { |f| f.write(@tempfile.read) }
+    if puzzle && @tempfile
+      FileUtils.mkdir_p(directory)
+      File.open(file_path, "wb") { |f| f.write(@tempfile.read) }
+    end
   end
   
   def delete_file
