@@ -1,0 +1,8 @@
+%h1 Bohconf Leaderboard
+
+%table
+  - @users.each_with_index do |user, i|
+    %tr
+      %td= "#{i + 1}."
+      %td= user.name
+    

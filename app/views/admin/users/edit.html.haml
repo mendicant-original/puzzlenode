@@ -3,6 +3,9 @@
 = form_for @user, :url => admin_user_path(@user) do |f|
 
   %p
+    = f.check_box :contestant
+    = f.label :contestant
+    %br
     = f.check_box :draft_access
     = f.label :draft_access
     %br
