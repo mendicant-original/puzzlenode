@@ -1,0 +1,42 @@
+=markdown
+  a
+    border-bottom: 1px solid $pn_light_blue
+    &:hover
+      text-decoration: none
+      border-color: $pn_orange
+
+  h1, h2, h3, h4, h5, h6
+    font-family: "MonkirtaPursuitNCRegular"
+  
+  h2
+    border-bottom: 2px solid #254980
+    padding-bottom: 0.25em
+    color: $pn_light_blue
+    +text-shadow(#222, 1px, 1px, 2px)
+    
+  pre, #files
+    padding: 1em
+    background-color: $pn_dark_blue
+    
+  pre code
+    font-size: 0.75em
+    line-height: 0.75em
+  
+  strong
+    font-weight: bold
+  
+  ul, ol
+    margin: 1em 0 1em 2em
+    list-style-position: outside
+    list-style-type: disc
+    li
+      margin: 0.5em 0
+
+  ol
+    list-style-type: decimal
+  em
+    font-style: italic
+
+  blockquote
+    border-left: 2px solid #256188
+    padding: 0 0.5em

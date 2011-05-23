@@ -1,0 +1,7 @@
+.announcement
+  .title
+    = link_to announcement.title, announcement_path(announcement.id)
+    .info
+      .author= announcement.author.name
+      .posted_date= announcement.created_at.to_date
+  .body= md(announcement.body)

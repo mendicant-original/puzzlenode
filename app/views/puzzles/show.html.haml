@@ -1,0 +1,14 @@
+#puzzle
+  %h1= @puzzle.name
+  
+  = render :partial => "info_bar"
+  
+  #description
+    = md @puzzle.description
+    - if @puzzle.attachments.any?
+      %h2 Files
+      #files
+        - @puzzle.attachments.map do |file|
+          = link_to image_tag("icons/file_small.png") + file.file_name,
+            file.public_path,
+            :target => "_blank"

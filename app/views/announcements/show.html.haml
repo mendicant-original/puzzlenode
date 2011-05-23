@@ -1,0 +1,5 @@
+= link_to "&laquo; View all news".html_safe, announcements_path
+
+#announcements
+  = render :partial => "announcement",
+    :locals => {:announcement => @announcement}

@@ -1,0 +1,10 @@
+#puzzle
+  %h1= link_to @puzzle.name, puzzle_path(@puzzle)
+
+  %h2 Edit Comment
+    
+  #comments
+    = form_for @comment, :url => puzzle_comment_path(@puzzle, @comment) do |f|
+      = f.text_area :body
+      .action
+        = f.submit "Save"

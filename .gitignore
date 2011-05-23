@@ -1,0 +1,10 @@
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/**/*
+.rvmrc
+config/database.yml
+config/omniauth.yml
+public/stylesheets/compiled
+db/schema.rb
+public/attachments

@@ -1,0 +1,24 @@
+#puzzle
+
+  %h1= link_to @puzzle.name, puzzle_path(@puzzle)
+
+  %h2= baddy
+  - #You got it
+  - #= @submission.correct ? "right. Nice job!" : "wrong. Give it another try!"
+    
+  - unless @submission.correct
+    %p.header-information
+      If you think you have found a defect in one of our puzzles and it is not 
+      listed below, contact us at puzzlenode@gmail.com. You may also be able to 
+      find help by checking out the #rmu channel on Freenode.
+  
+  - if @submission.correct
+    - # render :partial => "source_url"
+    
+  #action
+    - if @submission.correct
+      %button.clean-gray.large{:'data-url' => puzzle_comments_path(@puzzle)}
+        View Discussion
+    - else
+      %button.clean-orange.large{:'data-url' => new_puzzle_submission_path(@puzzle)}
+        Try again

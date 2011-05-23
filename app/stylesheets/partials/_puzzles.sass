@@ -1,0 +1,98 @@
+#puzzles
+  .puzzle
+    margin-bottom: 0.75em
+    .description
+      padding: 0.5em 0
+    
+    .description
+      border-top: 2px solid #254980
+      font-size: 1.2em
+      line-height: 1.5em
+    .action
+      float: right
+      margin-left: 0.5em
+      margin-bottom: 0.5em
+    
+    a
+      color: #eee
+      +text-shadow(#222, 1px, 1px, 3px)
+      letter-spacing: 0.05em
+      font-family: "MonkirtaPursuitNCRegular"
+      font-size: 2.5em
+      &:hover
+        text-decoration: none
+        color: $pn_light_blue
+      
+#puzzle
+  h1
+    margin-top: 0
+    margin-bottom: 0.25em
+    padding-bottom: 0.5em
+    font-family: "MonkirtaPursuitNCRegular"
+    +text-shadow(#222, 1px, 1px, 5px)
+    border-bottom: 5px solid #254980
+    font-size: 3em
+    a:hover
+      text-decoration: none
+      color: $pn_light_blue
+    button.right
+      float: right
+      margin-top: 2em
+    &.main
+      border-bottom: none
+      padding-bottom: 0
+  
+  div.puzzle-info
+    margin-bottom: 1.5em
+    border-bottom: 5px solid #254980
+    padding-bottom: 1em
+    span.label
+      color: $pn_light_blue
+    span.section
+      margin-right: 1em
+      padding: 0.5em 0
+      display: inline-block
+    span.right
+      float: right
+      margin-top: 3px
+      
+    a
+      border-bottom: 1px solid $pn_light_blue
+      &:hover
+        text-decoration: none
+        border-color: $pn_orange
+        
+  #description
+    margin-bottom: 1.5em
+  
+  #description, .description
+    font-size: 1.2em
+    line-height: 1.5em
+    text-align: justify
+    
+    +markdown
+      
+    #files a
+      display: block
+      border-bottom: none
+      img
+        vertical-align: middle
+        margin-right: 0.5em
+  #action
+    margin-top: 1em
+    border-top: 5px solid #254980
+    padding-top:  1em
+    
+    button
+      font-size: 1.25em
+
+    a
+      font-size: 1.15em
+  form.new_submission        
+    input[type=file]
+      padding: 0.5em
+      background-color: #fff
+      +border-radius(5px)
+      margin-right: 1em
+    h3
+      font-size: 1.25em

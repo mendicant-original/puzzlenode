@@ -1,0 +1,15 @@
+%p
+  = f.label :title
+  %br
+  = f.text_field :title
+
+%p
+  = f.label :author_id
+  %br
+  = f.select :author_id,
+    User.where(:admin => true).map {|c| [c.name, c.id]}
+
+%p= f.text_area :body
+    
+%p
+  = f.submit

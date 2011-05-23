@@ -1,0 +1,27 @@
+- content_for :header_bottom do
+  :javascript
+    $(function(){
+      $('form.new_submission').submit(function(){
+        $('#logo').addClass('loading');
+      });
+    });
+
+#puzzle
+  %h1= link_to @puzzle.name, puzzle_path(@puzzle)
+
+  = form_for @submission, :url => puzzle_submissions_path(@puzzle), 
+    :html => {:multipart => true} do |f|
+  
+    %h3 Check your solution to this problem by uploading the output file from your program.
+    
+    = f.file_field :file
+    = f.submit "Submit my solution", :class => "clean-gray"
+    
+    %p
+      If your answer is correct you will be given access to a discussion thread
+      where you can discuss this problem with others who have solved it. 
+      %br
+      If your answer is incorrect you will be notified immediately and may try again if you'd like.
+  
+  #action
+    = link_to "< Back to puzzle", puzzle_path(@puzzle)

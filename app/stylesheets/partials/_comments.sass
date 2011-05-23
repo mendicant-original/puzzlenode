@@ -1,0 +1,74 @@
+#comments_container
+  +container
+  
+  #share-source
+    +column(24, true)
+    form
+      display: block
+      margin-bottom: 1em
+      font-size: 1.2em
+    &.blank
+      form
+        background-color: $pn_orange
+        color: #333
+        padding: 1em
+      a img
+        display: none
+    a.edit
+      float: right
+      
+  #solved-by
+    +column(6, true)
+    
+    .header
+      background-color: $pn_dark_blue
+      padding: 0.5em
+      padding-bottom: 0.75em
+      margin-bottom: 0.5em
+      text-align: center
+      font-family: "PFTempestaSevenExtended"
+      
+    .user
+      text-align: center
+      margin-bottom: 0.5em
+      font-family: "MonkirtaPursuitNCRegular"
+      font-size: 1.1em
+      //color: $pn_light_blue
+      
+      a.edit
+        float: right
+        img
+          margin-left: -16px
+  #comments
+    +column(18)
+  
+    .comment
+      margin-bottom: 0.5em
+      .header
+        background-color: $pn_dark_blue
+        padding: 0.5em
+        font-size: 1.1em
+        font-family: "MonkirtaPursuitNCRegular"
+        .info
+          margin-left: 1em
+          display: inline-block
+          font-size: 0.75em
+          text-align: right
+          color: #92AECF
+        .controls
+          float: right
+          display: inline-block
+    // #new-comment
+    //   margin-top: 0.5em
+    //   border-top: 2px solid $pn_dark_blue
+    //   padding-top: 0.5em
+  
+  #new-comment
+    +column(24, true)
+  form.new_comment
+    width: 100%
+    textarea
+      width: 100%
+
+    .action
+      float: right

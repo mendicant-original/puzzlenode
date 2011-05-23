@@ -1,0 +1,60 @@
+- content_for :header_bottom do
+  :javascript
+    $(function(){
+      $('#comment-button').click(function(){
+        $.scrollTo('#new-comment', 500, { easing:'swing' });
+      });
+    })
+
+#puzzle
+  %h1
+    = link_to @puzzle.name, puzzle_path(@puzzle)
+    %button#comment-button.clean-gray.right Make a comment
+    
+  #comments_container
+    - if false # Disabled current_user.solution_for(@puzzle)
+      #share-source{:class => ("blank" if current_user.solution_for(@puzzle).source_url.blank?),
+        :style => ("display:none;" unless current_user.solution_for(@puzzle).source_url.blank? )}
+        = toggle_source_url(current_user, "icons/close.png")
+        = render :partial => "users/submissions/source_url"
+    #comments
+      - if @comments.empty?
+        %h3 There are currently no comments
+      
+        Start off the conversation by creating a comment!
+      
+      - @comments.each do |comment|
+        .comment
+          .header
+            = comment.user.name
+            .info= comment.created_at
+            - if current_user == comment.user
+              .controls
+                = link_to "Edit", edit_puzzle_comment_path(@puzzle, comment)
+                |
+                = link_to "Delete", puzzle_comment_path(@puzzle, comment),
+                  :method => :delete,
+                  :confirm => "Are you sure you wish to delete this comment?"
+          
+          .description= md comment.body
+    
+      = will_paginate @comments
+            
+    #solved-by
+      .header Solved by
+      - @puzzle.solved_by.each do |user|
+        .user
+          - if false # DISABLED unless user.solution_for(@puzzle).source_url.blank?
+            = link_to user.name, user.solution_for(@puzzle).source_url,
+              :target => "_blank"
+            = toggle_source_url(user)
+          - else
+            = user.name
+            
+    #new-comment
+      .description
+        %h2 Make a comment
+      = form_for Comment.new, :url => puzzle_comments_path(@puzzle) do |f|
+        = f.text_area :body
+        .action
+          = f.submit "Comment"
