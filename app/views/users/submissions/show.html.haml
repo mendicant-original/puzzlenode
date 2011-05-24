@@ -2,9 +2,9 @@
 
   %h1= link_to @puzzle.name, puzzle_path(@puzzle)
 
-  %h2= baddy
-  - #You got it
-  - #= @submission.correct ? "right. Nice job!" : "wrong. Give it another try!"
+  %h2
+    You got it
+    = @submission.correct ? "right. Nice job!" : "wrong. Give it another try!"
     
   - unless @submission.correct
     %p.header-information
