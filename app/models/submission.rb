@@ -2,7 +2,7 @@ class Submission < ActiveRecord::Base
   belongs_to :puzzle
   belongs_to :user
   
-  scope :correct, lambda { where(:correct => true) }
+  scope :correct, where(:correct => true)
 
   attr_accessor :file
 
