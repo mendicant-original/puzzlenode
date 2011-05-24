@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   has_many :authorizations, :dependent => :destroy
   has_many :announcements,  :dependent => :destroy, :foreign_key => "author_id"
   has_many :submissions,    :dependent => :destroy
+
+  scope :contestant, where(:contestant => true)
   
   attr_protected :admin
   
@@ -34,7 +36,7 @@ class User < ActiveRecord::Base
     # Panda loves Arel
     # but subqueries are so hard!
     # How to make a happy bear?
-    User.find_by_sql(%Q{
+    User.contestant.find_by_sql(%Q{
       SELECT users.*, solved, attempts, elapsed
         FROM users INNER JOIN (#{ solutions.to_sql }) q1 ON q1.user_id = users.id
                    INNER JOIN (#{ attempts.to_sql }) q2 ON q2.user_id = users.id
