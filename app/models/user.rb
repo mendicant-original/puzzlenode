@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
     # TODO
     # Panda loves Arel
     # but subqueries are so hard!
-    # How to make a happy bear?
+    # please make bear happy.
     User.contestant.find_by_sql(%Q{
       SELECT users.*, solved, attempts, elapsed
         FROM users INNER JOIN (#{ solutions.to_sql }) q1 ON q1.user_id = users.id
