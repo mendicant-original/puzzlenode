@@ -12,7 +12,14 @@ class UserTest < ActiveSupport::TestCase
     5.times { |i| create_submission(@harry, i.zero?) }
     2.times { |i| create_submission(@sally, true) }
 
-    assert_equal [@sally.id, @harry.id], User.leaderboard.map(&:id)
+    leaderboard = User.leaderboard
+    assert_equal [@sally.id, @harry.id], leaderboard.map(&:id)
+
+    assert_equal 2, leaderboard.first.solved.to_i
+    assert_equal 2, leaderboard.first.attempts.to_i
+
+    assert_equal 1, leaderboard.last.solved.to_i
+    assert_equal 5, leaderboard.last.attempts.to_i
   end
 
   test "ties are broken by the fewest number of attempts" do
