@@ -2,8 +2,16 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   def setup
-    @harry = Factory(:user, :admin => false, :name => "Harry Hacker", :nickname => "hh4x0r")
-    @sally = Factory(:user, :admin => false, :name => "Sally Solid",  :nickname => "sallys")
+    @harry = Factory(:user,
+      :admin    => false,
+      :name     => "Harry Hacker",
+      :nickname => "hh4x0r"
+    )
+    @sally = Factory(:user,
+      :admin    => false,
+      :name     => "Sally Solid",
+      :nickname => "sallys"
+    )
 
     @puzzle = Factory(:puzzle)
   end
