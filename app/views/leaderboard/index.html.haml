@@ -1,9 +1,17 @@
 %h1 Leaderboard
 
+.top_three
+  - @top_three.each_with_index do |(css_class, user), index|
+    - if user
+      %div{:class => "user #{ css_class }"}
+        = render :partial => 'top_three', :locals => { :rank => index + 1, :user => user }
+
+.clear
+
 %table
   - @users.each_with_index do |user, i|
     %tr
-      %td= "#{i + 1}."
-      %td= user.name
+      %td= "#{i + 4}."
+      %td= link_to user.name, github_url(user)
       %td= ranking_detail user
 
