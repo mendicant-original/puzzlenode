@@ -7,7 +7,8 @@ class User < ActiveRecord::Base
   
   def self.create_from_hash!(hash)    
     create(:name     => hash['user_info']['name'], 
-           :nickname => hash['user_info']['nickname'])
+           :nickname => hash['user_info']['nickname'],
+           :email    => hash['user_info']['email'])
   end
 
   def name
@@ -17,8 +18,9 @@ class User < ActiveRecord::Base
   def refresh_names(hash)
     return if nickname
 
-    update_attributes(:name      => hash['user_info']['name'],
-                      :nickname  => hash['user_info']['nickname'])
+    update_attributes(:name     => hash['user_info']['name'],
+                      :nickname => hash['user_info']['nickname'],
+                      :email    => hash['user_info']['email'])
   end
   
   def solution_for(puzzle)

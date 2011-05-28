@@ -5,12 +5,14 @@ class UserTest < ActiveSupport::TestCase
     @harry = Factory(:user,
       :admin    => false,
       :name     => "Harry Hacker",
-      :nickname => "hh4x0r"
+      :nickname => "hh4x0r",
+      :email    => "harry@hackers.org"
     )
     @sally = Factory(:user,
       :admin    => false,
       :name     => "Sally Solid",
-      :nickname => "sallys"
+      :nickname => "sallys",
+      :email    => "sallys@solid.com",
     )
 
     @puzzle = Factory(:puzzle)
