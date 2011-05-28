@@ -7,10 +7,11 @@ gem 'haml'
 
 gem 'omniauth', '~> 0.2.5'
 gem 'compass', '~> 0.10.6'
+gem 'activeadmin'
 
 gem 'rdiscount'
 gem 'nested_form'
-gem 'will_paginate'
+gem 'will_paginate', '~> 3.0.pre2'
 
 group 'test' do
   gem 'test-unit'
