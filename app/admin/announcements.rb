@@ -1,6 +1,4 @@
-ActiveAdmin.register Announcement do
-
-  #index => order("created_at DESC")
+ActiveAdmin.register Announcement, :sort_order => 'created_at_desc' do
 
   form do |f|
     f.inputs do

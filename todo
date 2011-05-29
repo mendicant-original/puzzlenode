@@ -1,3 +1,10 @@
+Update README with new admin panel info.
+Figure out how we can show the list of users in a way that's useful.
+Decide if regular users should be able to be admins; remove admin attribute from
+ user if not.
+
+Heed these warnings (if relevant):
+
 ===============================================================================
 
 Some setup you must do manually if you haven't yet:
