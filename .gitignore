@@ -8,3 +8,4 @@ config/omniauth.yml
 public/stylesheets/compiled
 db/schema.rb
 public/attachments
+config/initializers/secret_token.rb
