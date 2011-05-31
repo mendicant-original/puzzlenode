@@ -1,14 +1,18 @@
 class Submission < ActiveRecord::Base
   belongs_to :puzzle
   belongs_to :user
+
+  before_create :score!
   
-  scope :correct, lambda { where(:correct => true) }
+  scope :correct, where(:correct => true)
 
   attr_accessor :file
 
-  before_create do |record|
-    record.correct = record.puzzle.valid_solution?(record.file)
-    
+  private
+
+  def score!
+    self.correct = file && puzzle.valid_solution?(file)
     return true
   end
+
 end
