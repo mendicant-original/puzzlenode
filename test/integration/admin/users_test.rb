@@ -8,7 +8,8 @@ module Admin
       @admin_user.authorizations.create(:provider => "github", :uid => "12345")
     end
     
-    test "Admin users can edit other users" do      
+    test "Admin users can edit other users" do
+      pending && return
       other_user = Factory(:user, :admin => false, :name => "Edit Me", :nickname => "Edit Me")
       
       visit root_path
