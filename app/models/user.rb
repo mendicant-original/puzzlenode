@@ -4,9 +4,9 @@ class User < ActiveRecord::Base
   has_many :submissions,    :dependent => :destroy
 
   attr_protected :admin
-  
-  def self.create_from_hash!(hash)    
-    create(:name     => hash['user_info']['name'], 
+
+  def self.create_from_hash!(hash)
+    create(:name     => hash['user_info']['name'],
            :nickname => hash['user_info']['nickname'],
            :email    => hash['user_info']['email'])
   end
@@ -16,13 +16,13 @@ class User < ActiveRecord::Base
   end
 
   def refresh_names(hash)
-    return if nickname
+    return if nickname && email
 
     update_attributes(:name     => hash['user_info']['name'],
                       :nickname => hash['user_info']['nickname'],
                       :email    => hash['user_info']['email'])
   end
-  
+
   def solution_for(puzzle)
     return if puzzle.nil?
     submissions.where(:puzzle_id => puzzle.id, :correct => true).first
@@ -32,8 +32,13 @@ class User < ActiveRecord::Base
     # For each user, we need a count of correct submissions, along with
     # the date of the most recent correct submission.
     # We also need a count of all submissions correct or not.
-    solutions = Submission.correct.select('user_id, MAX(created_at) AS latest_solution, COUNT(*) AS solved').group('user_id')
-    attempts  = Submission.select('user_id, COUNT(*) AS attempts').group('user_id')
+
+    solutions = Submission.correct.
+      select('user_id, MAX(created_at) AS latest_solution, COUNT(*) AS solved').
+      group('user_id')
+
+    attempts  = Submission.select('user_id, COUNT(*) AS attempts').
+      group('user_id')
 
     # We want to sort results by:
     #   1) highest number of correct scores
