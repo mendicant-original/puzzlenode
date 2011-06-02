@@ -1,4 +1,9 @@
 Puzzlenode::Application.routes.draw do
+
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
   root :to => 'puzzles#index'
 
   match '/auth/:provider/callback',      :to => 'sessions#create'
@@ -19,11 +24,5 @@ Puzzlenode::Application.routes.draw do
 
   resources :announcements
 
-  match '/leaderboard', :to => "leaderboard#index", :as => 'leaderboard'
-
-  namespace :admin do
-    resources :puzzles
-    resources :users
-    resources :announcements
-  end
+  match '/leaderboard', :to => "leaderboard#index"
 end
