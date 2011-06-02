@@ -21,5 +21,21 @@ module Admin
 
       assert_current_path admin_puzzle_path(Puzzle.order("created_at DESC").first)
     end
+
+    test "Future puzzles aren't visible to basic users but admins can see them" do
+      visible_puzzle = Factory(:puzzle, :name => "Visible Puzzle",
+                                        :released_on => Date.yesterday)
+      hidden_puzzle  = Factory(:puzzle, :name => "Hidden Puzzle",
+                                        :released_on => Date.tomorrow)
+
+      visit root_path
+
+      assert_content "Visible Puzzle"
+      assert_no_content "Hidden Puzzle"
+
+      sign_user_in
+
+      assert_content "Hidden Puzzle"
+    end
   end
 end
