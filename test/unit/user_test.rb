@@ -46,6 +46,16 @@ class UserTest < ActiveSupport::TestCase
     assert_equal [@harry.id, @sally.id], User.leaderboard.map(&:id)
   end
 
+  test "admins are excluded from the leaderboard" do
+    admin = @harry
+    admin.update_attribute(:admin, true)
+
+    2.times { |i| create_submission(admin, true) }
+    2.times { |i| create_submission(@sally, true) }
+
+    assert_equal [@sally.id], User.leaderboard.map(&:id)
+  end
+
   private
 
   def create_submission(user, correct)

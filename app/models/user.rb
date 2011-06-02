@@ -57,6 +57,7 @@ class User < ActiveRecord::Base
       SELECT users.*, solved, attempts, latest_solution
         FROM users INNER JOIN (#{ solutions.to_sql }) q1 ON q1.user_id = users.id
                    INNER JOIN (#{ attempts.to_sql  }) q2 ON q2.user_id = users.id
+       WHERE NOT coalesce(users.admin, FALSE)
        ORDER BY solved DESC, attempts, latest_solution
        LIMIT #{ limit }
     })
