@@ -1,6 +1,9 @@
 - if current_user
+  - if current_user.admin
+    %li.node
+    %li= link_to "Admin", "/admin"
   %li.right= link_to "Log out", logout_path
 - else
   %li.right
     = link_to "Log in", login_path
-    
+
