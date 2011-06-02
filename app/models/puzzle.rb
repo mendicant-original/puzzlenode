@@ -4,11 +4,11 @@ class Puzzle < ActiveRecord::Base
   has_many :attachments, :dependent => :destroy
 
   accepts_nested_attributes_for :attachments, :allow_destroy => true
-  
+
   validates_presence_of :name, :short_description, :description
-  
+
   def self.published(user=nil)
-    if user && user.draft_access
+    if user && (user.draft_access || user.admin)
       self
     else
       where("released_on <= ?", Date.today)
@@ -22,7 +22,7 @@ class Puzzle < ActiveRecord::Base
   def valid_solution?(tempfile)
     fingerprint == sha1(tempfile)
   end
-  
+
   def answered_correctly?(user)
     if user && user.solution_for(self)
       true
@@ -30,14 +30,14 @@ class Puzzle < ActiveRecord::Base
       false
     end
   end
-  
+
   def solved_by
     User.includes(:submissions).
       where(["submissions.puzzle_id = ? AND submissions.correct = ?",
               self.id, true]).
       order("submissions.created_at")
   end
-  
+
   def published?
     released_on <= Date.today
   end

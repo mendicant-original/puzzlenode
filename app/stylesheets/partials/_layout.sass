@@ -7,15 +7,15 @@ body
   color: #292929
   background-color: #333
   font-family: "Gill Sans", "Tacoma", "Arial", Geneva,Verdana,sans-serif
-  
+
 header
   padding: 1.25em
   padding-bottom: 0
   background: #fff
-  
+
   h1
     margin: 0
-  
+
   #logo
     height: 139px
     background: #fff url(/images/puzzlenode_background.png) no-repeat center top
@@ -28,7 +28,7 @@ header
       color: $pn_blue
       padding-top: 20px
       text-align: center
-  
+
       a
         font-family: 'TinyBoxBlackBitA8Regular'
         color: $pn_blue
@@ -40,7 +40,7 @@ header
       position: absolute
       top: 101px
       left: 469px
-    
+
     &.loading
       img.loading
         display: block
@@ -53,27 +53,27 @@ header
     font-size: 1.25em
     position: relative
     margin: 0 -1em
-    
+
     ul
       list-style: none outside none
       li
         display: inline
         list-style-image: none
         list-style-type: none
-        margin-right: 1em
+        margin-right: 0.75em
         white-space: nowrap
         position: relative
-        
+
         &.node
           background: transparent url(/images/node.png) no-repeat 0 0
           display: inline-block
           width: 14px
           height: 14px
-        
+
         &.right
           float: right
           margin-right: 0
-          
+
         a
           display: inline-block
           color: #fff
@@ -85,16 +85,16 @@ header
             color: #fff
             text-decoration: none
             +text-shadow(#333, 1px, 1px, 4px)
-        
-        
+
+
     div.clear
       clear: both
-    
-    
+
+
 .wrap
   width: 970px
   margin: 0 auto
-  
+
 #content
   background-color: $pn_blue
   padding: 1.25em
