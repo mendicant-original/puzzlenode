@@ -6,4 +6,4 @@
     = @puzzle.released_on.strftime("%B %e, %Y")
   
   %span.right
-    = render :partial => "action_button"
+    = render :partial => "action_button", :locals => { :puzzle => @puzzle }
