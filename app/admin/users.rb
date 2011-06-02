@@ -29,4 +29,17 @@ ActiveAdmin.register User do
     f.buttons
   end
 
+  #
+  # Set protected attributes
+  #
+  after_create do |user|
+    user.update_attribute(:admin, params[:user][:admin])
+    user.update_attribute(:draft_access, params[:user][:draft_access])
+  end
+
+  after_update do |user|
+    user.update_attribute(:admin, params[:user][:admin])
+    user.update_attribute(:draft_access, params[:user][:draft_access])
+  end
+
 end
