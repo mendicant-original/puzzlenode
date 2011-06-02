@@ -22,8 +22,9 @@ ActiveAdmin.register User do
     f.inputs do
       f.input :name
       f.input :nickname, :as => :string
+      f.input :email
+      f.input :admin
       f.input :draft_access
-      f.input :contestant
     end
     f.buttons
   end
