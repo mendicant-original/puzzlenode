@@ -7,7 +7,7 @@ gem 'haml'
 
 gem 'omniauth', '~> 0.2.5'
 gem 'compass', '~> 0.10.6'
-gem 'activeadmin'
+gem 'activeadmin', '~> 0.2.2'
 
 gem 'rdiscount'
 gem 'nested_form'

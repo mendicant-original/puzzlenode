@@ -196,7 +196,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activeadmin
+  activeadmin (~> 0.2.2)
   capybara (~> 0.4.1.1)
   compass (~> 0.10.6)
   factory_girl_rails
