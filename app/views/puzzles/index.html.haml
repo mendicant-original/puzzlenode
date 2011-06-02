@@ -5,7 +5,6 @@
       
       .description
         .action
-          %button.clean-gray{:'data-url' => puzzle_path(puzzle)}
-            View Puzzle
+          = render :partial => 'action_button', :locals => { :puzzle => puzzle }
         = puzzle.short_description
         .clearfix
