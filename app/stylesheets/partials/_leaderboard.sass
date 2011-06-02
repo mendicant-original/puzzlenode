@@ -1,45 +1,64 @@
-.top_three
-  font-family: "MonkirtaPursuitNCRegular"
-  height: 300px
+#leaderboard
 
-  .user
-    float: left
-    width: 216px
-    height: 200px
-    border-radius: 5px
-    padding: 20px
-    text-align: center
+  h1
+    margin-top: 0
+    margin-bottom: 0.25em
+    padding-bottom: 0.5em
+    font-family: "MonkirtaPursuitNCRegular"
+    +text-shadow(#222, 1px, 1px, 5px)
+    border-bottom: 5px solid #254980
+    font-size: 3em
 
-    &.gold
-      background-color: gold
-      color: $pn_dark_gray
+  #top_three
+    font-family: "MonkirtaPursuitNCRegular"
+    margin: 2em 0
 
-      .name a
+    .clear
+      clear: both
+
+    .user
+      float: left
+      width: 216px
+      height: 200px
+      border-radius: 5px
+      padding: 20px
+      text-align: center
+      position: relative
+
+      &.gold
+        background-color: #FFD700
+        +linear-gradient(color-stops(#FFFD0D 20%, #FFD700))
         color: $pn_dark_gray
 
-    &.silver
-      margin-left: 100px
-      background-color: silver
-      color: $pn_dark_gray
+        .name a
+          color: $pn_dark_gray
 
-      .name a
+      &.silver
+        margin-left: 100px
+        background-color: #C0C0C0
+        +linear-gradient(color-stops(#DFDFDF 20%, #C0C0C0))
         color: $pn_dark_gray
 
-    &.bronze
-      float: right
-      background-color: #A67D3D
-      color: white
+        .name a
+          color: $pn_dark_gray
 
-      .name a
+      &.bronze
+        float: right
+        background-color: #A67D3D
+        +linear-gradient(color-stops(#CBA755 20%, #A67D3D))
         color: white
 
+        .name a
+          color: white
 
-    .name a
-      font-size: 1.5em
 
-    .rank
-      position: absolute
-      font-size: 3.25em
+      .name a
+        font-size: 1.5em
 
-    .avatar
-      padding-top: 3em
+      .rank
+        position: absolute
+        font-size: 3.25em
+        top: 0.05em
+
+      .avatar
+        padding-top: 3em
