@@ -1,8 +1,8 @@
 #puzzle
   %h1= @puzzle.name
-  
+
   = render :partial => "info_bar"
-  
+
   #description
     = md @puzzle.description
     - if @puzzle.attachments.any?

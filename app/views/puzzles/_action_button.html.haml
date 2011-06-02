@@ -2,7 +2,6 @@
 
 - if puzzle.answered_correctly? current_user
   %button.clean-gray{:'data-url' => puzzle_comments_path(puzzle), :class => size}
-    .solved
     View Discussion
 - else
   %button.clean-gray{:'data-url' => new_puzzle_submission_path(puzzle), :class => size}

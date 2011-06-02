@@ -1,8 +1,10 @@
 #puzzles
   - @puzzles.each do |puzzle|
     .puzzle
+      - if puzzle.answered_correctly? current_user
+        = image_tag "solved.png", :class => "solved"
       = link_to puzzle.name, puzzle_path(puzzle)
-      
+
       .description
         .action
           = render :partial => 'action_button', :locals => { :puzzle => puzzle }
