@@ -16,4 +16,21 @@ class SubmissionsTest < ActionDispatch::IntegrationTest
 
     assert_content "Please select a file to upload."
   end
+
+  test "there are no errors when a file is submitted" do
+    sign_user_in
+
+    visit new_puzzle_submission_path(@puzzle)
+
+    solution_file = Tempfile.new("solution.txt")
+    solution_file.write "SOLUTION!"
+    solution_file.close
+
+    attach_file "submission_file", solution_file.path
+    click_button "Submit my solution"
+
+    submission = @user.submissions.order("created_at DESC").first
+
+    assert_current_path user_submission_path(@user, submission)
+  end
 end
