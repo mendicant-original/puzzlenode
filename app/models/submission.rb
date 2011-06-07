@@ -6,6 +6,8 @@ class Submission < ActiveRecord::Base
   
   scope :correct, where(:correct => true)
 
+  validates_presence_of :file
+
   attr_accessor :file
 
   private

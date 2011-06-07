@@ -59,7 +59,7 @@ class UserTest < ActiveSupport::TestCase
   private
 
   def create_submission(user, correct)
-    s = Submission.create(:user => user, :puzzle => @puzzle)
+    s = Submission.create(:user => user, :puzzle => @puzzle, :file => Tempfile.new('solution'))
     s.update_attribute(:correct, correct)
   end
 end
