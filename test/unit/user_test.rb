@@ -26,20 +26,11 @@ class UserTest < ActiveSupport::TestCase
     assert_equal [@sally.id, @harry.id], leaderboard.map(&:id)
 
     assert_equal 2, leaderboard.first.solved.to_i
-    assert_equal 2, leaderboard.first.attempts.to_i
 
     assert_equal 1, leaderboard.last.solved.to_i
-    assert_equal 5, leaderboard.last.attempts.to_i
   end
 
-  test "ties are broken by the fewest number of attempts" do
-    5.times { |i| create_submission(@harry, i < 2) }
-    2.times { |i| create_submission(@sally, true) }
-
-    assert_equal [@sally.id, @harry.id], User.leaderboard.map(&:id)
-  end
-
-  test "remaining ties are broken by the fastest submission" do
+  test "ties are broken by the fastest submission" do
     2.times { |i| create_submission(@harry, true) }
     2.times { |i| create_submission(@sally, true) }
 

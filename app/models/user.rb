@@ -37,13 +37,9 @@ class User < ActiveRecord::Base
       select('user_id, MAX(created_at) AS latest_solution, COUNT(*) AS solved').
       group('user_id')
 
-    attempts  = Submission.select('user_id, COUNT(*) AS attempts').
-      group('user_id')
-
     # We want to sort results by:
     #   1) highest number of correct scores
-    #   2) lowest number of attempts
-    #   3) earliest creation date of the *last* correct submission
+    #   2) earliest creation date of the *last* correct submission
     #
     # This inner join is a bit fugly, but it allows us to gather all
     # the data and use it both for sorting and for displaying with
@@ -54,11 +50,10 @@ class User < ActiveRecord::Base
     # but subqueries are so hard!
     # please make bear happy.
     User.find_by_sql(%Q{
-      SELECT users.*, solved, attempts, latest_solution
+      SELECT users.*, solved, latest_solution
         FROM users INNER JOIN (#{ solutions.to_sql }) q1 ON q1.user_id = users.id
-                   INNER JOIN (#{ attempts.to_sql  }) q2 ON q2.user_id = users.id
        WHERE NOT coalesce(users.admin, FALSE)
-       ORDER BY solved DESC, attempts, latest_solution
+       ORDER BY solved DESC, latest_solution
        LIMIT #{ limit }
     })
   end
