@@ -17,4 +17,5 @@ group 'test' do
   gem 'test-unit'
   gem "capybara", "~> 0.4.1.1"
   gem "factory_girl_rails"
+  gem 'test_notifier', '~> 0.3.6'
 end

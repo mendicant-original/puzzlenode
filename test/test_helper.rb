@@ -3,27 +3,28 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 require 'capybara/rails'
 require 'support/integration'
+require 'test_notifier/runner/test_unit'
 
 class ActiveSupport::TestCase
   #fixtures :all
-  
+
   def build_puzzle
     test_tempfile = Tempfile.new("puzzle_sample")
     test_tempfile << "Sample Text"
     test_tempfile.rewind
 
     return Puzzle.create(
-      :name              => "test", 
+      :name              => "test",
       :description       => "test",
-      :short_description => "test", 
+      :short_description => "test",
       :file              => test_tempfile
     )
   end
-  
+
   def cleanup_attachment(attachment)
     FileUtils.rm_rf(attachment.directory)
   end
-  
+
 end
 
 class ActionDispatch::IntegrationTest
