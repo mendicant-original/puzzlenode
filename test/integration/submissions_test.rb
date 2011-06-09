@@ -14,7 +14,7 @@ class SubmissionsTest < ActionDispatch::IntegrationTest
     visit new_puzzle_submission_path(@puzzle)
     click_button "Submit my solution"
 
-    assert_content "Please select a file to upload."
+    assert_content "File can't be blank"
   end
 
   test "there are no errors when a file is submitted" do
