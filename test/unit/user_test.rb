@@ -14,8 +14,6 @@ class UserTest < ActiveSupport::TestCase
       :nickname => "sallys",
       :email    => "sallys@solid.com",
     )
-
-    @puzzle = Factory(:puzzle)
   end
 
   test "leaderboard is sorted by number of correct solutions" do
@@ -50,7 +48,10 @@ class UserTest < ActiveSupport::TestCase
   private
 
   def create_submission(user, correct)
-    s = Submission.create(:user => user, :puzzle => @puzzle, :file => Tempfile.new('solution'))
-    s.update_attribute(:correct, correct)
+    Submission.create(
+      :user   => user,
+      :puzzle => Factory(:puzzle),
+      :file   => Tempfile.new('solution')
+    ).update_attribute(:correct, correct)
   end
 end
