@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
 
   attr_protected :admin, :draft_access
 
+  scope :admin, where(:admin => true)
+
   def self.create_from_hash!(hash)
     create(:name     => hash['user_info']['name'],
            :nickname => hash['user_info']['nickname'],
