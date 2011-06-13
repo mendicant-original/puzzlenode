@@ -2,14 +2,6 @@ require 'test_helper'
 
 class Puzzle
   class CommentsTest < ActionDispatch::IntegrationTest
-    def create_correct_submission(user, puzzle)
-      submission = user.submissions.create do |submission|
-        submission.puzzle = puzzle
-        submission.file = Tempfile.new("solution")
-        submission.correct = true
-      end
-      submission.update_attribute(:correct, true)
-    end
 
     setup do
       @user = Factory(:user, :name => "Normal User")
@@ -20,9 +12,9 @@ class Puzzle
     end
 
     test "only show normal user in the solved by list" do
-      create_correct_submission @user, @puzzle
-      create_correct_submission @admin, @puzzle
-      create_correct_submission @draft_access, @puzzle
+      create_submission @puzzle, @user, true
+      create_submission @puzzle, @admin, true
+      create_submission @puzzle, @draft_access, true
 
       sign_user_in
 

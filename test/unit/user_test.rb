@@ -17,8 +17,8 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "leaderboard is sorted by number of correct solutions" do
-    5.times { |i| create_submission(@harry, i.zero?) }
-    2.times { |i| create_submission(@sally, true) }
+    5.times { |i| create_submission(Factory(:puzzle), @harry, i.zero?) }
+    2.times { |i| create_submission(Factory(:puzzle), @sally, true) }
 
     leaderboard = User.leaderboard
     assert_equal [@sally.id, @harry.id], leaderboard.map(&:id)
@@ -29,8 +29,8 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "ties are broken by the fastest submission" do
-    2.times { |i| create_submission(@harry, true) }
-    2.times { |i| create_submission(@sally, true) }
+    2.times { |i| create_submission(Factory(:puzzle), @harry, true) }
+    2.times { |i| create_submission(Factory(:puzzle), @sally, true) }
 
     assert_equal [@harry.id, @sally.id], User.leaderboard.map(&:id)
   end
@@ -39,19 +39,10 @@ class UserTest < ActiveSupport::TestCase
     admin = @harry
     admin.update_attribute(:admin, true)
 
-    2.times { |i| create_submission(admin, true) }
-    2.times { |i| create_submission(@sally, true) }
+    2.times { |i| create_submission(Factory(:puzzle), admin, true) }
+    2.times { |i| create_submission(Factory(:puzzle), @sally, true) }
 
     assert_equal [@sally.id], User.leaderboard.map(&:id)
   end
 
-  private
-
-  def create_submission(user, correct)
-    Submission.create(
-      :user   => user,
-      :puzzle => Factory(:puzzle),
-      :file   => Tempfile.new('solution')
-    ).update_attribute(:correct, correct)
-  end
 end

@@ -21,6 +21,14 @@ class ActiveSupport::TestCase
     )
   end
 
+  def create_submission(puzzle, user, correct)
+    Submission.create(
+      :user   => user,
+      :puzzle => puzzle,
+      :file   => Tempfile.new('solution')
+    ).update_attribute(:correct, correct)
+  end
+
   def cleanup_attachment(attachment)
     FileUtils.rm_rf(attachment.directory)
   end
