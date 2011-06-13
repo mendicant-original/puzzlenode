@@ -33,7 +33,6 @@ class User < ActiveRecord::Base
   def self.leaderboard(limit=10)
     # For each user, we need a count of correct submissions, along with
     # the date of the most recent correct submission.
-    # We also need a count of all submissions correct or not.
 
     solutions = Submission.correct.
       select('user_id, MAX(created_at) AS latest_solution, COUNT(*) AS solved').
@@ -46,11 +45,7 @@ class User < ActiveRecord::Base
     # This inner join is a bit fugly, but it allows us to gather all
     # the data and use it both for sorting and for displaying with
     # one database query.
-    #
-    # TODO
-    # Panda loves Arel
-    # but subqueries are so hard!
-    # please make bear happy.
+
     User.select("users.*, solved, latest_solution").
       joins("INNER JOIN (#{solutions.to_sql}) q1 on q1.user_id = users.id").
       where(:admin => false).
