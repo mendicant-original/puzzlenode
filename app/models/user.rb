@@ -51,12 +51,10 @@ class User < ActiveRecord::Base
     # Panda loves Arel
     # but subqueries are so hard!
     # please make bear happy.
-    User.find_by_sql(%Q{
-      SELECT users.*, solved, latest_solution
-        FROM users INNER JOIN (#{ solutions.to_sql }) q1 ON q1.user_id = users.id
-       WHERE NOT coalesce(users.admin, FALSE)
-       ORDER BY solved DESC, latest_solution
-       LIMIT #{ limit }
-    })
+    User.select("users.*, solved, latest_solution").
+      joins("INNER JOIN (#{solutions.to_sql}) q1 on q1.user_id = users.id").
+      where(:admin => false).
+      order("solved DESC", "latest_solution").
+      limit(limit)
   end
 end
