@@ -5,6 +5,7 @@ class Puzzles::CommentsController < Puzzles::Base
   
   def index
     @comments = @puzzle.comments.all.paginate(:per_page => 10, :page => params[:page])
+    @solved_by = @puzzle.solved_by.where(:admin => false, :draft_access => false)
   end
   
   def new
