@@ -42,7 +42,7 @@
             
     #solved-by
       .header Solved by
-      - @puzzle.solved_by.each do |user|
+      - @solved_by.each do |user|
         .user
           - if false # DISABLED unless user.solution_for(@puzzle).source_url.blank?
             = link_to user.name, user.solution_for(@puzzle).source_url,
