@@ -11,14 +11,17 @@
 
     .clear
 
-  %table
+  #generic
     - @users.each_with_index do |user, i|
-      %tr
-        %td= "#{i + 4}."
-        %td= link_to user.name, github_url(user)
-        %td= ranking_detail user
+      .row
+        .rank= "##{i + 4}"
+        .user
+          = gravatar_image user, 45
+          .name
+            = link_to user.name, github_url(user)
+            .detail= ranking_detail user
 
-  %hr
+  #about_leaderboard
 
-  This leaderboard is sorted by highest number of correct submissions and
-  earliest creation date of the last correct submission
+    This leaderboard is sorted by highest number of correct submissions and
+    earliest creation date of the last correct submission
