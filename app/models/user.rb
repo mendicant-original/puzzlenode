@@ -48,7 +48,7 @@ class User < ActiveRecord::Base
 
     User.select("users.*, solved, latest_solution").
       joins("INNER JOIN (#{solutions.to_sql}) q1 on q1.user_id = users.id").
-      where(:admin => false).
+      where(:admin => false, :draft_access => false).
       order("solved DESC", "latest_solution").
       limit(limit)
   end

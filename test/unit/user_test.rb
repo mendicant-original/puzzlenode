@@ -44,5 +44,15 @@ class UserTest < ActiveSupport::TestCase
 
     assert_equal [@sally.id], User.leaderboard.map(&:id)
   end
+  
+  test "users with draft access are excluded from the leaderboard" do
+    draft_access_user = @sally
+    draft_access_user.update_attribute(:draft_access, true)
+
+    2.times { |i| create_submission(Factory(:puzzle), draft_access_user, true) }
+    2.times { |i| create_submission(Factory(:puzzle), @harry, true) }
+
+    assert_equal [@harry.id], User.leaderboard.map(&:id)
+  end
 
 end
