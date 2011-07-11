@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   attr_protected :admin, :draft_access
 
   scope :admin, where(:admin => true)
+  scope :eligible_for_display, where(:admin => false, :draft_access => false)
 
   def self.create_from_hash!(hash)
     create(:name     => hash['user_info']['name'],
@@ -48,8 +49,7 @@ class User < ActiveRecord::Base
 
     User.select("users.*, solved, latest_solution").
       joins("INNER JOIN (#{solutions.to_sql}) q1 on q1.user_id = users.id").
-      where(:admin => false, :draft_access => false).
       order("solved DESC", "latest_solution").
-      limit(limit)
+      limit(limit).eligible_for_display
   end
 end
