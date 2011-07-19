@@ -7,3 +7,6 @@
   
   %span.right
     = render :partial => "action_button", :locals => { :puzzle => @puzzle }
+
+  %span.right.section
+    #{@correct_submissions.count} / #{@total_submissions.count} correct submissions
