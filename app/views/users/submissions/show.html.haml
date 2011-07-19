@@ -5,6 +5,11 @@
   %h2
     You got it
     = @submission.correct ? "right. Nice job!" : "wrong. Give it another try!"
+
+  - if @submission.correct && position = current_user.leaderboard_position
+    %p
+      Congratulations, you are on the leaderboard!
+      = render :partial => 'twitter_button', :locals => {:position => position}
     
   - unless @submission.correct
     %p.header-information
