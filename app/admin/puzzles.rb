@@ -25,6 +25,7 @@ ActiveAdmin.register Puzzle, :sort_order => 'created_at_asc' do
       f.input :released_on
       f.input :short_description,  :as => :string
       f.input :description
+      f.input :notice
       f.input :fingerprint,        :as => :string  if f.object.fingerprint
       f.input :file,               :as => :file,  :label => "Solution File"
 

@@ -3,6 +3,9 @@
 
   = render :partial => "info_bar"
 
+  - unless @puzzle.notice.blank?
+    #notice= @puzzle.notice
+
   #description
     = md @puzzle.description
     - if @puzzle.attachments.any?
