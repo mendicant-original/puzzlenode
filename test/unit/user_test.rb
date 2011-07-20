@@ -55,4 +55,10 @@ class UserTest < ActiveSupport::TestCase
     assert_equal [@harry.id], User.leaderboard.map(&:id)
   end
 
+  test "calculates leaderboard position" do
+    create_submission(Factory(:puzzle), @sally, true)
+
+    assert_equal 1, @sally.leaderboard_position
+    assert_nil @harry.leaderboard_position
+  end
 end

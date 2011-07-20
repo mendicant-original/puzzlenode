@@ -31,6 +31,11 @@ class User < ActiveRecord::Base
     submissions.where(:puzzle_id => puzzle.id, :correct => true).first
   end
 
+  def leaderboard_position(limit=10)
+    position = User.leaderboard(limit).index(self)
+    position + 1 if position
+  end
+
   def self.leaderboard(limit=10)
     # For each user, we need a count of correct submissions, along with
     # the date of the most recent correct submission.
