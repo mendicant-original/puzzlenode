@@ -2,24 +2,25 @@
 
   %h1= link_to @puzzle.name, puzzle_path(@puzzle)
 
+  - if @submission.correct && position = current_user.leaderboard_position
+    #notice.large
+      Congratulations, you are #{position.ordinalize} on the
+      = link_to "leaderboard", leaderboard_path
+      = render :partial => 'twitter_button', :locals => {:position => position}
+
   %h2
     You got it
     = @submission.correct ? "right. Nice job!" : "wrong. Give it another try!"
 
-  - if @submission.correct && position = current_user.leaderboard_position
-    %p
-      Congratulations, you are on the leaderboard!
-      = render :partial => 'twitter_button', :locals => {:position => position}
-    
   - unless @submission.correct
     %p.header-information
-      If you think you have found a defect in one of our puzzles and it is not 
-      listed below, contact us at puzzlenode@gmail.com. You may also be able to 
+      If you think you have found a defect in one of our puzzles and it is not
+      listed below, contact us at puzzlenode@gmail.com. You may also be able to
       find help by checking out the #rmu channel on Freenode.
-  
+
   - if @submission.correct
     - # render :partial => "source_url"
-    
+
   #action
     - if @submission.correct
       %button.clean-gray.large{:'data-url' => puzzle_comments_path(@puzzle)}
