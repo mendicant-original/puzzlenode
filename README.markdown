@@ -6,14 +6,14 @@ and is inspired by similar efforts such as
 [Internet Problem Solving Contest](http://ipsc.ksp.sk/).
 
 Puzzlenode is developed, maintained, and supported by
-[Ruby Mendicant University](http://university.rubymendicant.com) (RbMU) students
+[Mendicant University](http://university.rubymendicant.com) students
 and staff.
 
-If you are not a member of RbMU, please get in touch through our public channels:
+If you are not a member of Mendicant University, please get in touch through our public channels:
 
 - **Email:** <http://groups.google.com/group/rmu-talk>
 - **IRC:** #rmu
-- **Twitter:** #RbMU
+- **Twitter:** #mendicant / #RbMU
 
 ## Key Features
 
@@ -79,4 +79,4 @@ Our contact details are at the top of this file.
 
 ------
 
-PuzzleNode - a [Ruby Mendicant University](http://university.rubymendicant.com) project
+PuzzleNode - a [Mendicant University](http://university.rubymendicant.com) project
