@@ -39,15 +39,18 @@ To install a development version of Puzzlenode, follow these steps:
 6. Create a `config/initializers/secret_token.rb` file. The
    `config/initializers` directory contains an example `secret_token.rb` file
    with instructions for generating a secret token.
-7. Run the Rails tasks to initialize a development and a test database:
+7. Create and initialize the database:
 
-`rake db:migrate`
-
-`rake db:test:prepare`
+```bash
+$ rake db:create
+$ rake db:migrate
+```
 
 Finally, run the test suite to make sure everything is working correctly:
 
-    rake test
+```bash
+$ rake test
+```
 
 ## Contributing
 
