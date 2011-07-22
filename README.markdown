@@ -32,17 +32,14 @@ To install a development version of Puzzlenode, follow these steps:
 1. Fork our GitHub repository: <http://github.com/rmu/puzzlenode>
 2. Clone the fork to your computer
 3. Run `bundle install` to install all of the dependencies
-
-To configure University Web:
-
-1. Create a `database.yml` file in `config`. The `config` directory contains
+4. Create a `database.yml` file in `config`. The `config` directory contains
    an example `database.yml` for PostgreSQL.
-2. Create an `omniauth.yml` file in `config`. The `config` directory contains
+5. Create an `omniauth.yml` file in `config`. The `config` directory contains
    an example `omniauth.yml` file.
-3. Create a `config/initializers/secret_token.rb` file. The
+6. Create a `config/initializers/secret_token.rb` file. The
    `config/initializers` directory contains an example `secret_token.rb` file
    with instructions for generating a secret token.
-4. Run the Rails tasks to initialize a development and a test database:
+7. Run the Rails tasks to initialize a development and a test database:
 
 `rake db:migrate`
 
