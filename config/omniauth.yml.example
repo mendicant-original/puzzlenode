@@ -1,8 +1,13 @@
-twitter:
-  key: <KEY>
-  secret: <SECRET>
-
-# https://github.com/account/applications
+# Register your application with github and then paste your client and secret
+# keys below.
+#
+# Applications can be registered via this page:
+#   https://github.com/account/applications/new
+#
+# For standard local development (script/rails s) your paths will be:
+#   Main URL:     http://localhost:3000
+#   Callback URL: http://localhost:3000/auth/github/callback
+#
 
 github:
   client: <CLIENT>
