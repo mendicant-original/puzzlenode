@@ -4,8 +4,8 @@
     %title
       = yield(:title).blank? ? controller_name.humanize : yield(:title)
       \- PuzzleNode
-      
-    
+
+
     %meta{:name=>"viewport", :content=>"width=1050"}
     = stylesheet_link_tag 'compiled/screen.css', :media => 'screen, projection'
     = stylesheet_link_tag 'buttons.css', :media => 'screen, projection'
@@ -15,7 +15,7 @@
     = javascript_include_tag 'jquery-1.5', 'jquery.scrollTo-1.4.2-min.js',
                              'application', 'nested_form', 'rails'
     = csrf_meta_tag
-    
+
     = yield(:header_bottom)
 
   %body
