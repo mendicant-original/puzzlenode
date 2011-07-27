@@ -53,8 +53,9 @@ module Support
     end
 
     def assert_title(title)
-      assert has_css?('#wrap h1', :text => title),
-        "Title #{title.inspect} does not exist"
+      within('title') do
+        assert has_content?(title), "Title #{title.inspect} does not exist"
+      end
     end
 
     def click_link_within(scope, text)
