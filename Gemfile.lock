@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/jordanbyron/test_notifier.git
+  revision: 92569498d715054e9c85e2d008d9a2fe77efbafe
+  branch: minitest-test
+  specs:
+    test_notifier (0.3.6)
+      notifier
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -52,6 +60,9 @@ GEM
     celerity (0.8.9)
     childprocess (0.1.8)
       ffi (~> 1.0.6)
+    colorific (1.0.0)
+      minitest (~> 2.3.1)
+      ruby-progressbar (~> 0.0.10)
     compass (0.10.6)
       haml (>= 3.0.4)
     culerity (0.2.15)
@@ -97,6 +108,7 @@ GEM
       activesupport (~> 3.0.2)
       arel (~> 2.0.2)
     mime-types (1.16)
+    minitest (2.3.1)
     multi_json (1.0.0)
     multi_xml (0.2.2)
     multipart-post (1.1.0)
@@ -174,6 +186,7 @@ GEM
     ruby-openid (2.1.8)
     ruby-openid-apps-discovery (1.2.0)
       ruby-openid (>= 2.1.7)
+    ruby-progressbar (0.0.10)
     rubyntlm (0.1.1)
     rubyzip (0.9.4)
     sass (3.1.1)
@@ -182,9 +195,6 @@ GEM
       ffi (>= 1.0.7)
       json_pure
       rubyzip
-    test-unit (2.2.0)
-    test_notifier (0.3.6)
-      notifier
     thor (0.14.6)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
@@ -201,6 +211,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin (~> 0.2.2)
   capybara (~> 0.4.1.1)
+  colorific (~> 1.0.0)
   compass (~> 0.10.6)
   factory_girl_rails
   haml
@@ -209,6 +220,5 @@ DEPENDENCIES
   pg
   rails (~> 3.0.3)
   rdiscount
-  test-unit
-  test_notifier (~> 0.3.6)
+  test_notifier!
   will_paginate (~> 3.0.pre2)
