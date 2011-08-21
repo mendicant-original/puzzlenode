@@ -74,4 +74,9 @@ class PuzzleTest < ActiveSupport::TestCase
     assert puzzle.valid_solution?(tempfile1)    
   end
 
+  test "must be taggable" do
+    puzzle = Factory(:puzzle, :tag_list => "Game, Graphics")
+
+    assert_equal 2, puzzle.tags.count
+  end
 end

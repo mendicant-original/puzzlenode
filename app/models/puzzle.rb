@@ -1,4 +1,6 @@
 class Puzzle < ActiveRecord::Base
+  acts_as_taggable
+
   has_many :submissions, :dependent => :destroy
   has_many :comments,    :dependent => :destroy, :order => "created_at"
   has_many :attachments, :dependent => :destroy

@@ -3,6 +3,12 @@ class PuzzlesController < ApplicationController
   def index
     @puzzles = Puzzle.published(current_user).order("created_at").all
   end
+
+  def tag
+    @puzzles = Puzzle.tagged_with(params[:tag])
+
+    render :index
+  end
   
   def show
     @puzzle = Puzzle.find(params[:id])
