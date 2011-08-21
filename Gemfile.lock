@@ -36,6 +36,7 @@ GEM
       activemodel (= 3.0.3)
       activesupport (= 3.0.3)
     activesupport (3.0.3)
+    acts-as-taggable-on (2.0.6)
     addressable (2.2.4)
     arel (2.0.7)
     bcrypt-ruby (2.1.4)
@@ -204,6 +205,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin (~> 0.2.2)
+  acts-as-taggable-on
   capybara (~> 0.4.1.1)
   colorific (~> 1.0.0)
   compass (~> 0.10.6)

@@ -5,6 +5,7 @@ ActiveAdmin.register Puzzle, :sort_order => 'created_at_asc' do
       link_to puzzle.name, edit_admin_puzzle_path(puzzle)
     end
     column :released_on
+    column 'Tags', :tag_list
     column :created_at
     column 'Submissions' do |puzzle|
       puzzle.submissions.count.to_s
@@ -23,6 +24,7 @@ ActiveAdmin.register Puzzle, :sort_order => 'created_at_asc' do
       f.input :created_by
       f.input :created_by_url
       f.input :released_on
+      f.input :tag_list,           :label => "Tags"
       f.input :short_description,  :as => :string
       f.input :description
       f.input :notice

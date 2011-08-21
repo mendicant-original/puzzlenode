@@ -1,0 +1,5 @@
+- unless @puzzle.tags.empty?
+  %ul.tags
+    Tags: 
+    - @puzzle.tags.each do |t|
+      %li= link_to t.name, tag_path(t.name)

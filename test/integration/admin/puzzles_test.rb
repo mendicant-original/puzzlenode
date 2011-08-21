@@ -16,6 +16,7 @@ module Admin
       fill_in "Name",              :with => "Test Puzzle"
       fill_in "Short description", :with => "Test Puzzle Short Desc"
       fill_in "Description",       :with => "Test Puzzle Desc"
+      fill_in "Tags",              :with => "Test, Tag"
 
       click_button "Create Puzzle"
 
