@@ -8,6 +8,7 @@ gem 'rails',       '~> 3.0.3'
 gem 'omniauth',    '~> 0.2.5'
 gem 'activeadmin', '~> 0.2.2'
 gem 'acts-as-taggable-on'
+gem 'rake', '~> 0.9.2'
 
 ########
 # Data #
