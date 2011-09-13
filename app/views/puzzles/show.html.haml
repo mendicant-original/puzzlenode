@@ -1,7 +1,6 @@
 - title @puzzle.name
 #puzzle
   %h1= @puzzle.name
-  = render :partial => "tags"
   = render :partial => "info_bar"
 
   - unless @puzzle.notice.blank?
