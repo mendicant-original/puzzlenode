@@ -23,8 +23,4 @@ Puzzlenode::Application.routes.draw do
   resources :announcements
 
   match '/leaderboard', :to => "leaderboard#index"
-
-  ActiveAdmin.routes(self)
-
-  match '/admin/logout' => 'sessions#destroy'
 end
