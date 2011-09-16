@@ -1,0 +1,34 @@
+#puzzles.admin_list
+  %h2 Puzzles
+
+  %p.controls
+    = link_to "New Puzzle", new_admin_puzzle_path
+
+  %table
+    %tr
+      %th Name
+      %th Released on
+      %th Tags
+      %th Created at
+      %th Submissions
+      %th Comments
+      %th.controls{:colspan => 2}
+    - @puzzles.each do |puzzle|
+      %tr
+        %td
+          = link_to puzzle.name,
+            edit_admin_puzzle_path(puzzle)
+        %td= puzzle.released_on
+        %td= puzzle.tag_list
+        %td= puzzle.created_at
+        %td= puzzle.submissions.count
+        %td
+          = link_to "#{puzzle.comments.count} Comments",
+            puzzle_comments_path(puzzle)
+        %td= link_to "Show", puzzle_path(puzzle)
+        %td
+          = link_to "Destroy", admin_puzzle_path(puzzle),
+            :confirm => "Are you sure you wish to destroy this puzzle?",
+            :method  => "DELETE"
+
+  = will_paginate @puzzles
