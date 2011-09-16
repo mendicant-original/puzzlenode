@@ -4,17 +4,19 @@ source 'http://rubygems.org'
 # Core #
 ########
 
-gem 'rails',       '~> 3.0.3'
+gem 'rails',       '~> 3.1.0'
 gem 'omniauth',    '~> 0.2.5'
-gem 'activeadmin', '~> 0.2.2'
-gem 'acts-as-taggable-on'
-gem 'rake', '~> 0.9.2'
+gem 'activeadmin', :git    => 'https://github.com/gregbell/active_admin.git',
+                   :branch => 'rails-3-1'
+gem 'inherited_resources', '>= 1.3.0' # For activeadmin
+gem 'rake',        '~> 0.9.2'
 
 ########
 # Data #
 ########
 
 gem 'pg'
+gem 'acts-as-taggable-on'
 
 ################
 # Presentation #
