@@ -23,4 +23,12 @@ Puzzlenode::Application.routes.draw do
   resources :announcements
 
   match '/leaderboard', :to => "leaderboard#index"
+
+  namespace :admin do
+    resources :users
+    resources :puzzles
+    resources :announcements
+
+    match "/" => 'puzzles#index', :as => 'admin'
+  end
 end
