@@ -22,7 +22,7 @@ gem 'jquery-rails'
 
 gem 'haml'
 gem 'sass'
-gem 'rdiscount'
+gem 'redcarpet', "~> 2.0.0b3"
 gem 'will_paginate', '~> 3.0.pre2'
 
 # Gems used only for assets and not required
