@@ -42,3 +42,7 @@ group 'test' do
   gem 'colorific', '~> 1.0.0'
   gem 'test_notifier', '~> 0.4.0'
 end
+
+group :production do
+  gem 'therubyracer'
+end
