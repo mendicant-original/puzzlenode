@@ -14,6 +14,7 @@ gem 'rake',        '~> 0.9.2'
 
 gem 'pg'
 gem 'acts-as-taggable-on'
+gem 'jquery-rails'
 
 ################
 # Presentation #
@@ -21,10 +22,19 @@ gem 'acts-as-taggable-on'
 
 gem 'haml'
 gem 'sass'
-gem 'compass',       '~> 0.11.0'
 gem 'rdiscount'
-gem 'nested_form'
 gem 'will_paginate', '~> 3.0.pre2'
+
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+  gem 'sass-rails', "  ~> 3.1.0"
+  gem 'coffee-rails', "~> 3.1.0"
+  gem 'uglifier'
+  gem 'compass',  '~> 0.12.alpha'
+end
+
+gem 'jquery-rails'
 
 group 'test' do
   gem 'capybara',  '~> 0.4.1.1'

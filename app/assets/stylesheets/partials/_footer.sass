@@ -5,41 +5,41 @@
   border-top: 1px solid #0F1D32
   line-height: 1.5em
   font-size: 16px
-  
+
   .teaser
     text-align: center
-  
+
   &.active
     border-top: none
-    
+
     .bottom #rmu-logo
       background-position: center bottom
-  
+
   #about
     text-align: justify
     font-size: 1.2em
     display: none
-    
+
     h1
       font-family: "MonkirtaPursuitNCRegular"
       margin: 0.25em 0
       +text-shadow(#222, 1px, 1px, 2px)
       border-bottom: 2px solid #254980
       padding-bottom: 0.5em
-    
+
     a
       text-decoration: underline
       &.close
         float: right
-    
+
   .bottom
     text-align: center
     margin-top: 1em
     #rmu-logo
-      background: transparent url('/images/rmu.png') no-repeat center top
+      background: transparent asset-url("rmu.png", image) no-repeat center top
       height: 87px
       width: 120px
       display: inline-block
-      
+
       &:hover
         background-position: center bottom
