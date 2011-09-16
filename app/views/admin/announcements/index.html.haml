@@ -1,0 +1,24 @@
+#announcements.admin_list
+  %h2 Announcements
+
+  %p.controls
+    = link_to "New Announcement", new_admin_announcement_path
+
+  %table
+    %tr
+      %th Title
+      %th Author
+      %th.controls{:colspan => 2}
+    - @announcements.each do |announcement|
+      %tr
+        %td
+          = link_to announcement.title,
+            edit_admin_announcement_path(announcement)
+        %td= announcement.author.name
+        %td= link_to "Show", announcement_path(announcement)
+        %td
+          = link_to "Destroy", admin_announcement_path(announcement),
+            :confirm => "Are you sure you wish to destroy this announcement?",
+            :method  => "DELETE"
+
+  = will_paginate @announcements
