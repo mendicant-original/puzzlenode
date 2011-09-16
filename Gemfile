@@ -6,9 +6,6 @@ source 'http://rubygems.org'
 
 gem 'rails',       '~> 3.1.0'
 gem 'omniauth',    '~> 0.2.5'
-gem 'activeadmin', :git    => 'https://github.com/gregbell/active_admin.git',
-                   :branch => 'rails-3-1'
-gem 'inherited_resources', '>= 1.3.0' # For activeadmin
 gem 'rake',        '~> 0.9.2'
 
 ########
@@ -23,7 +20,8 @@ gem 'acts-as-taggable-on'
 ################
 
 gem 'haml'
-gem 'compass',       '~> 0.10.6'
+gem 'sass'
+gem 'compass',       '~> 0.11.0'
 gem 'rdiscount'
 gem 'nested_form'
 gem 'will_paginate', '~> 3.0.pre2'
