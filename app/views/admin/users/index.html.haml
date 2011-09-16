@@ -1,0 +1,24 @@
+#users.admin_list
+  %h2 Users
+
+  %table
+    %tr
+      %th Name
+      %th Solved
+      %th Attempted
+      %th Member Since
+      %th.controls
+    - @users.each do |user|
+      %tr
+        %td
+          = link_to user.name,
+            edit_admin_user_path(user)
+        %td= user.submissions.correct.count
+        %td= user.submissions.count
+        %td= user.created_at
+        %td
+          = link_to "Destroy", admin_user_path(user),
+            :confirm => "Are you sure you wish to destroy this user?",
+            :method  => "DELETE"
+
+  = will_paginate @users

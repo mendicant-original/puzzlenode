@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate_admin_user!
     unless current_user.try(:admin)
-      flash[:error] = "You are not authorize to view this area"
+      flash[:error] = "You are not authorized to view this area"
       redirect_to root_path
     end
   end
