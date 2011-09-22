@@ -15,13 +15,13 @@ module Admin
 
       visit edit_admin_user_path(other_user.id)
 
-      assert_content "Edit User"
+      assert_content "Edit Me"
 
       check "Admin"
 
       click_button "Update User"
 
-      assert_current_path admin_user_path(other_user)
+      assert_current_path admin_users_path
 
       assert other_user.reload.admin, "Other user not set to admin!"
     end
@@ -33,13 +33,13 @@ module Admin
 
       visit edit_admin_user_path(other_user.id)
 
-      assert_content "Edit User"
+      assert_content "Edit Me"
 
       check "Draft access"
 
       click_button "Update User"
 
-      assert_current_path admin_user_path(other_user)
+      assert_current_path admin_users_path
 
       assert other_user.reload.draft_access, "Other user not set to admin!"
     end

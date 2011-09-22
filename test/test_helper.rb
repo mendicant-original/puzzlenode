@@ -7,8 +7,6 @@ require 'support/mini_contest'
 require 'test_notifier/runner/minitest'
 
 class ActiveSupport::TestCase
-  #fixtures :all
-
   def build_puzzle
     test_tempfile = Tempfile.new("puzzle_sample")
     test_tempfile << "Sample Text"
@@ -37,7 +35,7 @@ class ActiveSupport::TestCase
 end
 
 class ActionDispatch::IntegrationTest
-  include Capybara
+  include Capybara::DSL
   include Support::Integration
 
   setup do
