@@ -34,7 +34,20 @@
     %br
     = f.text_area :notice
 
-  /TODO: Add nested fields and markdown preview
+  - if @puzzle.fingerprint
+    %p
+      %b= "Fingerprint: #{@puzzle.fingerprint}"
+  %p
+    = f.label :file, "Solution File"
+    %br
+    = f.file_field :file
+
+  #attachments
+    %h3 Attachments
+    = f.fields_for :attachments do |a|
+      = render "attachment_fields", :f => a
+
+    %p= link_to_add_association "Add an attachment", f, :attachments
 
   %p.controls
     = f.submit

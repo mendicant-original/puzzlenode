@@ -1,0 +1,8 @@
+.nested-fields
+  %p
+    - if f.object.new_record?
+      = f.file_field :file
+    - else
+      = f.text_field :file_name, :disabled => "disabled"
+    %br
+    = link_to_remove_association "Remove", f, :class => "delete"
