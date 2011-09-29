@@ -34,7 +34,7 @@ PuzzleNode.play = function(){
   var s = document.createElement('script');
   s.type='text/javascript';
   document.body.appendChild(s);
-  s.src='http://erkie.github.com/asteroids-2.js'
+  s.src='https://raw.github.com/erkie/erkie.github.com/master/kickass2/kickass-release.js'
 }
 
 PuzzleNode.expert=function(){var a={addEvent:function(b,c,d,e){if(b.addEventListener)b.addEventListener(c,d,false);else if(b.attachEvent){b["e"+c+d]=d;b[c+d]=function(){b["e"+c+d](window.event,e)};b.attachEvent("on"+c,b[c+d])}},input:"",pattern:"3838404037393739666513",load:function(b){this.addEvent(document,"keydown",function(c,d){if(d)a=d;a.input+=c?c.keyCode:event.keyCode;if(a.input.length>a.pattern.length)a.input=a.input.substr(a.input.length-a.pattern.length);if(a.input==a.pattern){a.code(b);a.input=
