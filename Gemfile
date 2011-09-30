@@ -4,7 +4,8 @@ source 'http://rubygems.org'
 # Core #
 ########
 
-gem 'rails',       '~> 3.1.0'
+gem 'rails',       :git    => "https://github.com/rails/rails.git",
+                   :branch => "3-1-stable"
 gem 'omniauth',    '~> 0.2.5'
 gem 'rake',        '~> 0.9.2'
 
