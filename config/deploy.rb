@@ -12,7 +12,7 @@ set :use_sudo, false
 set :deploy_via, :remote_cache
 
 set :branch, "rails31" #master
-server "rubymendicant.com", :app, :web, :db, :primary => true
+server "puzzlenode.com", :app, :web, :db, :primary => true
 
 namespace :deploy do
   task :restart, :roles => :app do
