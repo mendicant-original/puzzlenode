@@ -2,10 +2,10 @@
   :javascript
     $(function(){
       $('#logo').addClass('loading');
+      $('#login').html("Redirecting ...").click(function(e){ e.preventDefault(); });
     });
 
-  :plain
-    <meta http-equiv="REFRESH" content="2;url=/auth/github">
+  %meta{:'http-equiv' => "REFRESH", :content => "1;url=/auth/github"}
 
 #redirect
   %h1 Redirecting to Github for login
