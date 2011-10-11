@@ -1,8 +1,13 @@
 - if current_user
-  - if current_user.admin
-    %li.node
-    %li= link_to "Admin", "/admin"
-  %li.right= link_to "Log out", logout_path
+  %li.user
+    #user_box
+      = gravatar_image current_user, 45, :id => "user_gravatar"
+      .user_name
+        = current_user.name
+      .user_information
+        = link_to "Stats"
+        &bull;
+        = link_to "Log out", logout_path, :id => "log-out"
 - else
   %li.right
     = link_to "Log in", login_path, :id => "login"

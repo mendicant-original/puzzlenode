@@ -1,0 +1,30 @@
+nav ul li.user
+  float: right
+  position: relative
+  margin-right: 0
+
+  #user_box
+    position: absolute
+    width: 175px
+    height: 50px
+    bottom: -40px
+    right: 0
+    background-color: $pn_blue
+    padding: 10px
+    +border-top-radius(5px)
+
+    #user_gravatar
+      //border: 2px solid #FE7F2F
+      +border-radius(5px)
+      float: left
+      margin-right: 10px
+
+    .user_name
+      margin-bottom: 0.5em
+
+    a
+      margin-top: 0
+      font-family: inherit
+      +single-text-shadow(none)
+      font-size: 0.9em
+      color: $pn_light_blue
