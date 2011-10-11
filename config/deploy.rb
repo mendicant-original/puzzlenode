@@ -24,6 +24,7 @@ after 'deploy:update_code' do
   {"database.yml"    => "config/database.yml",
    "omniauth.yml"    => "config/omniauth.yml",
    "secret_token.rb" => "config/initializers/secret_token.rb",
+   "setup_mail.rb"   => "config/initializers/setup_mail.rb",
    "attachments"     => "public/attachments"}.
   each do |from, to|
     run "ln -nfs #{shared_path}/#{from} #{release_path}/#{to}"

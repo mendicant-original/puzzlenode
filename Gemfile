@@ -25,19 +25,21 @@ gem 'sass'
 gem 'redcarpet', '~> 2.0.0b3'
 gem 'will_paginate', '~> 3.0'
 gem 'cocoon'
+gem 'jquery-rails'
+
+###############
+# Maintenance #
+###############
 
 gem 'capistrano'
+gem 'exception_notification'
 
-# Gems used only for assets and not required
-# in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.1.0'
   gem 'coffee-rails', '~> 3.1.0'
   gem 'uglifier'
   gem 'compass',      '~> 0.12.alpha'
 end
-
-gem 'jquery-rails'
 
 group 'test' do
   gem 'capybara',  '~> 1.1.1'
