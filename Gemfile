@@ -45,7 +45,7 @@ group 'test' do
   gem 'capybara',  '~> 1.1.1'
   gem 'factory_girl_rails'
   gem 'colorific', '~> 1.0.0'
-  gem 'test_notifier', '~> 0.4.0'
+  gem 'test_notifier', '~> 1.0.0'
 end
 
 group :production do

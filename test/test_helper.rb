@@ -6,6 +6,8 @@ require 'support/integration'
 require 'support/mini_contest'
 require 'test_notifier/runner/minitest'
 
+TestNotifier.silence_no_notifier_warning = true
+
 class ActiveSupport::TestCase
   def build_puzzle
     test_tempfile = Tempfile.new("puzzle_sample")
