@@ -17,7 +17,7 @@ If you are not a member of Mendicant University, please get in touch through our
 
 ## Key Features
 
-Coming soon
+**Coming soon**
 
 ## Installation
 
