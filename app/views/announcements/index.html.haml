@@ -10,8 +10,12 @@
   by checking out the #rmu channel on Freenode.
 
 #announcements
+  - if current_user.try(:admin)
+    = button_to "New Announcement", new_admin_announcement_path, :method => :get,
+      :id => "new-announcement"
+
   - @announcements.each do |announcement|
     = render :partial => "announcement",
       :locals => {:announcement => announcement}
-      
+
 = will_paginate @announcements

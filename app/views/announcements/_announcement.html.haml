@@ -2,6 +2,8 @@
   .title
     = link_to announcement.title, announcement_path(announcement.id)
     .info
+      - if current_user.try(:admin)
+        = link_to "Edit", edit_admin_announcement_path(announcement)
       .author= announcement.author.name
       .posted_date= announcement.created_at.to_date
   .body= md(announcement.body)

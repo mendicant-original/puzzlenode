@@ -17,7 +17,7 @@ module Admin
 
       if @announcement.save
         flash[:notice] = "Announcement sucessfully created"
-        redirect_to admin_announcements_path
+        redirect_to announcement_path(@announcement)
       else
         render :new
       end
@@ -30,7 +30,7 @@ module Admin
     def update
       if @announcement.update_attributes(params[:announcement])
         flash[:notice] = "Announcement sucessfully updated"
-        redirect_to admin_announcements_path
+        redirect_to announcement_path(@announcement)
       else
         render :edit
       end
