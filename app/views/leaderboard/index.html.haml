@@ -18,7 +18,7 @@
         .user
           = gravatar_image user, 45
           .name
-            = link_to user.name, github_url(user)
+            = link_to user.name, user_path(user)
             .detail= ranking_detail user
 
   #about_leaderboard

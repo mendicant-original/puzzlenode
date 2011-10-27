@@ -1,7 +1,7 @@
 #profile
   %h1
     = gravatar_image @user, 48
-    = @user.nickname
+    = link_to @user.nickname, github_url(@user)
 
   #stats
     %h2 Stats
