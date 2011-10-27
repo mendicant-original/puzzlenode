@@ -5,7 +5,7 @@
       .user_name
         = current_user.name
       .user_information
-        = link_to "Stats"
+        = link_to "Profile", user_path(current_user.nickname)
         &bull;
         = link_to "Log out", logout_path, :id => "log-out"
 - else

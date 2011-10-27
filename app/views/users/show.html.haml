@@ -1,0 +1,12 @@
+#profile
+  %h1
+    = gravatar_image @user, 48
+    = @user.nickname
+
+  #stats
+    %h2 Stats
+
+    %h3 Problems Solved: #{@user.submissions.correct.count}
+    - if @leaderboard
+      %h3
+        Leaderboard position: #{@leaderboard}
