@@ -17,7 +17,7 @@ module Admin
 
       if @puzzle.save
         flash[:notice] = "Puzzle sucessfully created"
-        redirect_to admin_puzzles_path
+        redirect_to puzzle_path(@puzzle)
       else
         render :new
       end
@@ -30,7 +30,7 @@ module Admin
     def update
       if @puzzle.update_attributes(params[:puzzle])
         flash[:notice] = "Puzzle sucessfully updated"
-        redirect_to admin_puzzles_path
+        redirect_to puzzle_path(@puzzle)
       else
         render :edit
       end

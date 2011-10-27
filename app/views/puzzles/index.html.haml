@@ -1,4 +1,8 @@
 #puzzles
+  - if current_user.try(:admin)
+    = button_to "New Puzzle", new_admin_puzzle_path, :method => :get,
+      :id => "new-puzzle"
+
   - @puzzles.each do |puzzle|
     .puzzle
       - if puzzle.answered_correctly? current_user
