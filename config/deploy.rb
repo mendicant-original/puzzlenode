@@ -11,7 +11,7 @@ set :use_sudo, false
 
 set :deploy_via, :remote_cache
 
-set :branch, "rails31" #master
+set :branch, "master"
 server "puzzlenode.com", :app, :web, :db, :primary => true
 
 namespace :deploy do
