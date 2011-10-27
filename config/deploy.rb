@@ -4,7 +4,7 @@ set :application, "puzzlenode"
 set :repository,  "git://github.com/rmu/puzzlenode.git"
 
 set :scm, :git
-set :deploy_to, "/var/rapp/_#{application}"
+set :deploy_to, "/var/rapp/#{application}"
 
 set :user, "git"
 set :use_sudo, false
