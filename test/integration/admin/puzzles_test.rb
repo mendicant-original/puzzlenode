@@ -20,7 +20,7 @@ module Admin
 
       click_button "Create Puzzle"
 
-      assert_current_path admin_puzzles_path
+      assert_current_path puzzle_path(Puzzle.order("created_at DESC").first)
 
       assert_content "Test Puzzle"
     end
