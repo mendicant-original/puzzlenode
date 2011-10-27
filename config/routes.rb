@@ -3,6 +3,7 @@ Puzzlenode::Application.routes.draw do
   root :to => 'puzzles#index'
 
   match '/auth/:provider/callback',      :to => 'sessions#create'
+  match '/auth/failure',                 :to => 'sessions#failure'
   match '/logout' => 'sessions#destroy', :as => 'logout'
   match '/login' => 'sessions#new',      :as => 'login'
 
@@ -24,7 +25,11 @@ Puzzlenode::Application.routes.draw do
 
   match '/leaderboard', :to => "leaderboard#index"
 
-  ActiveAdmin.routes(self)
+  namespace :admin do
+    resources :users
+    resources :puzzles
+    resources :announcements
 
-  match '/admin/logout' => 'sessions#destroy'
+    match "/" => 'puzzles#index', :as => 'admin'
+  end
 end

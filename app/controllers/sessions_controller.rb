@@ -1,9 +1,9 @@
 class SessionsController < ApplicationController
-  
+
   def new
-    
+
   end
-  
+
   def create
     auth = request.env['omniauth.auth']
 
@@ -14,13 +14,21 @@ class SessionsController < ApplicationController
     end
     # Log the authorizing user in.
     self.current_user = @auth.user
-    
+
     redirect_back_or_default root_path
   end
-  
+
   def destroy
     self.current_user = nil
-    
+
+    redirect_to root_path
+  end
+
+  def failure
+    flash[:error] = "There was a problem logging in. Please try again"
+
+    self.current_user = nil # Try destroying the current_user
+
     redirect_to root_path
   end
 end

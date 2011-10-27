@@ -5,6 +5,8 @@ tmp/**/*
 .rvmrc
 config/database.yml
 config/omniauth.yml
-public/stylesheets/compiled
 public/attachments
+public/assets
 config/initializers/secret_token.rb
+config/initializers/setup_mail.rb
+lib/development_mail_interceptor.rb

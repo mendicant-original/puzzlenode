@@ -20,7 +20,9 @@ module Admin
 
       click_button "Create Puzzle"
 
-      assert_current_path admin_puzzle_path(Puzzle.order("created_at DESC").first)
+      assert_current_path admin_puzzles_path
+
+      assert_content "Test Puzzle"
     end
 
     test "Future puzzles aren't visible to basic users but admins can see them" do

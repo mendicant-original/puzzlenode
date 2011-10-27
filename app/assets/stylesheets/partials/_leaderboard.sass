@@ -1,0 +1,110 @@
+#leaderboard
+
+  hr
+    background-color: #254980
+    border: 1px solid #254980
+    color: #254980
+    margin: 1em 0
+
+  h1
+    margin-top: 0
+    margin-bottom: 0.25em
+    padding-bottom: 0.5em
+    font-family: "MonkirtaPursuitNCRegular"
+    +text-shadow(#222, 1px, 1px, 5px)
+    border-bottom: 5px solid #254980
+    font-size: 3em
+
+  #top_three
+    font-family: "MonkirtaPursuitNCRegular"
+    margin: 2em 0
+
+    .clear
+      clear: both
+
+    .user
+      float: left
+      width: 220px
+      min-height: 200px
+      +border-radius(5px)
+      padding: 20px
+      text-align: center
+      position: relative
+
+      &.gold
+        background-color: #FFD700
+        +background-image(linear-gradient(#FFFD0D 20%, #FFD700))
+        color: $pn_dark_gray
+
+        .name a
+          color: $pn_dark_gray
+
+      &.silver
+        margin-left: 100px
+        background-color: #C0C0C0
+        +background-image(linear-gradient(#DFDFDF 20%, #C0C0C0))
+        color: $pn_dark_gray
+
+        .name a
+          color: $pn_dark_gray
+
+      &.bronze
+        float: right
+        background-color: #A67D3D
+        +background-image(linear-gradient(#CBA755 20%, #A67D3D))
+        color: white
+
+        .name a
+          color: white
+
+
+      .name a
+        font-size: 1.5em
+
+      .rank
+        position: absolute
+        font-size: 3.25em
+        top: 0.05em
+
+      .avatar
+        padding-top: 3em
+
+  #generic
+    font-size: 24px
+    font-family: "MonkirtaPursuitNCRegular"
+    .row
+      margin-bottom: 0.5em
+      .rank
+        float: left
+        padding: 5px
+        margin-right: 10px
+        font-size: 28px
+        width: 53px
+      .user
+        width: 896px
+        display: inline-block
+        background-color: $pn_dark_blue
+        +background-image(linear-gradient($pn_dark_blue, #1B3969))
+        color: #eee
+        +border-radius(5px)
+
+        img
+          float: left
+          +border-left-radius(5px)
+
+        .name
+          margin-left: 45px
+          padding: 8px 15px
+          a
+            color: #eee
+          .detail
+            float: right
+            color: $pn_light_blue
+            font-size: 15px
+            margin-top: 6px
+
+  #about_leaderboard
+    border-top: $pn_dark_blue 2px solid
+    margin-top: 1em
+    padding-top: 1em
+    text-align: center

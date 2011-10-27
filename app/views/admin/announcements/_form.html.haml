@@ -1,0 +1,16 @@
+= form_for @announcement, :url => url, :html => {:class => "admin"} do |f|
+  %h2= @announcement.title || "New Announcement"
+
+  %p
+    = f.label :title
+    %br
+    = f.text_field :title
+  %p
+    = f.label :author_id
+    %br
+    = f.select :author_id, User.admin.map {|u| [u.name, u.id]}
+  %p
+    = f.text_area :body
+  %p.controls
+    = f.submit
+    = link_to "Cancel", admin_announcements_path

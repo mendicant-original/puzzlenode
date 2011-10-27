@@ -1,0 +1,24 @@
+= form_for @user, :url => url, :html => {:class => "admin"} do |f|
+  %h2= @user.name
+
+  %p
+    = f.label :name
+    %br
+    = f.text_field :name
+  %p
+    = f.label :nickname
+    %br
+    = f.text_field :nickname
+  %p
+    = f.label :email
+    %br
+    = f.text_field :email
+  %p
+    = f.check_box :admin
+    = f.label :admin
+    %br
+    = f.check_box :draft_access
+    = f.label :draft_access
+  %p.controls
+    = f.submit
+    = link_to "Cancel", admin_users_path
