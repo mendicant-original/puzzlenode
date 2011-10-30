@@ -1,4 +1,4 @@
-= form_for @puzzle, :url => url, :html => {:class => "admin"} do |f|
+= form_for @puzzle, :url => url do |f|
   %h2= @puzzle.name || "New Puzzle"
 
   %p
@@ -51,4 +51,7 @@
 
   %p.controls
     = f.submit
-    = link_to "Cancel", admin_puzzles_path
+    - if @puzzle.new_record?
+      = link_to "Cancel", puzzles_path
+    - else
+      = link_to "Cancel", puzzle_path(@puzzle)
