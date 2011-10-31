@@ -4,6 +4,8 @@
   %h1
     = gravatar_image @user, 48
     = link_to @user.nickname, github_url(@user)
+    - unless @user.real_name.blank?
+      %span#real_name (#{@user.real_name})
 
   #stats
     %h2 Stats

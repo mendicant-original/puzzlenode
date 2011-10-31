@@ -18,6 +18,10 @@ class User < ActiveRecord::Base
     read_attribute(:name) || nickname || "Anonymous ##{id}"
   end
 
+  def real_name
+    read_attribute(:name)
+  end
+
   def refresh_names(hash)
     return if nickname && email
 
