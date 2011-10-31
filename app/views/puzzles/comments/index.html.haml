@@ -10,7 +10,7 @@
   %h1
     = link_to @puzzle.name, puzzle_path(@puzzle)
     %button#comment-button.clean-gray.right Make a comment
-    
+
   #comments_container
     - if false # Disabled current_user.solution_for(@puzzle)
       #share-source{:class => ("blank" if current_user.solution_for(@puzzle).source_url.blank?),
@@ -20,9 +20,9 @@
     #comments
       - if @comments.empty?
         %h3 There are currently no comments
-      
+
         Start off the conversation by creating a comment!
-      
+
       - @comments.each do |comment|
         .comment
           .header
@@ -35,11 +35,11 @@
                 = link_to "Delete", puzzle_comment_path(@puzzle, comment),
                   :method => :delete,
                   :confirm => "Are you sure you wish to delete this comment?"
-          
+
           .description= md comment.body
-    
+
       = will_paginate @comments
-            
+
     #solved-by
       .header Solved by
       - @solved_by.each do |user|
@@ -49,8 +49,8 @@
               :target => "_blank"
             = toggle_source_url(user)
           - else
-            = user.name
-            
+            = link_to user.name, user_path(user.nickname)
+
     #new-comment
       .description
         %h2 Make a comment
