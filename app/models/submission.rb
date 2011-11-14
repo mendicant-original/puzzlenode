@@ -19,7 +19,7 @@ class Submission < ActiveRecord::Base
   end
 
   def only_one_correct_submission_per_puzzle_per_user
-    if user.try(:solution_for, puzzle)
+    if user && !user.draft_access && user.solution_for(puzzle)
       errors[:base] << "You've already solved this puzzle!"
       return false
     end
