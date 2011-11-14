@@ -28,4 +28,11 @@ class SubmissionTest < ActiveSupport::TestCase
 
     assert second_submission.new_record?, "Record saved when it shouldn't"
   end
+
+  test "for users with draft access multiple correct submissions are possible" do
+    @user.update_attribute(:draft_access, true)
+    second_submission = @user.submissions.create(:puzzle => @puzzle, :file => @file)
+
+    assert !second_submission.new_record?, "Record not saved when it should have been"
+  end
 end
