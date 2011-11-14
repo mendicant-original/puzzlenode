@@ -43,7 +43,7 @@ To install a development version of Puzzlenode, follow these steps:
 
 ```bash
 $ rake db:create
-$ rake db:migrate
+$ rake db:schema:load
 ```
 
 Finally, run the test suite to make sure everything is working correctly:
