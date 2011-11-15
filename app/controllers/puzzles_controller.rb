@@ -26,7 +26,11 @@ class PuzzlesController < ApplicationController
     path = File.join(Rails.root, "public", "attachments", params[:id],
                      [params[:file], params[:format]].compact.join("."))
 
-    send_data(File.binread(path))
+    if File.exists?(path)
+      send_data(File.binread(path))
+    else
+      raise ActionController::RoutingError.new('Not Found')
+    end
   end
 
 end
