@@ -5,7 +5,7 @@ class Attachment < ActiveRecord::Base
   before_destroy :delete_file
 
   validates_presence_of   :file_name
-  validates_uniqueness_of :file_name, :scope => :puzzle
+  validates_uniqueness_of :file_name, :scope => :puzzle_id
 
   def file=(tempfile)
     self.file_name = File.basename(tempfile.original_filename)
@@ -34,6 +34,6 @@ class Attachment < ActiveRecord::Base
   end
 
   def delete_file
-    FileUtils.rm(file_path)
+    FileUtils.rm(file_path) if File.exists?(file_path)
   end
 end
