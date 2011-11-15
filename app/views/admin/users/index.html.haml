@@ -1,6 +1,10 @@
 #users.admin_list
   %h2 Users
 
+  %form{:method => "GET", :class => "search"}
+    = text_field_tag :search, params[:search]
+    = submit_tag "Search"
+
   %table
     %tr
       %th Name

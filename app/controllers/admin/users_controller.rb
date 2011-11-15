@@ -4,8 +4,14 @@ module Admin
     before_filter :find_user, :only => [:edit, :update, :destroy]
 
     def index
-      @users = User.order("created_at DESC").
-        paginate(:page => params[:page])
+      @users = User.order("created_at DESC")
+
+      unless params[:search].blank?
+        @users = @users.where(%{name ILIKE :criteria OR nickname ILIKE :criteria
+          OR email ILIKE :criteria}, :criteria => "%#{params[:search]}%")
+      end
+
+      @users = @users.paginate(:page => params[:page])
     end
 
     def edit
