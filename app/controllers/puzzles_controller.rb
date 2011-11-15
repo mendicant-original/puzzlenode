@@ -23,11 +23,11 @@ class PuzzlesController < ApplicationController
   end
 
   def attachments
-    path = File.join(Rails.root, "public", "attachments", params[:id],
-                     [params[:file], params[:format]].compact.join("."))
+    attachment = Attachment.where("file_name ILIKE ? AND puzzle_id = ?",
+      [params[:file], params[:format]].compact.join("."), params[:id]).first
 
-    if File.exists?(path)
-      send_data(File.binread(path))
+    if attachment
+      send_data(File.binread(attachment.file_path))
     else
       raise ActionController::RoutingError.new('Not Found')
     end
