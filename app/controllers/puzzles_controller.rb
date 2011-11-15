@@ -15,7 +15,7 @@ class PuzzlesController < ApplicationController
     @puzzle = Puzzle.find(params[:id])
 
     unless @puzzle.published?
-      if current_user.nil? || !current_user.draft_access
+      if current_user.nil? || !(current_user.draft_access || current_user.admin)
         flash[:error] = "Sorry, this puzzle hasn't been published yet."
         redirect_to root_path
       end
