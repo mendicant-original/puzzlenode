@@ -25,20 +25,24 @@ module Admin
       assert_content "Test Puzzle"
     end
 
-    test "Future puzzles aren't visible to basic users but admins can see them" do
-      visible_puzzle = Factory(:puzzle, :name => "Visible Puzzle",
-                                        :released_on => Date.yesterday)
-      hidden_puzzle  = Factory(:puzzle, :name => "Hidden Puzzle",
-                                        :released_on => Date.tomorrow)
+    test "Unpublished puzzles aren't visible to basic users but admins can see them" do
+      published_puzzle   = Factory(:puzzle, :name => "Published Puzzle",
+                                   :released_on => Date.yesterday,
+                                   :published => true)
+
+      unpublished_puzzle = Factory(:puzzle, :name => "Unpublished Puzzle",
+                                   :released_on => Date.yesterday,
+                                   :published => false)
 
       visit root_path
 
-      assert_content "Visible Puzzle"
-      assert_no_content "Hidden Puzzle"
+      assert_content "Published Puzzle"
+      assert_no_content "Unpublished Puzzle"
 
       sign_user_in
 
-      assert_content "Hidden Puzzle"
+      assert_content "Published Puzzle"
+      assert_content "Unpublished Puzzle"
     end
   end
 end

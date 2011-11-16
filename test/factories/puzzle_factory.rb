@@ -5,4 +5,5 @@ Factory.define :puzzle do |p|
   p.tag_list          "Game, Graphics"
   p.file              Tempfile.new("test_tempfile")
   p.released_on       DateTime.yesterday
+  p.published         true
 end
