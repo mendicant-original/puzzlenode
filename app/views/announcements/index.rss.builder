@@ -1,4 +1,4 @@
-xml.instruct! :xml, :version => "1.0" 
+xml.instruct! :xml, :version => "1.0"
 xml.rss :version => "2.0",  'xmlns:atom' => "http://www.w3.org/2005/Atom" do
   xml.channel do
     xml.title "PuzzleNode"
@@ -11,8 +11,8 @@ xml.rss :version => "2.0",  'xmlns:atom' => "http://www.w3.org/2005/Atom" do
         xml.description md(announcement.body)
         xml.author announcement.author.name
         xml.pubDate announcement.created_at.to_s(:rfc822)
-        xml.link "http://puzzlenode.com/#{announcement.id}"
-        xml.guid "http://puzzlenode.com/#{announcement.id}"
+        xml.link "http://puzzlenode.com/announcements/#{announcement.id}"
+        xml.guid "http://puzzlenode.com/announcements/#{announcement.id}"
       end
     end
   end
