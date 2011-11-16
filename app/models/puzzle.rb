@@ -13,7 +13,7 @@ class Puzzle < ActiveRecord::Base
     if user && (user.draft_access || user.admin)
       self
     else
-      where("released_on <= ?", Date.today)
+      where(:published => true)
     end
   end
 
@@ -35,13 +35,9 @@ class Puzzle < ActiveRecord::Base
 
   def solved_by
     User.includes(:submissions).
-      where(["submissions.puzzle_id = ? AND submissions.correct = ?",
-              self.id, true]).
+      where("submissions.puzzle_id = ? AND submissions.correct = ?",
+            self.id, true).
       order("submissions.created_at")
-  end
-
-  def published?
-    released_on <= Date.today
   end
 
   private

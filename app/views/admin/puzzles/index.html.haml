@@ -8,6 +8,7 @@
     %tr
       %th Name
       %th Released on
+      %th Published
       %th Tags
       %th Created at
       %th Submissions
@@ -19,6 +20,7 @@
           = link_to puzzle.name,
             edit_admin_puzzle_path(puzzle)
         %td= puzzle.released_on
+        %td= puzzle.published
         %td= puzzle.tag_list
         %td= puzzle.created_at
         %td= puzzle.submissions.count

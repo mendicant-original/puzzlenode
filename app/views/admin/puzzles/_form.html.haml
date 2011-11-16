@@ -18,6 +18,9 @@
     %br
     = f.date_select :released_on
   %p
+    = f.label :published?
+    = f.check_box :published
+  %p
     = f.label :tag_list, "Tags"
     %br
     = f.text_field :tag_list
