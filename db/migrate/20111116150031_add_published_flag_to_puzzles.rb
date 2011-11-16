@@ -2,12 +2,7 @@ class AddPublishedFlagToPuzzles < ActiveRecord::Migration
   def self.up
     add_column :puzzles, :published, :boolean, :default => false
 
-    puzzles = Puzzle.where("released_on <= ?", Date.today)
-
-    puzzles.each do |p|
-      p.published = true
-      p.save
-    end
+    Puzzle.where("released_on <= ?", Date.today).update_all(:published => true)
   end
 
   def self.down

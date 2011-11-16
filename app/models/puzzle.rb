@@ -13,8 +13,7 @@ class Puzzle < ActiveRecord::Base
     if user && (user.draft_access || user.admin)
       self
     else
-      where("released_on <= ? AND published = ?",
-            Date.today, true)
+      where(:published => true)
     end
   end
 
