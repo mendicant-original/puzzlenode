@@ -48,8 +48,10 @@
             = link_to user.name, user.solution_for(@puzzle).source_url,
               :target => "_blank"
             = toggle_source_url(user)
-          - else
+          - elsif !user.nickname.blank?
             = link_to user.name, user_path(user.nickname)
+          - else
+            = user.name
 
     #new-comment
       .description
