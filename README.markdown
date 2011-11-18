@@ -54,7 +54,7 @@ $ rake test
 
 ## Contributing
 
-Features and bugs are tracked in [Github Issues](https://github.com/rmu/puzzlenode/issues). 
+Features and bugs are tracked through [Github Issues](https://github.com/rmu/puzzlenode/issues). 
 
 Contributors retain copyright to their work but must agree to release their
 contributions under the [Affero GPL version 3](http://www.gnu.org/licenses/agpl.html)
