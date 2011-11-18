@@ -54,10 +54,7 @@ $ rake test
 
 ## Contributing
 
-Approved features are tracked in
-[Pivotal Tracker](https://www.pivotaltracker.com/projects/258601) while bugs
-and requested features should be entered into
-[Github Issues](https://github.com/rmu/puzzlenode/issues).
+Features and bugs are tracked in [Github Issues](https://github.com/rmu/puzzlenode/issues). 
 
 Contributors retain copyright to their work but must agree to release their
 contributions under the [Affero GPL version 3](http://www.gnu.org/licenses/agpl.html)
