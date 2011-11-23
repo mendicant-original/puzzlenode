@@ -6,7 +6,7 @@ body
   *font-size:small
   color: #292929
   background-color: #333
-  font-family: "Gill Sans", "Tacoma", "Arial", Geneva,Verdana,sans-serif
+  font-family: $pn_body_font
 
 header
   padding: 1.25em
@@ -90,6 +90,17 @@ header
     div.clear
       clear: both
 
+    &#admin_nav
+      background: $pn_blue
+      border-bottom: 1px solid $pn_dark_blue
+      ul
+        li
+          &.orange
+            color: $pn_orange
+          a
+            font-family: $pn_body_font
+            font-size: 1em
+            font-weight: bold
 
 .wrap
   width: 970px

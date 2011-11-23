@@ -23,6 +23,9 @@
           = image_tag "loading.gif", :class => "loading"
       %nav
         .wrap= render :partial => "shared/nav"
+      - if current_user.try(:admin)
+        %nav#admin_nav
+          .wrap= render :partial => "shared/admin_nav"
     #content
       .wrap= yield
     #footer
