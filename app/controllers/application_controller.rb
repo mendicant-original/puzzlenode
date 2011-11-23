@@ -27,7 +27,6 @@ class ApplicationController < ActionController::Base
 
   def user_required
     unless signed_in?
-      flash[:error] = "Please sign in to continue!"
       store_location
       redirect_to login_path
     end
