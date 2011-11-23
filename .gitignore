@@ -3,6 +3,8 @@ db/*.sqlite3
 log/*.log
 tmp/**/*
 .rvmrc
+*.swp
+.sass-cache
 config/database.yml
 config/omniauth.yml
 public/attachments
