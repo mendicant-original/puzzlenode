@@ -92,11 +92,16 @@ header
 
     &#admin_nav
       background: $pn_blue
-      border-bottom: 1px solid $pn_dark_blue
       ul
         li
           &.orange
-            color: $pn_orange
+            background-color: $pn_orange
+            color: #853A12
+            font-size: 1em
+            font-weight: bold
+            padding: 0.5em
+            +border-bottom-radius(10px)
+            +text-shadow(#DE8964, -1px, -1px)
           a
             font-family: $pn_body_font
             font-size: 1em
@@ -113,7 +118,6 @@ header
   font-size: 16px
   min-height: 200px
   border-bottom: 1px solid #254980
-  border-top: 1px solid #254980
 
 ::-moz-selection
   background: $pn_orange
