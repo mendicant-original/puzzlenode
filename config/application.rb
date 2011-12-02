@@ -50,5 +50,7 @@ module Puzzlenode
     config.filter_parameters += [:password]
 
     config.autoload_paths += %W(#{config.root}/lib)
+
+    Haml::Template.options[:ugly] = true
   end
 end
