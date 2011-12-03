@@ -14,7 +14,10 @@
   #description
     = md @puzzle.description
     - if @puzzle.attachments.any?
-      %h2 Files
+      #files-header
+        %h2 Files
+        %button.clean-gray{:'data-url' => root_path}
+          Download All
       #files
         - @puzzle.attachments.map do |file|
           = link_to image_tag("icons/file_small.png") + file.file_name,
