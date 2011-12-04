@@ -90,4 +90,15 @@ class PuzzleTest < ActiveSupport::TestCase
 
     assert_equal 2, puzzle.tags.count
   end
+
+  test "must generate a filename with markdown extension from its name attribute" do
+    puzzle = Factory(:puzzle, :name => "Six Degrees of Separation")
+    assert_equal puzzle.file_name, "six_degrees_of_separation.markdown"
+  end
+
+  test "must generate a filepath" do
+    puzzle = Factory(:puzzle, :name => "Six Degrees of Separation")
+    assert_equal puzzle.file_path, File.join(Rails.root, 'public', 'puzzles',
+                                             puzzle.id.to_s, puzzle.file_name)
+  end
 end
