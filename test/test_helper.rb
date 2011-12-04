@@ -29,6 +29,9 @@ class ActiveSupport::TestCase
     FileUtils.rm_rf(attachment.directory)
   end
 
+  def cleanup_puzzles
+    FileUtils.rm_rf(File.join(Rails.root, 'public', 'puzzles'))
+  end
 end
 
 class ActionDispatch::IntegrationTest
