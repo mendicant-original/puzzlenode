@@ -5,6 +5,6 @@
     
   #comments
     = form_for @comment, :url => puzzle_comment_path(@puzzle, @comment) do |f|
-      = f.text_area :body
+      = f.text_area :body, 'data-preview' => true
       .action
         = f.submit "Save"

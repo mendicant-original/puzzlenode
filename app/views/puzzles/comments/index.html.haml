@@ -57,6 +57,6 @@
       .description
         %h2 Make a comment
       = form_for Comment.new, :url => puzzle_comments_path(@puzzle) do |f|
-        = f.text_area :body
+        = f.text_area :body, 'data-preview' => true
         .action
           = f.submit "Comment"
