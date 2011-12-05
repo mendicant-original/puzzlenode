@@ -1,8 +1,4 @@
 class PuzzleFile
-  def initialize(puzzle)
-    @puzzle = puzzle
-  end
-
   # The purpose of these class methods are to provide a nicer interface.
   # It does not make a lot of sense to say PuzzleFile.new as that would
   # confuse the reader into thinking a new file is being created when in
@@ -17,9 +13,17 @@ class PuzzleFile
       new(puzzle).delete
     end
 
-    def saved_to_disk?(puzzle)
+    def path_for(puzzle)
+      new(puzzle).file_path
+    end
+
+    def saved?(puzzle)
       new(puzzle).file_exists?
     end
+  end
+
+  def initialize(puzzle)
+    @puzzle = puzzle
   end
 
   # Pulls data from the puzzle to create the file contents
@@ -56,18 +60,18 @@ class PuzzleFile
   end
 
   def directory
-    File.join(Rails.root, 'public', 'puzzles', @puzzle.id.to_s)
+    File.join(Rails.root, 'public', 'puzzles')
   end
 
   def file_name
-    @puzzle.name.titleize.gsub(" ", "").underscore + ".markdown"
+    @puzzle.id.to_s + "-" + @puzzle.name.titleize.gsub(" ", "").underscore + ".markdown"
   end
 
   def file_exists?
     File.exists?(file_path)
   end
 
-  # def public_path
-  #   "/puzzles/#{puzzle.id}.markdown"
-  # end
+  def public_path
+    "/puzzles/#{file_name}"
+  end
 end

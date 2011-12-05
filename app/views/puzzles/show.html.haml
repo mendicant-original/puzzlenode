@@ -19,7 +19,6 @@
         %button.clean-gray{:'data-url' => root_path}
           Download All
       #files
-        - @puzzle.attachments.map do |file|
-          = link_to image_tag("icons/file_small.png") + file.file_name,
-            file.public_path,
-            :target => "_blank"
+        = file_link @puzzle_as_markdown
+        - @puzzle.attachments.map do |attachment|
+          = file_link attachment

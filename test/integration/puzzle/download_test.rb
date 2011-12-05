@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class Puzzle
-  class DownloadAllTest < ActionDispatch::IntegrationTest
+  class DownloadTest < ActionDispatch::IntegrationTest
 
     setup do
       @tempfile = Tempfile.new("puzzle_example")
@@ -15,10 +15,7 @@ class Puzzle
       puzzle = Factory(:puzzle)
       attachment = puzzle.attachments.create(:file => @uploaded_file)
 
-      p puzzle.attachments
-
       visit puzzle_path(puzzle)
-      puts page.html
       assert page.has_button?("Download All"), "No download all button found"
 
       cleanup_attachment(attachment)

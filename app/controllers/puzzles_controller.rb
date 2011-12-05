@@ -21,6 +21,8 @@ class PuzzlesController < ApplicationController
     # TODO Remove legacy Puzzle#id based routes
     @puzzle ||= Puzzle.find(params[:id])
 
+    @puzzle_as_markdown = PuzzleFile.new(@puzzle)
+
     unless @puzzle.published?
       if current_user.nil? || !(current_user.draft_access || current_user.admin)
         flash[:error] = "Sorry, this puzzle hasn't been published yet."

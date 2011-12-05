@@ -3,17 +3,19 @@ require 'test_helper'
 class PuzzleFileTest < ActiveSupport::TestCase
   setup do
     @puzzle = OpenStruct.new
+    @puzzle.id = 1
     @puzzle.name = "Six Degrees of Separation"
     @puzzle.description = "Find connections!"
     @puzzle_file = PuzzleFile.new(@puzzle)
   end
 
   test "must generate a filename with markdown extension from its name attribute" do
-    assert_equal @puzzle_file.file_name, "six_degrees_of_separation.markdown"
+    assert_equal @puzzle_file.file_name, "1-six_degrees_of_separation.markdown"
   end
 
   test "must generate a filepath" do
-    expected_path = File.join(Rails.root, 'public', 'puzzles', @puzzle.id.to_s, @puzzle_file.file_name)
+    expected_path = File.join(Rails.root, 'public', 'puzzles',
+                              "1-six_degrees_of_separation.markdown")
     assert_equal @puzzle_file.file_path, expected_path
   end
 
@@ -40,8 +42,8 @@ class PuzzleFileTest < ActiveSupport::TestCase
 
   test "knows if a file is saved to disk" do
     cleanup_puzzles
-    assert !PuzzleFile.saved_to_disk?(@puzzle)
+    assert !PuzzleFile.saved?(@puzzle)
     @puzzle_file.save
-    assert PuzzleFile.saved_to_disk?(@puzzle)
+    assert PuzzleFile.saved?(@puzzle)
   end
 end
