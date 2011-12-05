@@ -2,7 +2,9 @@ require 'test_helper'
 
 class PuzzleFileTest < ActiveSupport::TestCase
   setup do
-    @puzzle = Factory(:puzzle, :name => "Six Degrees of Separation")
+    @puzzle = OpenStruct.new
+    @puzzle.name = "Six Degrees of Separation"
+    @puzzle.description = "Find connections!"
     @puzzle_file = PuzzleFile.new(@puzzle)
   end
 
@@ -34,5 +36,12 @@ class PuzzleFileTest < ActiveSupport::TestCase
     assert File.exists?(@puzzle_file.file_path), "File does not exist before deleting"
     @puzzle_file.delete
     assert !File.exists?(@puzzle_file.file_path), "File was not deleted"
+  end
+
+  test "knows if a file is saved to disk" do
+    cleanup_puzzles
+    assert !PuzzleFile.saved_to_disk?(@puzzle)
+    @puzzle_file.save
+    assert PuzzleFile.saved_to_disk?(@puzzle)
   end
 end

@@ -3,6 +3,11 @@ class PuzzleFile
     @puzzle = puzzle
   end
 
+  # The purpose of these class methods are to provide a nicer interface.
+  # It does not make a lot of sense to say PuzzleFile.new as that would
+  # confuse the reader into thinking a new file is being created when in
+  # fact we are just instantiating the class. PuzzleFile.save(puzzle) is
+  # much more intention revealing.
   class << self
     def save(puzzle)
       new(puzzle).save_new_copy
@@ -10,6 +15,10 @@ class PuzzleFile
 
     def delete(puzzle)
       new(puzzle).delete
+    end
+
+    def saved_to_disk?(puzzle)
+      new(puzzle).file_exists?
     end
   end
 
