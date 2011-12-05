@@ -91,14 +91,15 @@ class PuzzleTest < ActiveSupport::TestCase
     assert_equal 2, puzzle.tags.count
   end
 
-  test "must generate a filename with markdown extension from its name attribute" do
-    puzzle = Factory(:puzzle, :name => "Six Degrees of Separation")
-    assert_equal puzzle.file_name, "six_degrees_of_separation.markdown"
+  test "saves the file to disk after save is called on the model" do
+    puzzle = Factory.build(:puzzle)
+    PuzzleFile.expects(:save)
+    puzzle.save
   end
 
-  test "must generate a filepath" do
-    puzzle = Factory(:puzzle, :name => "Six Degrees of Separation")
-    assert_equal puzzle.file_path, File.join(Rails.root, 'public', 'puzzles',
-                                             puzzle.id.to_s, puzzle.file_name)
+  test "deletes the file when destroyed" do
+    puzzle = Factory(:puzzle)
+    PuzzleFile.expects(:delete)
+    puzzle.destroy
   end
 end
