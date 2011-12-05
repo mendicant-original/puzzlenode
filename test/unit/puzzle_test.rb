@@ -93,13 +93,13 @@ class PuzzleTest < ActiveSupport::TestCase
 
   test "saves the file to disk after save is called on the model" do
     puzzle = Factory.build(:puzzle)
-    PuzzleFile.expects(:save)
+    puzzle.puzzle_file.expects(:save)
     puzzle.save
   end
 
   test "deletes the file when destroyed" do
     puzzle = Factory(:puzzle)
-    PuzzleFile.expects(:delete)
+    puzzle.puzzle_file.expects(:delete)
     puzzle.destroy
   end
 end

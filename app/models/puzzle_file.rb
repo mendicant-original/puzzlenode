@@ -1,24 +1,11 @@
 class PuzzleFile
-  # The purpose of these class methods are to provide a nicer interface.
-  # It does not make a lot of sense to say PuzzleFile.new as that would
-  # confuse the reader into thinking a new file is being created when in
-  # fact we are just instantiating the class. PuzzleFile.save(puzzle) is
-  # much more intention revealing.
   class << self
-    def save(puzzle)
+    def find_or_create(puzzle)
       new(puzzle).save_new_copy
-    end
-
-    def delete(puzzle)
-      new(puzzle).delete
     end
 
     def path_for(puzzle)
       new(puzzle).file_path
-    end
-
-    def saved?(puzzle)
-      new(puzzle).file_exists?
     end
   end
 
@@ -34,17 +21,18 @@ class PuzzleFile
   end
 
   # Overwrites a file if one already exists, otherwise it just saves
-  # Returns no useful value
+  # Returns the PuzzleFile instance
   def save_new_copy
-    delete if file_exists?
-    save
+    delete and save if file_exists?
+    self
   end
 
   # Creates the directory if it doesn't exist and saves the file
-  # Returns no useful value
+  # Returns the PuzzleFile instance
   def save
     FileUtils.mkdir_p(directory)
     File.open(file_path, "wb") { |f| f.write(contents) }
+    self
   end
 
   # Deletes the file at the file path

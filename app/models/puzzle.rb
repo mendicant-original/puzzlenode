@@ -26,12 +26,16 @@ class Puzzle < ActiveRecord::Base
     slug
   end
 
+  def puzzle_file
+    @puzzle_file ||= PuzzleFile.new(self)
+  end
+
   def save_to_file
-    PuzzleFile.save(self)
+    puzzle_file.save
   end
 
   def delete_file
-    PuzzleFile.delete(self)
+    puzzle_file.delete
   end
 
   def file=(tempfile)

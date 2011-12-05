@@ -23,7 +23,7 @@ class PuzzleFileTest < ActiveSupport::TestCase
     cleanup_puzzles
 
     assert !File.exists?(@puzzle_file.file_path)
-    PuzzleFile.save(@puzzle)
+    PuzzleFile.new(@puzzle).save
     assert File.exists?(@puzzle_file.file_path)
   end
 
@@ -42,8 +42,9 @@ class PuzzleFileTest < ActiveSupport::TestCase
 
   test "knows if a file is saved to disk" do
     cleanup_puzzles
-    assert !PuzzleFile.saved?(@puzzle)
+
+    refute @puzzle_file.file_exists?
     @puzzle_file.save
-    assert PuzzleFile.saved?(@puzzle)
+    assert @puzzle_file.file_exists?
   end
 end
