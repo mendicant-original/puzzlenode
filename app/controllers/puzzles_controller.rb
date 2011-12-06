@@ -21,7 +21,7 @@ class PuzzlesController < ApplicationController
     # TODO Remove legacy Puzzle#id based routes
     @puzzle ||= Puzzle.find(params[:id])
 
-    @puzzle_as_markdown = PuzzleFile.find_or_create(@puzzle)
+    @puzzle_as_markdown = PuzzleFile.find(@puzzle)
 
     unless @puzzle.published?
       if current_user.nil? || !(current_user.draft_access || current_user.admin)

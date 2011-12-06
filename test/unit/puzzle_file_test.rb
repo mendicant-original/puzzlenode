@@ -10,12 +10,12 @@ class PuzzleFileTest < ActiveSupport::TestCase
   end
 
   test "must generate a filename with markdown extension from its name attribute" do
-    assert_equal @puzzle_file.file_name, "1-six_degrees_of_separation.markdown"
+    assert_equal @puzzle_file.file_name, "six_degrees_of_separation.markdown"
   end
 
   test "must generate a filepath" do
     expected_path = File.join(Rails.root, 'public', 'puzzles',
-                              "1-six_degrees_of_separation.markdown")
+                              "six_degrees_of_separation.markdown")
     assert_equal @puzzle_file.file_path, expected_path
   end
 

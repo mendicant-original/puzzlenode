@@ -1,7 +1,7 @@
 class PuzzleFile
   class << self
-    def find_or_create(puzzle)
-      new(puzzle).save_new_copy
+    def find(puzzle)
+      new(puzzle)
     end
 
     def path_for(puzzle)
@@ -23,7 +23,7 @@ class PuzzleFile
   # Overwrites a file if one already exists, otherwise it just saves
   # Returns the PuzzleFile instance
   def save_new_copy
-    delete and save if file_exists?
+    delete and save
     self
   end
 
@@ -38,7 +38,7 @@ class PuzzleFile
   # Deletes the file at the file path
   # Returns no useful value
   def delete
-    FileUtils.rm(file_path)
+    FileUtils.rm(file_path) if file_exists?
   end
 
   # Refers to the full path to the location on disk for the puzzle file
@@ -52,7 +52,7 @@ class PuzzleFile
   end
 
   def file_name
-    @puzzle.id.to_s + "-" + @puzzle.name.titleize.gsub(" ", "").underscore + ".markdown"
+    @puzzle.name.titleize.gsub(" ", "").underscore + ".markdown"
   end
 
   def file_exists?
