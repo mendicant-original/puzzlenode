@@ -24,6 +24,7 @@ $tab_height: 32px
 
 ul.tabs
   margin: 0
+  margin-top: 0.5em
   padding: 0
   list-style: none
   height: $tab_height
@@ -33,15 +34,14 @@ ul.tabs
     float: left
     margin: 0
     padding: 0
-    height: $tab_height - 1 
+    height: $tab_height - 1
     line-height: $tab_height - 1
     border: 1px solid #999
     margin-bottom: -1px
     overflow: hidden
     position: relative
     background: #e0e0e0
-    border-top-left-radius: 8px
-    border-top-right-radius: 8px
+    +border-top-radius(8px)
 
     a
       text-decoration: none
@@ -51,6 +51,7 @@ ul.tabs
       padding: 0 20px
       border: 1px solid #fff
       outline: none
+      +border-top-radius(8px)
       &:hover
         background: #ccc
 
