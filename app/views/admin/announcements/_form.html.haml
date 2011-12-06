@@ -10,7 +10,7 @@
     %br
     = f.select :author_id, User.admin.map {|u| [u.name, u.id]}
   %p
-    = f.text_area :body
+    = f.text_area :body, 'data-preview' => true
   %p.controls
     = f.submit
     - if @announcement.new_record?

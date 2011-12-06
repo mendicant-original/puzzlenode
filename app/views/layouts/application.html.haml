@@ -8,7 +8,7 @@
 
     %meta{:name=>"viewport", :content=>"width=1050"}
     = stylesheet_link_tag 'application'
-    = javascript_include_tag 'application'
+    = javascript_include_tag 'application', :debug => Rails.env.development?
     = csrf_meta_tag
 
     = yield(:header_bottom)

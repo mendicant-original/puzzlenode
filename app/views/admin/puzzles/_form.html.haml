@@ -31,11 +31,11 @@
   %p
     = f.label :description
     %br
-    = f.text_area :description
+    = f.text_area :description, 'data-preview' => true
   %p
     = f.label :notice
     %br
-    = f.text_area :notice
+    = f.text_area :notice, 'data-preview' => true
 
   - if @puzzle.fingerprint
     %p
