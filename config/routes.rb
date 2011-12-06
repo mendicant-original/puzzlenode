@@ -32,4 +32,6 @@ Puzzlenode::Application.routes.draw do
 
     match "/" => 'puzzles#index', :as => 'admin'
   end
+
+  match 'markdown/parse' => 'markdown#parse', :as => "parse_markdown"
 end
