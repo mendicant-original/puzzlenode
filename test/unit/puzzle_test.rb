@@ -1,6 +1,11 @@
 require 'test_helper'
 
 class PuzzleTest < ActiveSupport::TestCase
+  test "must require a slug" do
+    puzzle = Factory.build(:puzzle, :slug => nil)
+    refute puzzle.valid?
+  end
+
   test "must be able to create a fingerprint for a file" do
     tempfile = Tempfile.new("puzzle_sample")
     tempfile << "Sample Text\n"
@@ -9,7 +14,7 @@ class PuzzleTest < ActiveSupport::TestCase
     expected_fingerprint = Digest::SHA1.hexdigest(tempfile.read)
     tempfile.rewind
 
-    puzzle = Puzzle.new(:file => tempfile)
+    puzzle = Factory(:puzzle, :file => tempfile)
 
     assert_equal expected_fingerprint, puzzle.fingerprint
   end
@@ -23,7 +28,7 @@ class PuzzleTest < ActiveSupport::TestCase
     test_tempfile << "sample text"
     test_tempfile.rewind
 
-    puzzle = Puzzle.new(:file => seed_tempfile)
+    puzzle = Factory(:puzzle, :file => seed_tempfile)
 
     assert puzzle.valid_solution?(test_tempfile)
   end
@@ -37,7 +42,7 @@ class PuzzleTest < ActiveSupport::TestCase
     test_tempfile << "wow, this totally doesn't match, buddy"
     test_tempfile.rewind
 
-    puzzle = Puzzle.new(:file => seed_tempfile)
+    puzzle = Factory(:puzzle, :file => seed_tempfile)
 
     assert !puzzle.valid_solution?(test_tempfile)
   end
@@ -51,10 +56,10 @@ class PuzzleTest < ActiveSupport::TestCase
     tempfile2 << "First line\r\nSecond line"
     tempfile2.rewind
 
-    puzzle = Puzzle.new(:file => tempfile1)
+    puzzle = Factory(:puzzle, :file => tempfile1)
     assert puzzle.valid_solution?(tempfile2)
 
-    puzzle = Puzzle.new(:file => tempfile2)
+    puzzle = Factory(:puzzle, :file => tempfile2)
     assert puzzle.valid_solution?(tempfile1)    
   end
 
@@ -67,10 +72,10 @@ class PuzzleTest < ActiveSupport::TestCase
     tempfile2 << "First line"
     tempfile2.rewind
 
-    puzzle = Puzzle.new(:file => tempfile1)
+    puzzle = Factory(:puzzle, :file => tempfile1)
     assert puzzle.valid_solution?(tempfile2)
 
-    puzzle = Puzzle.new(:file => tempfile2)
+    puzzle = Factory(:puzzle, :file => tempfile2)
     assert puzzle.valid_solution?(tempfile1)    
   end
 

@@ -14,12 +14,7 @@ class ActiveSupport::TestCase
     test_tempfile << "Sample Text"
     test_tempfile.rewind
 
-    return Puzzle.create(
-      :name              => "test",
-      :description       => "test",
-      :short_description => "test",
-      :file              => test_tempfile
-    )
+    Factory(:puzzle, :file => test_tempfile)
   end
 
   def create_submission(puzzle, user, correct)

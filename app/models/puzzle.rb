@@ -7,7 +7,8 @@ class Puzzle < ActiveRecord::Base
 
   accepts_nested_attributes_for :attachments, :allow_destroy => true
 
-  validates_presence_of :name, :short_description, :description
+  validates_presence_of   :name, :short_description, :description, :slug
+  validates_uniqueness_of :slug
 
   def self.published(user=nil)
     if user && (user.draft_access || user.admin)
