@@ -12,7 +12,7 @@ class PuzzlesController < ApplicationController
   end
 
   def show
-    @puzzle = Puzzle.find_by_slug(params[:id])
+    @puzzle = Puzzle.find_by_slug!(params[:id])
 
     unless @puzzle.published?
       if current_user.nil? || !(current_user.draft_access || current_user.admin)
