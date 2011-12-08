@@ -14,7 +14,6 @@ module Admin
       visit new_admin_puzzle_path
 
       fill_in "Name",              :with => "Test Puzzle"
-      # VVV this will be removed, just getting test passing VVV
       fill_in "Slug",              :with => "test-puzzle"
       fill_in "Short description", :with => "Test Puzzle Short Desc"
       fill_in "Description",       :with => "Test Puzzle Desc"

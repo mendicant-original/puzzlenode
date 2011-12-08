@@ -6,6 +6,12 @@ class PuzzleTest < ActiveSupport::TestCase
     refute puzzle.valid?
   end
 
+  test "the slug must be unique" do
+    puzzle       = Factory(:puzzle, :slug => "cheese-sticks")
+    other_puzzle = Factory.build(:puzzle, :slug => "cheese-sticks")
+    refute other_puzzle.valid?
+  end
+
   test "must be able to create a fingerprint for a file" do
     tempfile = Tempfile.new("puzzle_sample")
     tempfile << "Sample Text\n"

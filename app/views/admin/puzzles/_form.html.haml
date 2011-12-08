@@ -1,3 +1,9 @@
+- content_for :header_bottom do
+  :javascript
+    $(function(){
+      PuzzleNode.Slugger.watch('puzzle_name', 'puzzle_slug');
+    })
+
 = form_for @puzzle, :url => url do |f|
   %h2= @puzzle.name || "New Puzzle"
 

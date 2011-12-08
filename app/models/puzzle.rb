@@ -18,6 +18,10 @@ class Puzzle < ActiveRecord::Base
     end
   end
 
+  def to_param
+    slug
+  end
+
   def file=(tempfile)
     write_attribute :fingerprint, sha1(tempfile)
   end
