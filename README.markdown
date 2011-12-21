@@ -11,12 +11,8 @@ and staff.
 
 If you are not a member of Mendicant University, please get in touch through our public channels:
 
-- **IRC:** #mendicant
+- **IRC:** #mendicant on freenode.net
 - **Twitter:** #mendicant
-
-## Key Features
-
-Coming soon
 
 ## Installation
 
