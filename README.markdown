@@ -64,7 +64,7 @@ Our contact details are at the top of this file.
 ### Submitting a Pull Request
 
 1. If a ticket doesn't exist for your bug or feature, create one on GitHub.
-  __NOTE: It's always a good idea to get feedback on your idea before you begin development work__
+    - _NOTE: Don't be afraid to get feedback on your idea before you begin development work._
 2. Fork the project.
 3. Create a topic branch.
 4. Implement your feature or bug fix.
