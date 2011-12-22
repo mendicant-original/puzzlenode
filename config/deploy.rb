@@ -1,7 +1,7 @@
 require 'bundler/capistrano'
 
 set :application, "puzzlenode"
-set :repository,  "git://github.com/rmu/puzzlenode.git"
+set :repository,  "git://github.com/mendicant-university/puzzlenode.git"
 
 set :scm, :git
 set :deploy_to, "/var/rapp/#{application}"
