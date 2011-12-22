@@ -1,4 +1,4 @@
-![PuzzleNode Logo](https://github.com/rmu/puzzlenode/raw/master/doc/puzzlenode.png)
+![PuzzleNode Logo](https://github.com/mendicant-university/puzzlenode/raw/master/doc/puzzlenode.png)
 
 PuzzleNode is a site for coders who enjoy to work on challenging problems,
 and is inspired by similar efforts such as
@@ -24,7 +24,7 @@ or SQLite are not officially supported.
 
 To install a development version of Puzzlenode, follow these steps:
 
-1. Fork our GitHub repository: <http://github.com/rmu/puzzlenode>
+1. Fork our GitHub repository: <http://github.com/mendicant-university/puzzlenode>
 2. Clone the fork to your computer
 3. Run `bundle install` to install all of the dependencies
 4. Create a `database.yml` file in `config`. The `config` directory contains
@@ -49,7 +49,7 @@ $ rake test
 
 ## Contributing
 
-Features and bugs are tracked through [Github Issues](https://github.com/rmu/puzzlenode/issues).
+Features and bugs are tracked through [Github Issues](https://github.com/mendicant-university/puzzlenode/issues).
 
 Contributors retain copyright to their work but must agree to release their
 contributions under the [Affero GPL version 3](http://www.gnu.org/licenses/agpl.html)
@@ -76,7 +76,7 @@ Our contact details are at the top of this file.
 Jordan Byron // [jordanbyron.com](http://jordanbyron.com) <br/>
 Gregory Brown // [majesticseacreature.com](http://majesticseacreature.com/)
 
-[Full List](https://github.com/rmu/puzzlenode/contributors)
+[Full List](https://github.com/mendicant-university/puzzlenode/contributors)
 
 ------
 
