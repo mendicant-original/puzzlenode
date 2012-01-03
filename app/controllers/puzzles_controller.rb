@@ -5,7 +5,7 @@ class PuzzlesController < ApplicationController
   def index
     @puzzles = Puzzle.published(current_user).order("created_at").all
     fake_user = OpenStruct.new
-    CommentMailer.welcome_email(fake_user).deliver
+    CommentMailer.delay.welcome_email(fake_user)
   end
 
   def tag

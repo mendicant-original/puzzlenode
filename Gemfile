@@ -22,6 +22,7 @@ gem 'jquery-rails'
 
 gem 'delayed_mailhopper'
 gem 'delayed_job_active_record'
+gem 'daemons'
 
 ################
 # Presentation #
