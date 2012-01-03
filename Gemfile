@@ -17,6 +17,13 @@ gem 'acts-as-taggable-on'
 gem 'jquery-rails'
 
 ################
+# Mail #
+################
+
+gem 'delayed_mailhopper'
+gem 'delayed_job_active_record'
+
+################
 # Presentation #
 ################
 
