@@ -1,5 +1,5 @@
 class CommentMailer < ActionMailer::Base
-  default from: "duanjingjing@gmail.com"
+  default from: "puzzlenodetest@gmail.com"
 
   def welcome_email(user)
     @user = user

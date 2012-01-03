@@ -1,7 +1,11 @@
+require "ostruct"
+
 class PuzzlesController < ApplicationController
 
   def index
     @puzzles = Puzzle.published(current_user).order("created_at").all
+    fake_user = OpenStruct.new
+    CommentMailer.welcome_email(fake_user).deliver
   end
 
   def tag

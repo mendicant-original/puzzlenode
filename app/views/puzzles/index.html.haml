@@ -3,6 +3,8 @@
     = button_to "New Puzzle", new_admin_puzzle_path, :method => :get,
       :id => "new-puzzle"
 
+  .content Hello, World!
+
   - @puzzles.each do |puzzle|
     .puzzle
       - if puzzle.answered_correctly? current_user
