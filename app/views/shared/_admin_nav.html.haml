@@ -3,3 +3,4 @@
   %li= link_to "Users", admin_users_path
   %li= link_to "Puzzles", admin_puzzles_path
   %li= link_to "Announcements", admin_announcements_path
+  %li.right= yield(:admin_nav)

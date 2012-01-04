@@ -1,3 +1,8 @@
+- if current_user.try(:admin)
+  - content_for :admin_nav do
+    = button_to "New Announcement", new_admin_announcement_path, :method => :get,
+      :id => "new-announcement"
+
 %p.header-information
   Bookmark this page and visit it often to keep track of news about puzzlenode,
   including new problems or fixes to existing problems. You can also keep track
@@ -10,10 +15,6 @@
   by checking out the #mendicant channel on Freenode.
 
 #announcements
-  - if current_user.try(:admin)
-    = button_to "New Announcement", new_admin_announcement_path, :method => :get,
-      :id => "new-announcement"
-
   - @announcements.each do |announcement|
     = render :partial => "announcement",
       :locals => {:announcement => announcement}

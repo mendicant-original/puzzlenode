@@ -1,4 +1,9 @@
 - title @puzzle.name
+
+- if current_user.try(:admin)
+  - content_for :admin_nav do
+    = button_to "Edit", edit_admin_puzzle_path(@puzzle), :method => :get
+
 #puzzle
   %h1= @puzzle.name
   = render :partial => "info_bar"
