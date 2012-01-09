@@ -1,14 +1,19 @@
 class PuzzlesController < ApplicationController
+  respond_to :html
 
   def index
     @puzzles = Puzzle.published(current_user).order("created_at").all
+
+    respond_with(@puzzles)
   end
 
   def tag
     @puzzles = Puzzle.published(current_user).order("created_at").
                 tagged_with(params[:tag])
 
-    render :index
+    respond_with(@puzzles) do |format|
+      format.html { render :index }
+    end
   end
 
   def show
@@ -20,6 +25,8 @@ class PuzzlesController < ApplicationController
         redirect_to root_path
       end
     end
+
+    respond_with(@puzzle)
   end
 
   def attachments
