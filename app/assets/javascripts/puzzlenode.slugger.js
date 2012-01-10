@@ -6,7 +6,7 @@ PuzzleNode.Slugger.watch = function(sourceField, destinationField){
   sourceField      = $('#' + sourceField);
   destinationField = $('#' + destinationField);
 
-  sourceField.keyup(function(e){    
+  sourceField.keyup(function(e){
     PuzzleNode.Slugger.generate(sourceField.val(), function(data){
       destinationField.val(data);
     })
@@ -14,8 +14,6 @@ PuzzleNode.Slugger.watch = function(sourceField, destinationField){
 }
 
 PuzzleNode.Slugger.generate = function(text, callback){
-  console.debug(text);
-
   $.get("/slugger", {'text': text}, function(data){
     callback(data);
   });
