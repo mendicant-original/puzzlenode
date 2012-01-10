@@ -15,6 +15,7 @@ module Slugger
     slug_text = clean_smart_quotes(text)
     slug_text.gsub!(/[?.!,:'"]/, '')
     slug_text.gsub!(/<[^>]+>/, '')
+    slug_text.gsub!(/\[(\d+)\]/, '\1')
     slug_text.split(' ')[0..5].join('-').downcase
   end
 
