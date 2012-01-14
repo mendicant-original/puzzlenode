@@ -33,4 +33,28 @@ class SubmissionsTest < ActionDispatch::IntegrationTest
 
     assert_current_path user_submission_path(@user, submission)
   end
+
+  test "show source url" do
+    sign_user_in
+
+    puzzle_allow_url = Factory(:puzzle, :allow_source_url => true)
+    create_submission(puzzle_allow_url, @user, true)
+    submission = @user.submissions.last
+
+    visit user_submission_path(@user.id, submission.id)
+
+    assert_content "Share your solution"
+  end
+
+  test "do not show source url" do
+    sign_user_in
+
+    create_submission(@puzzle, @user, true)
+    submission = @user.submissions.last
+
+    visit user_submission_path(@user.id, submission.id)
+
+    assert_no_content "Share your solution"
+  end
+
 end
