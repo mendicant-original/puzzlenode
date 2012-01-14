@@ -18,8 +18,8 @@
       listed below, contact us at puzzlenode@gmail.com. You may also be able to
       find help by checking out the #mendicant channel on Freenode.
 
-  - if @submission.correct
-    - # render :partial => "source_url"
+  - if @submission.correct && @puzzle.allow_source_url
+    = render :partial => "source_url"
 
   #action
     - if @submission.correct

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111116150031) do
+ActiveRecord::Schema.define(:version => 20120114110709) do
 
   create_table "announcements", :force => true do |t|
     t.text     "body"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(:version => 20111116150031) do
     t.date     "released_on"
     t.text     "notice"
     t.boolean  "published",         :default => false
+    t.boolean  "allow_source_url",  :default => false
   end
 
   create_table "submissions", :force => true do |t|
