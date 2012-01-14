@@ -41,6 +41,14 @@ $ rake db:create
 $ rake db:schema:load
 ```
 
+To make things even easier, you can copy and paste this into your terminal once you've got the project cloned to your computer
+
+```bash
+gem install bundler
+bundle install
+bundle exec rake setup
+```
+
 Finally, run the test suite to make sure everything is working correctly:
 
 ```bash

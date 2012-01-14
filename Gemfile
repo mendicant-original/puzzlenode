@@ -33,6 +33,7 @@ gem 'jquery-rails'
 
 gem 'capistrano'
 gem 'exception_notification'
+gem 'highline', '~> 1.6.9'
 
 group :assets do
   gem 'sass-rails',   '~> 3.1.0'
