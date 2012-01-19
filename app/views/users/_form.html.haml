@@ -1,6 +1,4 @@
 = form_for @user, :url => user_path(@user.nickname) do |f|
-  %h2= @user.name || "New User"
-
   %p
     = f.label :Do_you_want_to_receive_notification_when_comments_are_made?
     = f.check_box :notify_comment_made
