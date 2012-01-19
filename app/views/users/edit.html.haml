@@ -1,0 +1,20 @@
+= render :partial => "form"
+
+- title "#{@user.nickname}'s Profile"
+
+#profile
+  %h1
+    = gravatar_image @user, 48
+    = link_to @user.nickname, github_url(@user)
+    - unless @user.real_name.blank?
+      %span#real_name (#{@user.real_name})
+
+  #stats
+    %h2 Stats!!!
+
+    %h3 Problems Solved: #{@user.submissions.correct.count}
+    - if @leaderboard
+      %h3
+        Leaderboard position: #{@leaderboard}
+
+  
