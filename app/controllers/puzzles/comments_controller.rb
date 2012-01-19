@@ -18,9 +18,23 @@ class Puzzles::CommentsController < Puzzles::Base
 
     if @comment.save
       flash[:notice] = "Comment sucessfully created."
+      notify_others(current_user.nickname, @comment, @puzzle.name)
       redirect_to puzzle_comments_path(@puzzle)
     else
       render :action => :new
+    end
+  end
+
+  def notify_others(commenter, comment, puzzle_name)
+    subject = "PuzzleNode new comment"
+    body = "User #{commenter} has just posted a comment " +
+      "to puzzle #{puzzle_name}: \n" + comment
+
+    @puzzle.solved_by.each do |user|
+      if user.notify_comment_made
+        to = user.email
+        CommentMailer.delay.comment_made(subject, to, body)
+      end
     end
   end
 

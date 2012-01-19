@@ -1,11 +1,9 @@
 class CommentMailer < ActionMailer::Base
   default from: "puzzlenodetest@gmail.com"
 
-  def welcome_email(user)
-    @user = user
-    @user.name = "Jingjing Duan"
-    @user.login = "jduan"
-    @url = "http://example.com/login"
-    mail(:to => "duanjingjing@gmail.com", :subject => "Welcome to my site")
+  def comment_made(subject, to, body)
+    @subject = subject
+    @body = body
+    mail(:to => to, :subject => subject)
   end
 end
