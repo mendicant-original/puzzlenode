@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120103073336) do
+ActiveRecord::Schema.define(:version => 20120119073301) do
 
   create_table "announcements", :force => true do |t|
     t.text     "body"
@@ -118,10 +118,11 @@ ActiveRecord::Schema.define(:version => 20120103073336) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "admin",        :default => false
+    t.boolean  "admin",               :default => false
     t.text     "nickname"
-    t.boolean  "draft_access", :default => false
+    t.boolean  "draft_access",        :default => false
     t.string   "email"
+    t.boolean  "notify_comment_made"
   end
 
 end
