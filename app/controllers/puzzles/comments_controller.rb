@@ -14,11 +14,13 @@ class Puzzles::CommentsController < Puzzles::Base
 
   def create
     params[:comment][:user_id] = current_user.id
+    puts "params:"
+    pp params
     @comment = @puzzle.comments.new(params[:comment])
 
     if @comment.save
       flash[:notice] = "Comment sucessfully created."
-      notify_others(current_user.nickname, @comment, @puzzle.name)
+      notify_others(current_user.nickname, @comment.body, @puzzle.name)
       redirect_to puzzle_comments_path(@puzzle)
     else
       render :action => :new
@@ -26,12 +28,17 @@ class Puzzles::CommentsController < Puzzles::Base
   end
 
   def notify_others(commenter, comment, puzzle_name)
-    subject = "PuzzleNode new comment"
+    subject = "PuzzleNode new comment posted"
     body = "User #{commenter} has just posted a comment " +
       "to puzzle #{puzzle_name}: \n" + comment
 
-    @puzzle.solved_by.each do |user|
+    puts "solved_by: #{@puzzle.solved_by}"
+    #solved_users = @puzzle.solved_by
+    solved_users = User.all
+    solved_users.each do |user|
+      puts "solved user: #{user.nickname}"
       if user.notify_comment_made
+        puts "notify user: #{user.nickname}"
         to = user.email
         CommentMailer.delay.comment_made(subject, to, body)
       end
@@ -57,7 +64,8 @@ class Puzzles::CommentsController < Puzzles::Base
   private
 
   def answered_correct_only
-    unless @puzzle.answered_correctly?(current_user) || (current_user && current_user.admin)
+    # TODO: revert this file
+    unless true
       flash[:error] = "You must answer this puzzle correctly before you can access comments"
       redirect_to puzzle_path(@puzzle)
     end

@@ -3,11 +3,10 @@
     = button_to "New Puzzle", new_admin_puzzle_path, :method => :get,
       :id => "new-puzzle"
 
-  .content Hello, World!
-
   - @puzzles.each do |puzzle|
     .puzzle
-      - if puzzle.answered_correctly? current_user
+      / TODO: revert this file 
+      - if true
         = image_tag "solved.png", :class => "solved"
       = link_to puzzle.name, puzzle_path(puzzle)
 
