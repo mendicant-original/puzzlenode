@@ -40,7 +40,18 @@ class User < ActiveRecord::Base
     position + 1 if position
   end
 
+  def leaderboard
+    board = User._leaderboard
+    index = board.index(self) 
+    board[(index - 4), 10]
+  end
+
   def self.leaderboard(limit=10)
+    User._leaderboard.limit(limit).eligible_for_display
+  end
+  
+  private
+  def self._leaderboard
     # For each user, we need a count of correct submissions, along with
     # the date of the most recent correct submission.
 
@@ -58,7 +69,6 @@ class User < ActiveRecord::Base
 
     User.select("users.*, solved, latest_solution").
       joins("INNER JOIN (#{solutions.to_sql}) q1 on q1.user_id = users.id").
-      order("solved DESC", "latest_solution").
-      limit(limit).eligible_for_display
+      order("solved DESC", "latest_solution")
   end
 end
