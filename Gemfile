@@ -15,7 +15,6 @@ gem 'rake',     '~> 0.9.2'
 gem 'pg'
 gem 'acts-as-taggable-on'
 gem 'jquery-rails'
-gem 'faker'
 
 ################
 # Presentation #
@@ -51,4 +50,8 @@ end
 
 group :production do
   gem 'therubyracer'
+end
+
+group :development do
+  gem 'faker', :require => false
 end

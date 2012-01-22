@@ -11,9 +11,10 @@ namespace :db do
 
       10.times do
         date = sometime_last_year
+        name = fake_title
 
         Puzzle.create!(
-          name:              fake_title,
+          name:              name,
           short_description: fake_sentence,
           description:       fake_description,
           created_at:        date,
@@ -21,9 +22,12 @@ namespace :db do
           created_by:        fake_name,
           notice:            fake_sentence,
           released_on:       sometime_next_fortnight(date),
-          published:         true
+          published:         true,
+          slug:              Slugger.generate(name)
         )
       end
+
+      puts "10 puzzles created"
     end
 
     desc "Seed database with fake user data"
@@ -40,6 +44,8 @@ namespace :db do
           updated_at: date
         )
       end
+
+      puts "50 users created"
     end
 
     desc "Seed database with fake announcement data"
@@ -62,6 +68,8 @@ namespace :db do
           updated_at: date
         )
       end
+
+      puts "10 announcements created"
     end
 
     desc "Seed database with fake submission data"
@@ -93,7 +101,7 @@ namespace :db do
               puzzle_id:  puzzle.id,
               correct:    correct,
               created_at: attempt_at,
-              updated_at: attempt_at 
+              updated_at: attempt_at
             )
             submission.save(validate: false)
 

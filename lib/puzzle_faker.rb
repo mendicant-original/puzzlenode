@@ -7,8 +7,8 @@ module PuzzleFaker
   def fake_paragraphs
     p = []
 
-    rand(1..3).times do
-      p << Faker::Lorem.paragraph(rand(4..8))
+    (1 + rand(3)).times do
+      p << Faker::Lorem.paragraph(4 + rand(8))
     end
 
     p.join("\n\n")
@@ -31,15 +31,15 @@ module PuzzleFaker
   end
 
   def fake_sentences
-    Faker::Lorem.sentences(rand(3..5)).join("\n")
+    Faker::Lorem.sentences(3 + rand(5)).join("\n")
   end
 
   def fake_list
-    Faker::Lorem.sentences(rand(3..5)).map{|s| '* ' + s}.join("\n")
+    Faker::Lorem.sentences(3 + rand(5)).map{|s| '* ' + s}.join("\n")
   end
 
   def fake_title
-    Faker::Lorem.words(rand(2..4)).join(' ').titleize
+    Faker::Lorem.words(2 + rand(4)).join(' ').titleize
   end
 
   def fake_heading
@@ -60,7 +60,7 @@ module PuzzleFaker
   def fake_description
     text = [fake_paragraphs]
 
-    rand(3..5).times do
+    (3 + rand(5)).times do
       text << fake_heading
       text << fake_paragraphs
 
