@@ -21,7 +21,7 @@ class Attachment < ActiveRecord::Base
   end
 
   def public_path
-    "/puzzles/#{puzzle.id}/attachments/#{file_name}"
+    "/puzzles/#{puzzle.slug}/attachments/#{file_name}"
   end
 
   private

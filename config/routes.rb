@@ -7,15 +7,16 @@ Puzzlenode::Application.routes.draw do
   match '/logout' => 'sessions#destroy', :as => 'logout'
   match '/login' => 'sessions#new',      :as => 'login'
 
+  match '/puzzles/:slug/attachments/:file', :to => 'puzzles#attachments',
+                                            :as => "attachment"
+
   resources :puzzles do
     resources :submissions, :controller => "Puzzles::Submissions"
     resources :comments,    :controller => "Puzzles::Comments"
   end
 
-  match '/tags/:tag',                       :to => 'puzzles#tag',
-                                            :as => "tag"
-  match '/puzzles/:slug/attachments/:file', :to => 'puzzles#attachments',
-                                            :as => "attachment"
+  match '/tags/:tag',                     :to => 'puzzles#tag',
+                                          :as => "tag"
 
   resources :users do
     resources :submissions, :controller => "Users::Submissions"

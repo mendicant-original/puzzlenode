@@ -32,8 +32,10 @@ class PuzzlesController < ApplicationController
   end
 
   def attachments
+    puzzle = Puzzle.find_by_slug(params[:slug])
+
     attachment = Attachment.where("file_name ILIKE ? AND puzzle_id = ?",
-      [params[:file], params[:format]].compact.join("."), params[:id]).first
+      [params[:file], params[:format]].compact.join("."), puzzle.id).first
 
     if attachment
       send_data(File.binread(attachment.file_path))
