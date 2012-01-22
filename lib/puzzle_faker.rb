@@ -2,8 +2,6 @@ module PuzzleFaker
   # This module uses several magic numbers to represent the relative frequencies
   # of structures as seen in actual puzzles, as seen by actual eyeballs.
 
-  require 'faker'
-
   def fake_paragraphs
     p = []
 
