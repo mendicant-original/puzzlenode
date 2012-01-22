@@ -46,7 +46,7 @@ module Admin
     private
 
     def find_puzzle
-      @puzzle = Puzzle.find(params[:id])
+      @puzzle = Puzzle.find_by_slug!(params[:id])
     end
   end
 end

@@ -12,10 +12,10 @@ Puzzlenode::Application.routes.draw do
     resources :comments,    :controller => "Puzzles::Comments"
   end
 
-  match '/tags/:tag',                     :to => 'puzzles#tag',
-                                          :as => "tag"
-  match '/puzzles/:id/attachments/:file', :to => 'puzzles#attachments',
-                                          :as => "attachment"
+  match '/tags/:tag',                       :to => 'puzzles#tag',
+                                            :as => "tag"
+  match '/puzzles/:slug/attachments/:file', :to => 'puzzles#attachments',
+                                            :as => "attachment"
 
   resources :users do
     resources :submissions, :controller => "Users::Submissions"
@@ -34,4 +34,5 @@ Puzzlenode::Application.routes.draw do
   end
 
   match 'markdown/parse' => 'markdown#parse', :as => "parse_markdown"
+  get "slugger" => "slugger#index", :as => "slugger"
 end
