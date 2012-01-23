@@ -33,6 +33,8 @@ class PuzzlesController < ApplicationController
 
   def attachments
     puzzle = Puzzle.find_by_slug(params[:slug])
+    # TODO Remove legacy Puzzle#id based routes
+    puzzle ||= Puzzle.find(params[:slug])
 
     attachment = Attachment.where("file_name ILIKE ? AND puzzle_id = ?",
       [params[:file], params[:format]].compact.join("."), puzzle.id).first
@@ -43,5 +45,4 @@ class PuzzlesController < ApplicationController
       raise ActionController::RoutingError.new('Not Found')
     end
   end
-
 end
