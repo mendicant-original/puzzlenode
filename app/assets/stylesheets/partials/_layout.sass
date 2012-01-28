@@ -92,8 +92,11 @@ header
 
     &#admin_nav
       background: $pn_blue
+      padding: 0
       ul
         li
+          padding: 0.5em
+          display: inline-block
           &.orange
             background-color: $pn_orange
             color: #853A12
@@ -106,6 +109,9 @@ header
             font-family: $pn_body_font
             font-size: 1em
             font-weight: bold
+          &.right
+            input
+              margin: 0
 
 .wrap
   width: 970px

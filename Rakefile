@@ -5,3 +5,10 @@ require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
 Puzzlenode::Application.load_tasks
+
+task :generate_slugs => :environment do
+  Puzzle.all.each do |puzzle|
+    puzzle.slug = Slugger.generate(puzzle.name)
+    puzzle.save!
+  end
+end

@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(:version => 20120119073301) do
     t.date     "released_on"
     t.text     "notice"
     t.boolean  "published",         :default => false
+    t.string   "slug"
   end
 
   create_table "submissions", :force => true do |t|

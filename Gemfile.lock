@@ -83,6 +83,8 @@ GEM
     factory_girl_rails (1.2.0)
       factory_girl (~> 2.1.0)
       railties (>= 3.0.0)
+    faker (1.0.1)
+      i18n (~> 0.4)
     faraday (0.6.1)
       addressable (~> 2.2.4)
       multipart-post (~> 1.1.0)
@@ -248,6 +250,7 @@ DEPENDENCIES
   delayed_mailhopper
   exception_notification
   factory_girl_rails
+  faker
   haml
   jquery-rails
   omniauth (~> 0.2.5)

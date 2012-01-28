@@ -15,6 +15,7 @@ gem 'rake',     '~> 0.9.2'
 gem 'pg'
 gem 'acts-as-taggable-on'
 gem 'jquery-rails'
+gem 'faker', :require => false
 
 ################
 # Mail #

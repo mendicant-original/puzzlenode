@@ -1,3 +1,8 @@
+- if current_user.try(:admin)
+  - content_for :admin_nav do
+    = button_to "Edit", edit_admin_announcement_path(@announcement),
+      :method => :get
+
 = link_to "&laquo; View all news".html_safe, announcements_path
 
 #announcements
