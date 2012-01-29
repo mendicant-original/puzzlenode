@@ -35,6 +35,20 @@ class User < ActiveRecord::Base
     submissions.where(:puzzle_id => puzzle.id, :correct => true).first
   end
 
+  def local_leaderboard(offset=5)
+    leaderboard_query = "SELECT user_id, rank FROM
+        (SELECT user_id, max(created_at) as latest_solution, count(*) AS solved,
+        rank() OVER (order by count(*) desc, max(created_at)) as rank 
+        FROM submissions GROUP BY user_id) as leaderboard"
+    my_rank = Submission.find_by_sql("
+      #{leaderboard_query} WHERE leaderboard.user_id = #{id.to_s}")
+  
+    rank = my_rank.first.rank.to_i
+
+    Submission.find_by_sql("#{leaderboard_query} 
+      WHERE leaderboard.rank BETWEEN #{rank - offset + 1} AND #{rank + offset}")
+  end
+
   def leaderboard_position(limit=10)
     position = User.leaderboard(limit).index(self)
     position + 1 if position
