@@ -6,7 +6,7 @@ class UsersController < ApplicationController
       flash[:error] = "Sorry, we can't find that user!"
       redirect_to root_path
     else
-      @leaderboard = @user.leaderboard_position(User.count)
+      @leaderboard = @user.leaderboard_position
     end
   end
 
