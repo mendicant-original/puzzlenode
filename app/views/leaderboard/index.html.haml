@@ -12,9 +12,9 @@
     .clear
 
   #generic
-    - @users.each_with_index do |user, i|
+    - @users.each_with_index do |user|
       .row
-        .rank= "##{i + 4}"
+        .rank= "##{user.rank}"
         .user
           = gravatar_image user, 45
           .name
@@ -24,11 +24,11 @@
   
     - if !@local_users.nil?
       %br
-      %h1 Local Leaderboard
+      %br
       #generic
-      - @local_users.each_with_index do |user, i|
+      - @local_users.each_with_index do |user|
         .row
-          .rank= "##{i + 4}"
+          .rank= "##{user.rank}"
           .user
             = gravatar_image user, 45
             .name

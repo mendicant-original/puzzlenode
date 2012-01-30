@@ -37,12 +37,12 @@ class User < ActiveRecord::Base
 
   def local_leaderboard(offset=5)
     rank_offset = leaderboard_position - offset - 1
-    User.leaderboard(0, rank_offset)
+    User.leaderboard(10, rank_offset)
   end
-
+  
   def leaderboard_position
     my_rank = Submission.find_by_sql("SELECT user_id,rank 
-      FROM (#{User.leaderboard.to_sql}) as leaderboard WHERE user_id = #{id}")
+      FROM (#{User.leaderboard(0,0).to_sql}) as leaderboard WHERE user_id = #{id}")
     my_rank.first.rank.to_i unless my_rank.empty?
   end
 
@@ -54,7 +54,7 @@ class User < ActiveRecord::Base
       select('user_id, MAX(created_at) AS latest_solution, COUNT(*) AS solved,
              rank() OVER (ORDER BY COUNT(*) DESC, MAX(created_at))').
       group('user_id')
-
+    
     # We want to sort results by:
     #   1) highest number of correct scores
     #   2) earliest creation date of the *last* correct submission
