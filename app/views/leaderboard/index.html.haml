@@ -20,11 +20,12 @@
           .name
             = link_to user.name, user_path(user.nickname)
             .detail= ranking_detail user
-  
-  
+
+
     - if !@local_users.nil?
-      %br
-      %br
+      %p
+        &bull; &bull; &bull;
+        %span.local People close to your rank
       #generic
       - @local_users.each_with_index do |user|
         .row
