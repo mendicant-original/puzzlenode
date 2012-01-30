@@ -3,8 +3,7 @@ class UsersController < ApplicationController
 
   def show
     unless @user
-      flash[:error] = "Sorry, we can't find that user!"
-      redirect_to root_path
+      raise ActionController::RoutingError.new('Not Found')
     else
       @leaderboard = @user.leaderboard_position
     end
