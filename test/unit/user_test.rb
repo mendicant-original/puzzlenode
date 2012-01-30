@@ -66,14 +66,14 @@ class UserTest < ActiveSupport::TestCase
     create_submission(Factory(:puzzle), @sally, true)
     
     0.upto(4) do |i|
-      user = Factory(:user, :name => "John Doe #{i}")
+      user = Factory(:user)
       create_submission(Factory(:puzzle), user, true)
     end
 
     create_submission(Factory(:puzzle), @harry, true)
 
     7.upto(15) do |i|
-      user = Factory(:user, :name => "John Doe #{i}")
+      user = Factory(:user)
       create_submission(Factory(:puzzle), user, true)
     end
 

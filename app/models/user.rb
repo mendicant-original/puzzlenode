@@ -36,16 +36,14 @@ class User < ActiveRecord::Base
   end
 
   def local_leaderboard(offset=5)
-    my_rank = Submission.find_by_sql("SELECT user_id,rank 
-      FROM (#{User.leaderboard.to_sql}) as leaderboard WHERE user_id = #{id}")
-    rank = my_rank.first.rank.to_i
-    User.leaderboard(10, rank - offset - 1)  
+    rank_offset = leaderboard_position - offset - 1
+    User.leaderboard(0, rank_offset)
   end
 
-
-  def leaderboard_position(limit=10)
-    position = User.leaderboard(limit).index(self)
-    position + 1 if position
+  def leaderboard_position
+    my_rank = Submission.find_by_sql("SELECT user_id,rank 
+      FROM (#{User.leaderboard.to_sql}) as leaderboard WHERE user_id = #{id}")
+    my_rank.first.rank.to_i unless my_rank.empty?
   end
 
   def self.leaderboard(limit=10, offset=0)
