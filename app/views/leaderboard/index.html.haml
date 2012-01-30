@@ -12,14 +12,28 @@
     .clear
 
   #generic
-    - @users.each_with_index do |user, i|
+    - @users.each_with_index do |user|
       .row
-        .rank= "##{i + 4}"
+        .rank= "##{user.rank}"
         .user
           = gravatar_image user, 45
           .name
             = link_to user.name, user_path(user.nickname)
             .detail= ranking_detail user
+  
+  
+    - if !@local_users.nil?
+      %br
+      %br
+      #generic
+      - @local_users.each_with_index do |user|
+        .row
+          .rank= "##{user.rank}"
+          .user
+            = gravatar_image user, 45
+            .name
+              = link_to user.name, user_path(user.nickname)
+              .detail= ranking_detail user
 
   #about_leaderboard
 
