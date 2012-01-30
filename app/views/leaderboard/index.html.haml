@@ -20,6 +20,20 @@
           .name
             = link_to user.name, user_path(user.nickname)
             .detail= ranking_detail user
+  
+  
+    - if !@local_users.nil?
+      %br
+      %h1 Local Leaderboard
+      #generic
+      - @local_users.each_with_index do |user, i|
+        .row
+          .rank= "##{i + 4}"
+          .user
+            = gravatar_image user, 45
+            .name
+              = link_to user.name, user_path(user.nickname)
+              .detail= ranking_detail user
 
   #about_leaderboard
 

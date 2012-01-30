@@ -23,8 +23,7 @@ Puzzlenode::Application.routes.draw do
 
   resources :announcements
 
-  match '/leaderboard', :to       => "leaderboard#index"
-  match '/leaderboard/local', :to => "leaderboard#local"
+  match '/leaderboard', :to => "leaderboard#index"
 
   namespace :admin do
     resources :users
