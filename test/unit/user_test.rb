@@ -63,21 +63,24 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "get leaderboard neighborhood" do
-    0.upto(15) do |i|
+    create_submission(Factory(:puzzle), @sally, true)
+    
+    0.upto(4) do |i|
       user = Factory(:user, :name => "John Doe #{i}")
       create_submission(Factory(:puzzle), user, true)
-      create_submission(Factory(:puzzle), user, true) if i % 2 == 0
     end
 
     create_submission(Factory(:puzzle), @harry, true)
 
-    16.upto(30) do |i|
+    7.upto(15) do |i|
       user = Factory(:user, :name => "John Doe #{i}")
       create_submission(Factory(:puzzle), user, true)
     end
 
     leaderboard = @harry.local_leaderboard
-    assert_equal 10, leaderboard.size 
-    assert_equal @harry.id, leaderboard[4].user_id
+    assert_equal @harry.name, leaderboard[5].name
+    
+    leaderboard = @sally.local_leaderboard
+    assert_equal @sally.name, leaderboard[0].name
   end
 end

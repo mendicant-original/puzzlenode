@@ -36,25 +36,23 @@ class User < ActiveRecord::Base
   end
 
   def local_leaderboard(offset=5)
-    leaderboard_query = "SELECT user_id, rank FROM
-        (SELECT user_id, max(created_at) as latest_solution, count(*) AS solved,
-        rank() OVER (order by count(*) desc, max(created_at)) as rank 
-        FROM submissions GROUP BY user_id) as leaderboard"
-    my_rank = Submission.find_by_sql("
-      #{leaderboard_query} WHERE leaderboard.user_id = #{id.to_s}")
-  
+    solutions = Submission.correct.
+      select('user_id, MAX(created_at) AS latest_solution, COUNT(*) AS solved,
+        rank() OVER (ORDER BY COUNT(*) DESC, MAX(created_at))').group('user_id')
+    my_rank = Submission.find_by_sql("SELECT user_id,rank 
+      FROM (#{solutions.to_sql}) as leaderboard WHERE user_id = #{id}")
     rank = my_rank.first.rank.to_i
-
-    Submission.find_by_sql("#{leaderboard_query} 
-      WHERE leaderboard.rank BETWEEN #{rank - offset + 1} AND #{rank + offset}")
+    board_offset = rank - offset - 1 < 0 ? 0 : (rank - offset - 1)
+    User.leaderboard(10, board_offset)  
   end
+
 
   def leaderboard_position(limit=10)
     position = User.leaderboard(limit).index(self)
     position + 1 if position
   end
 
-  def self.leaderboard(limit=10)
+  def self.leaderboard(limit=10, offset=0)
     # For each user, we need a count of correct submissions, along with
     # the date of the most recent correct submission.
 
@@ -70,9 +68,10 @@ class User < ActiveRecord::Base
     # the data and use it both for sorting and for displaying with
     # one database query.
 
-    User.select("users.*, solved, latest_solution").
+    leaderboard = User.select("users.*, solved, latest_solution").
       joins("INNER JOIN (#{solutions.to_sql}) q1 on q1.user_id = users.id").
       order("solved DESC", "latest_solution").
+      offset(offset).
       limit(limit).eligible_for_display
   end
 end
