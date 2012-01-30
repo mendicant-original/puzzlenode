@@ -60,5 +60,35 @@ class UserTest < ActiveSupport::TestCase
 
     assert_equal 1, @sally.leaderboard_position
     assert_nil @harry.leaderboard_position
+    
+    0.upto(15) do |i|
+      user = Factory(:user)
+      create_submission(Factory(:puzzle), user, true)
+    end
+    
+    create_submission(Factory(:puzzle), @harry, true)
+    assert_equal 18, @harry.leaderboard_position
+  end
+
+  test "get leaderboard neighborhood" do
+    create_submission(Factory(:puzzle), @sally, true)
+    
+    0.upto(4) do |i|
+      user = Factory(:user)
+      create_submission(Factory(:puzzle), user, true)
+    end
+
+    create_submission(Factory(:puzzle), @harry, true)
+
+    7.upto(15) do |i|
+      user = Factory(:user)
+      create_submission(Factory(:puzzle), user, true)
+    end
+
+    leaderboard = @harry.local_leaderboard
+    assert_equal @harry.name, leaderboard[5].name
+   
+    leaderboard = @sally.local_leaderboard
+    assert_equal @sally.name, leaderboard[0].name
   end
 end
