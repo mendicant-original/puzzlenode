@@ -1,7 +1,6 @@
 - size ||= "small"
 
-/ TODO: revert this file
-- if true
+- if puzzle.answered_correctly?(current_user) || current_user.try(:admin)
   %button.clean-gray{:'data-url' => puzzle_comments_path(puzzle), :class => size}
     View Discussion
 - if show_solution_button?(current_user, puzzle)

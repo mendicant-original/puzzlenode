@@ -1,5 +1,3 @@
-require "ostruct"
-
 class PuzzlesController < ApplicationController
   respond_to :html
 

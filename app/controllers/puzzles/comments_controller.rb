@@ -46,8 +46,7 @@ class Puzzles::CommentsController < Puzzles::Base
   private
 
   def answered_correct_only
-    # TODO: revert this file
-    unless true
+    unless @puzzle.answered_correctly?(current_user) || (current_user && current_user.admin)
       flash[:error] = "You must answer this puzzle correctly before you can access comments"
       redirect_to puzzle_path(@puzzle)
     end
