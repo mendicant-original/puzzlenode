@@ -36,14 +36,10 @@ class User < ActiveRecord::Base
   end
 
   def local_leaderboard(offset=5)
-    solutions = Submission.correct.
-      select('user_id, MAX(created_at) AS latest_solution, COUNT(*) AS solved,
-        rank() OVER (ORDER BY COUNT(*) DESC, MAX(created_at))').group('user_id')
     my_rank = Submission.find_by_sql("SELECT user_id,rank 
-      FROM (#{solutions.to_sql}) as leaderboard WHERE user_id = #{id}")
+      FROM (#{User.leaderboard.to_sql}) as leaderboard WHERE user_id = #{id}")
     rank = my_rank.first.rank.to_i
-    board_offset = rank - offset - 1 < 0 ? 0 : (rank - offset - 1)
-    User.leaderboard(10, board_offset)  
+    User.leaderboard(10, rank - offset - 1)  
   end
 
 
@@ -57,7 +53,8 @@ class User < ActiveRecord::Base
     # the date of the most recent correct submission.
 
     solutions = Submission.correct.
-      select('user_id, MAX(created_at) AS latest_solution, COUNT(*) AS solved').
+      select('user_id, MAX(created_at) AS latest_solution, COUNT(*) AS solved,
+             rank() OVER (ORDER BY COUNT(*) DESC, MAX(created_at))').
       group('user_id')
 
     # We want to sort results by:
@@ -68,10 +65,11 @@ class User < ActiveRecord::Base
     # the data and use it both for sorting and for displaying with
     # one database query.
 
-    leaderboard = User.select("users.*, solved, latest_solution").
+    leaderboard = User.select("users.*, users.id as user_id, solved, latest_solution, rank").
       joins("INNER JOIN (#{solutions.to_sql}) q1 on q1.user_id = users.id").
-      order("solved DESC", "latest_solution").
-      offset(offset).
-      limit(limit).eligible_for_display
+      order("solved DESC", "latest_solution")
+    leaderboard = leaderboard.offset(offset) if offset > 0
+    leaderboard = leaderboard.limit(limit) if limit > 0
+    leaderboard.eligible_for_display
   end
 end

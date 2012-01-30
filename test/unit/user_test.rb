@@ -79,7 +79,7 @@ class UserTest < ActiveSupport::TestCase
 
     leaderboard = @harry.local_leaderboard
     assert_equal @harry.name, leaderboard[5].name
-    
+   
     leaderboard = @sally.local_leaderboard
     assert_equal @sally.name, leaderboard[0].name
   end
