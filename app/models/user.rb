@@ -36,14 +36,16 @@ class User < ActiveRecord::Base
   end
 
   def local_leaderboard(offset=5)
+    return unless leaderboard_position
+
     rank_offset = leaderboard_position - offset - 1
     User.leaderboard(10, rank_offset)
   end
-  
+
   def leaderboard_position
-    my_rank = Submission.find_by_sql("SELECT user_id,rank 
-      FROM (#{User.leaderboard(0,0).to_sql}) as leaderboard WHERE user_id = #{id}")
-    my_rank.first.rank.to_i unless my_rank.empty?
+    rank = Submission.find_by_sql("SELECT id, rank
+      FROM (#{User.leaderboard(0,0).to_sql}) as leaderboard WHERE id = #{id}")
+    rank.first.rank.to_i unless rank.empty?
   end
 
   def self.leaderboard(limit=10, offset=0)
@@ -54,7 +56,7 @@ class User < ActiveRecord::Base
       select('user_id, MAX(created_at) AS latest_solution, COUNT(*) AS solved,
              rank() OVER (ORDER BY COUNT(*) DESC, MAX(created_at))').
       group('user_id')
-    
+
     # We want to sort results by:
     #   1) highest number of correct scores
     #   2) earliest creation date of the *last* correct submission
@@ -63,11 +65,14 @@ class User < ActiveRecord::Base
     # the data and use it both for sorting and for displaying with
     # one database query.
 
-    leaderboard = User.select("users.*, users.id as user_id, solved, latest_solution, rank").
+    leaderboard = User.select("users.*, solved, latest_solution, rank").
       joins("INNER JOIN (#{solutions.to_sql}) q1 on q1.user_id = users.id").
-      order("solved DESC", "latest_solution")
+      order("solved DESC", "latest_solution").
+      eligible_for_display
+
     leaderboard = leaderboard.offset(offset) if offset > 0
-    leaderboard = leaderboard.limit(limit) if limit > 0
-    leaderboard.eligible_for_display
+    leaderboard = leaderboard.limit(limit)   if limit > 0
+
+    leaderboard
   end
 end
