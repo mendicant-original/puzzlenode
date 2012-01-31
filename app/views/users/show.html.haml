@@ -15,7 +15,6 @@
       %h3
         Leaderboard position: #{@leaderboard}
 
-  %h2 Email preference:
-
-  - email_flag = @user.notify_comment_made ? "Yes" : "No"
-  %h3 Receive email notification for comments to solved puzzles? #{email_flag}
+  - if current_user == @user
+    %button.clean-gray{:'data-url' => edit_user_path(current_user.nickname)}
+      Edit your profile

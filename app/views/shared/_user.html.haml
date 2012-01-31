@@ -7,8 +7,6 @@
       .user_information
         = link_to "Profile", user_path(current_user.nickname)
         &bull;
-        = link_to "Edit", edit_user_path(current_user.nickname)
-        &bull;
         = link_to "Log out", logout_path, :id => "log-out"
 - else
   %li.right

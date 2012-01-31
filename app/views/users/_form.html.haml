@@ -1,6 +1,14 @@
-= form_for @user, :url => user_path(@user.nickname) do |f|
+= form_for @user, :url => user_path(@user.nickname), :html => {:class => "bp"} do |f|
   %p
-    = f.label :notify_comment_made, "Notify me every time a comment is made"
+    = f.label :name
+    %br
+    = f.text_field :name
+  %p
+    = f.label :email
+    %br
+    = f.text_field :email
+  %p
     = f.check_box :notify_comment_made
+    = f.label :notify_comment_made, "Notify me every time a comment is made"
   %p.controls
     = f.submit "Save"
