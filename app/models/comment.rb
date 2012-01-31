@@ -11,7 +11,7 @@ class Comment < ActiveRecord::Base
       notified_users << user if user.notify_comment_made
     end
 
-    CommentMailer.delay.comment_made(self, notified_users)
+    CommentMailer.comment_made(self, notified_users).deliver
   end
 
 end
