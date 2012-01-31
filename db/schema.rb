@@ -123,7 +123,7 @@ ActiveRecord::Schema.define(:version => 20120119073301) do
     t.text     "nickname"
     t.boolean  "draft_access",        :default => false
     t.string   "email"
-    t.boolean  "notify_comment_made"
+    t.boolean  "notify_comment_made", :default => false, :null => false
   end
 
 end
