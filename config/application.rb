@@ -52,5 +52,7 @@ module Puzzlenode
     config.autoload_paths += %W(#{config.root}/lib)
 
     Haml::Template.options[:ugly] = true
+
+    config.action_mailer.default_url_options = {:host => "puzzlenode.com"}
   end
 end
