@@ -25,6 +25,6 @@ class CommentTest < ActiveSupport::TestCase
     comment = puzzle.comments.create(:body => "this is a comment",
                                      :user_id => @harry.id)
     comment.notify_comment_made
-    assert !ActionMailer::Base.deliveries.empty?
+    assert_equal 2, ActionMailer::Base.deliveries.size
   end
 end
