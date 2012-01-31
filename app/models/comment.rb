@@ -7,8 +7,8 @@ class Comment < ActiveRecord::Base
   def notify_comment_made
     notified_users = []
 
-    notified_users = puzzle.solved_by.inject([]) do |accum, user|
-      accum << user if user.notify_comment_made
+    puzzle.solved_by.each do |user|
+      notified_users << user if user.notify_comment_made
     end
 
     CommentMailer.delay.comment_made(self, notified_users)
