@@ -5,7 +5,7 @@ class CommentMailer < ActionMailer::Base
     @comment = comment
     @puzzle = comment.puzzle
 
-    subject = "PuzzleNode new comment posted"
+    subject = "[PuzzleNode] #{@comment.user.nickname} commented on #{@puzzle.name}"
 
     users.each do |user|
       @user = user
