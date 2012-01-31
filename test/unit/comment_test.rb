@@ -18,13 +18,13 @@ class CommentTest < ActiveSupport::TestCase
     )
   end
 
-  test "Comment#notify_others should email the other users when a comment is made" do
+  test "Comment#notify_comment_made should email the other users when a comment is made" do
     create_submission(Factory(:puzzle), @harry, true)
     create_submission(Factory(:puzzle), @sally, true)
     puzzle = Factory(:puzzle)
     comment = puzzle.comments.create(:body => "this is a comment",
                                      :user_id => @harry.id)
-    comment.notify_others
+    comment.notify_comment_made
     assert !ActionMailer::Base.deliveries.empty?
   end
 end

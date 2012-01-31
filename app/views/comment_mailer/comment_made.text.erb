@@ -1,0 +1,11 @@
+<%= @user.nickname %> just posted a comment on  <%= @puzzle.name %>
+
+You can see what has been said and share your own thoughts via the link below:
+
+<%= puzzle_comment_path(@puzzle, @comment) %>
+
+----
+
+You can customize your notification settings via the link below:
+
+<%= edit_user_path(@user.nickname) %>

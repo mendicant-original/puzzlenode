@@ -14,13 +14,11 @@ class Puzzles::CommentsController < Puzzles::Base
 
   def create
     params[:comment][:user_id] = current_user.id
-    puts "params:"
-    pp params
     @comment = @puzzle.comments.new(params[:comment])
 
     if @comment.save
       flash[:notice] = "Comment sucessfully created."
-      @comment.notify_others
+      @comment.notify_comment_made
       redirect_to puzzle_comments_path(@puzzle)
     else
       render :action => :new
