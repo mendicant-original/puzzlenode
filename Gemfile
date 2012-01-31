@@ -23,6 +23,7 @@ gem 'faker', :require => false
 
 gem 'delayed_mailhopper'
 gem 'delayed_job_active_record'
+gem 'daemons', :require => false
 
 ################
 # Presentation #
