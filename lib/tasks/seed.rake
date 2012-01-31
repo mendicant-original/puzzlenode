@@ -61,7 +61,7 @@ namespace :db do
         date = sometime_last_year
 
         Announcement.create!(
-          author_id:  admins.sample.id,
+          author_id:  admins.sample.id
           title:      fake_title,
           body:       fake_paragraphs,
           created_at: date,
