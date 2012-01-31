@@ -1,4 +1,4 @@
-<%= @user.nickname %> just posted a comment on  <%= @puzzle.name %>
+<%= @comment.user.nickname %> just posted a comment on  <%= @puzzle.name %>.
 
 You can see what has been said and share your own thoughts via the link below:
 
@@ -8,4 +8,4 @@ You can see what has been said and share your own thoughts via the link below:
 
 You can customize your notification settings via the link below:
 
-<%= edit_user_url(@user.nickname) %>
+<%= user_settings_url %>

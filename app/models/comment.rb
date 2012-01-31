@@ -1,13 +1,17 @@
 class Comment < ActiveRecord::Base
+  after_create :notify_comment_made
+
   belongs_to :user
   belongs_to :puzzle
 
   # Notify the other users who have solved this puzzle
   # when a new comment is made.
   def notify_comment_made
-    notified_users = puzzle.solved_by.where(:notify_comment_made => true)
+    users  = puzzle.solved_by.where(:notify_comment_made => true) - [user]
+    emails = users.map(&:email).compact
 
-    CommentMailer.comment_made(self, notified_users).deliver
+    emails.each_slice(25) do |e|
+      CommentMailer.comment_made(self, e).deliver
+    end
   end
-
 end

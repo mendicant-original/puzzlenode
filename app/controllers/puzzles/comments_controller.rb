@@ -18,7 +18,6 @@ class Puzzles::CommentsController < Puzzles::Base
 
     if @comment.save
       flash[:notice] = "Comment sucessfully created."
-      @comment.notify_comment_made
       redirect_to puzzle_comments_path(@puzzle)
     else
       render :action => :new

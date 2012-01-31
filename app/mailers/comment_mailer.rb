@@ -1,16 +1,13 @@
 class CommentMailer < ActionMailer::Base
-  default :from => "puzzlenodetest@gmail.com"
+  default :from => "puzzlenode@gmail.com"
 
-  def comment_made(comment, users)
+  def comment_made(comment, emails)
     @comment = comment
-    @puzzle = comment.puzzle
+    @puzzle  = comment.puzzle
 
     subject = "[PuzzleNode] #{@comment.user.nickname} commented on #{@puzzle.name}"
 
-    users.each do |user|
-      @user = user
-      to = user.email
-      mail(:to => to, :subject => subject)
-    end
+    to  = "<PuzzleNode> puzzlenode+noreply@gmail.com"
+    mail(:to => to, :bcc => emails, :subject => subject)
   end
 end
