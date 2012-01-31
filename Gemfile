@@ -18,6 +18,13 @@ gem 'jquery-rails'
 gem 'faker', :require => false
 
 ################
+# Mail #
+################
+
+gem 'delayed_mailhopper'
+gem 'delayed_job_active_record'
+
+################
 # Presentation #
 ################
 

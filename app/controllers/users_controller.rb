@@ -9,6 +9,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    if @user.update_attributes(params[:user])
+      flash[:notice] = "User sucessfully updated"
+      redirect_to user_path(@user.nickname)
+    else
+      render :edit
+    end
+  end
+
+
   private
 
   def find_user
