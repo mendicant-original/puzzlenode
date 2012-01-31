@@ -18,6 +18,7 @@ Puzzlenode::Application.routes.draw do
   match '/tags/:tag',                     :to => 'puzzles#tag',
                                           :as => "tag"
 
+  match '/users/settings' => 'users#edit', :as => "user_settings"
   resources :users do
     resources :submissions, :controller => "Users::Submissions"
   end
