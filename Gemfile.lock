@@ -65,7 +65,6 @@ GEM
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.1)
-    daemons (1.1.5)
     delayed_job (3.0.0)
       activesupport (~> 3.0)
     delayed_job_active_record (0.3.1)
@@ -245,7 +244,6 @@ DEPENDENCIES
   coffee-rails (~> 3.1.0)
   colorific (~> 1.0.0)
   compass (~> 0.12.alpha)
-  daemons
   delayed_job_active_record
   delayed_mailhopper
   exception_notification
