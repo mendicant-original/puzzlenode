@@ -1,5 +1,5 @@
 class CommentMailer < ActionMailer::Base
-  default :from => "puzzlenode@gmail.com"
+  default :from => "puzzlenode+noreply@gmail.com"
 
   def comment_made(comment, emails)
     @comment = comment
