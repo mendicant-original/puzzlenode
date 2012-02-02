@@ -10,6 +10,7 @@ set :user, "git"
 set :use_sudo, false
 
 set :deploy_via, :remote_cache
+set :rake, "bundle exec rake"
 
 set :branch, "master"
 server "puzzlenode.com", :app, :web, :db, :primary => true
