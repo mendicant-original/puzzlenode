@@ -1,0 +1,7 @@
+.row
+  .rank= "##{user.rank}"
+  .user{:class => ('current' if user == current_user)}
+    = gravatar_image user, 45
+    .name
+      = link_to user.name, user_path(user.nickname)
+      .detail= ranking_detail user

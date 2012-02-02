@@ -12,29 +12,14 @@
     .clear
 
   #generic
-    - @users.each_with_index do |user|
-      .row
-        .rank= "##{user.rank}"
-        .user
-          = gravatar_image user, 45
-          .name
-            = link_to user.name, user_path(user.nickname)
-            .detail= ranking_detail user
+    = render :partial => "user", :collection => @users
 
 
     - if !@local_users.nil?
       %p
         &bull; &bull; &bull;
         %span.local People close to your rank
-      #generic
-      - @local_users.each_with_index do |user|
-        .row
-          .rank= "##{user.rank}"
-          .user
-            = gravatar_image user, 45
-            .name
-              = link_to user.name, user_path(user.nickname)
-              .detail= ranking_detail user
+      = render :partial => "user", :collection => @local_users
 
   #about_leaderboard
 
