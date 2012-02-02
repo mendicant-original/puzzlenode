@@ -7,6 +7,8 @@ class Comment < ActiveRecord::Base
   # Notify the other users who have solved this puzzle
   # when a new comment is made.
   def notify_comment_made
+    return true # Temporarily disable this feature
+
     users   = puzzle.solved_by.where(:notify_comment_made => true)
     users  += User.where(:admin => true, :notify_comment_made => true)
     users  -= [ user ]

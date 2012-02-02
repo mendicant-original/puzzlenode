@@ -31,6 +31,8 @@ class CommentMailerTest < ActionMailer::TestCase
     end
 
     test "notifies users when a comment is made" do
+      skip "Comment notification disabled"
+
       assert ActionMailer::Base.deliveries.empty?
 
       comment = @puzzle.comments.create(:body    => "this is a comment",
@@ -44,6 +46,8 @@ class CommentMailerTest < ActionMailer::TestCase
     end
 
     test "notifications are only sent to users who have solved the puzzle" do
+      skip "Comment notification disabled"
+
       new_puzzle = Factory(:puzzle)
       create_submission(new_puzzle, @harry, true)
       create_submission(new_puzzle, @bill, true)
@@ -62,6 +66,8 @@ class CommentMailerTest < ActionMailer::TestCase
     end
 
     test "notifications are not sent to users who opt-out" do
+      skip "Comment notification disabled"
+
       @sally.update_attribute(:notify_comment_made, false)
 
       assert ActionMailer::Base.deliveries.empty?

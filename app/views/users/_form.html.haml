@@ -7,9 +7,10 @@
     = f.label :email
     %br
     = f.text_field :email
-  %p
-    = f.check_box :notify_comment_made
-    = f.label :notify_comment_made,
-      "Notify me every time a comment is made on puzzles I've solved"
+  - if false # Temporarily disable this feature
+    %p
+      = f.check_box :notify_comment_made
+      = f.label :notify_comment_made,
+        "Notify me every time a comment is made on puzzles I've solved"
   %p.controls
     = f.submit "Save"
