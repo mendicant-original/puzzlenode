@@ -52,7 +52,7 @@ class PuzzleFile
   end
 
   def file_name
-    @puzzle.name.titleize.gsub(" ", "").underscore + ".markdown"
+    @puzzle.slug + ".markdown"
   end
 
   def file_exists?
