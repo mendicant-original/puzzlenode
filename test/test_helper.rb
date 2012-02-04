@@ -1,6 +1,7 @@
 ENV["RAILS_ENV"] = "test"
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
+require 'bare_test_helper'
 require 'capybara/rails'
 require 'support/integration'
 require 'support/mini_contest'
@@ -29,10 +30,11 @@ class ActiveSupport::TestCase
     FileUtils.rm_rf(attachment.directory)
   end
 
-  def cleanup_puzzles
-    FileUtils.rm_rf(File.join(Rails.root, 'public', 'puzzles'))
+  teardown do
+    cleanup_puzzles
   end
 end
+
 
 class ActionDispatch::IntegrationTest
   include Capybara::DSL
@@ -46,5 +48,7 @@ class ActionDispatch::IntegrationTest
       'user_info' => { 'nickname' => 'PN User' }
     }
   end
-  teardown { Capybara.reset_sessions! }
+  teardown {
+    Capybara.reset_sessions!
+  }
 end

@@ -1,3 +1,5 @@
+require 'zip/zip'
+
 class Puzzle < ActiveRecord::Base
   acts_as_taggable
 
@@ -10,8 +12,9 @@ class Puzzle < ActiveRecord::Base
   validates_presence_of   :name, :short_description, :description, :slug
   validates_uniqueness_of :slug
 
-  after_save     :save_to_file
-  before_destroy :delete_file
+  before_save    :delete_related_files
+  after_save     :save_related_files
+  before_destroy :delete_related_files
 
 
   def self.published(user=nil)
@@ -26,16 +29,26 @@ class Puzzle < ActiveRecord::Base
     slug
   end
 
-  def puzzle_file
-    @puzzle_file ||= PuzzleFile.new(self)
+  def file_directory
+    File.expand_path(File.join(Rails.root, 'public', 'puzzles'))
   end
 
-  def save_to_file
-    puzzle_file.save
+  def description_file
+    @description_file ||= PuzzleFile::Description.new(self)
   end
 
-  def delete_file
-    puzzle_file.delete
+  def zip_file
+    @zip_file ||= PuzzleFile::Zipped.new(self)
+  end
+
+  def save_related_files
+    description_file.save
+    zip_file.save
+  end
+
+  def delete_related_files
+    description_file.delete
+    zip_file.delete
   end
 
   def file=(tempfile)

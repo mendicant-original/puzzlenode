@@ -16,9 +16,9 @@
     - if @puzzle.attachments.any?
       #files-header
         %h2 Files
-        %button.clean-gray{:'data-url' => root_path}
+        %button.clean-gray{:'data-url' => @puzzle.zip_file.public_path }
           Download All
       #files
-        = file_link @puzzle_as_markdown
+        = file_link @puzzle.description_file
         - @puzzle.attachments.map do |attachment|
           = file_link attachment
