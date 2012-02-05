@@ -2,7 +2,7 @@ require 'fileutils'
 
 module PuzzleFile
   module GenericFile
-    def initialize(puzzle, path = Rails.root)
+    def initialize(puzzle, path)
       @puzzle = puzzle
       @path = path
     end
@@ -16,7 +16,7 @@ module PuzzleFile
     end
 
     def directory
-      File.expand_path(File.join(@path, 'public', 'puzzles'))
+      File.expand_path(File.join(@path))
     end
 
     # Refers to the full path to the location on disk for the puzzle file

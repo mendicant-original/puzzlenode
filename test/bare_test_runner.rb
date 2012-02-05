@@ -1,3 +1,3 @@
-require_relative 'unit/puzzle_file/puzzle_file_generic_file_test'
-require_relative 'unit/puzzle_file/puzzle_description_file_test'
-require_relative 'unit/puzzle_file/puzzle_zipped_file_test'
+require_relative 'unit/puzzle_file/generic_file_test'
+require_relative 'unit/puzzle_file/description_test'
+require_relative 'unit/puzzle_file/zipped_test'

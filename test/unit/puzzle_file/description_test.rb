@@ -7,7 +7,7 @@ class PuzzleDescriptionFileTest < ActiveSupport::TestCase
                    :name        => "[#1] Six Degrees of Separation",
                    :slug        => "1-six-degrees-of-separation",
                    :description => "Find connections!")
-    @desc_file = PuzzleFile::Description.new(@puzzle, PUZZLE_DIRECTORY)
+    @desc_file = PuzzleFile::Description.new(@puzzle, FILE_DIRECTORY)
   end
 
   test "must generate a filename with markdown extension from its name attribute" do
@@ -15,7 +15,7 @@ class PuzzleDescriptionFileTest < ActiveSupport::TestCase
   end
 
   test "must generate a filepath" do
-    expected_path = (PUZZLE_DIRECTORY + "/public/puzzles/" + "1-six-degrees-of-separation.markdown")
+    expected_path = (FILE_DIRECTORY + "/1-six-degrees-of-separation.markdown")
     assert_equal @desc_file.file_path, expected_path
   end
 

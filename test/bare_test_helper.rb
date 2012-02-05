@@ -1,6 +1,7 @@
 require 'active_support'
 require 'test/unit'
 require 'fileutils'
+require 'ostruct'
 
 class ActiveSupport::TestCase
   PUZZLE_DIRECTORY = File.expand_path(File.join(File.dirname(__FILE__), 'temp'))
@@ -45,7 +46,7 @@ class ActiveSupport::TestCase
     puzzle
   end
 
-  setup do
+  teardown do
     cleanup_puzzles
   end
 end

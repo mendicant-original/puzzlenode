@@ -12,7 +12,7 @@ class PuzzleZippedFileTest < ActiveSupport::TestCase
 
     @puzzle = fake_description_file_for(@puzzle)
 
-    @zip = PuzzleFile::Zipped.new(@puzzle, PUZZLE_DIRECTORY)
+    @zip = PuzzleFile::Zipped.new(@puzzle, FILE_DIRECTORY)
   end
 
   test "must generate a filename with markdown extension from its name attribute" do
@@ -20,7 +20,7 @@ class PuzzleZippedFileTest < ActiveSupport::TestCase
   end
 
   test "must generate a filepath" do
-    expected_path = (PUZZLE_DIRECTORY + "/public/puzzles/" + "1-six-degrees-of-separation.zip")
+    expected_path = (FILE_DIRECTORY + "/1-six-degrees-of-separation.zip")
     assert_equal @zip.file_path, expected_path
   end
 

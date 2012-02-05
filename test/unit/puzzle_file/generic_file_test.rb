@@ -18,11 +18,11 @@ class PuzzleFileGenericFileTest < ActiveSupport::TestCase
   end
 
   test "directory returns the correct path" do
-    assert_equal @file.directory, "/public/puzzles"
+    assert_equal @file.directory, "/"
   end
 
   test "file path returns the full path to the file" do
-    assert_equal @file.file_path, ("/public/puzzles/some_dynamic_name.extension")
+    assert_equal @file.file_path, ("/some_dynamic_name.extension")
   end
 
   test "deletes the file if it has been saved" do

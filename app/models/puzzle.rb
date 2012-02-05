@@ -30,15 +30,19 @@ class Puzzle < ActiveRecord::Base
   end
 
   def file_directory
-    File.expand_path(File.join(Rails.root, 'public', 'puzzles'))
+    @file_directory || File.join(Rails.public_path, 'puzzles')
+  end
+
+  def file_directory=(directory)
+    @file_directory = directory
   end
 
   def description_file
-    @description_file ||= PuzzleFile::Description.new(self)
+    @description_file ||= PuzzleFile::Description.new(self, file_directory)
   end
 
   def zip_file
-    @zip_file ||= PuzzleFile::Zipped.new(self)
+    @zip_file ||= PuzzleFile::Zipped.new(self, file_directory)
   end
 
   def save_related_files
