@@ -1,5 +1,6 @@
 module Admin
   class PuzzlesController < ApplicationController
+    before_filter :authenticate_admin_user!
     before_filter :find_puzzle, :only => [:edit, :update, :destroy]
 
     def index

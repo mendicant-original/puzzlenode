@@ -91,12 +91,16 @@ class PuzzleTest < ActiveSupport::TestCase
     assert_equal 2, puzzle.tags.count
   end
 
-  test "deletes the old description file when the puzzle is updated" do
-    puzzle = Factory(:puzzle)
+  test "deletes the old description file when the puzzle is updated if slug is changed" do
+    puzzle = Factory(:puzzle, :slug => "1-original-name")
 
-    puzzle.name = "[#1] New name"
+    des_path = puzzle.description_file.file_path
+    zip_path = puzzle.zip_file.file_path
+
+    FileUtils.expects(:rm).with(des_path).once
+    FileUtils.expects(:rm).with(zip_path).once
+
     puzzle.slug = "1-new-name"
-    puzzle.description_file.expects(:delete)
     puzzle.save
   end
 
