@@ -26,7 +26,7 @@
       - @comments.each do |comment|
         .comment
           .header
-            = comment.user.name
+            = link_to comment.user.name, user_path(comment.user.nickname)
             .info= comment.created_at
             - if current_user == comment.user
               .controls
