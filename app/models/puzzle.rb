@@ -10,7 +10,7 @@ class Puzzle < ActiveRecord::Base
   validates_presence_of   :name, :short_description, :description, :slug
   validates_uniqueness_of :slug
 
-  def self.published(user=nil)
+  def self.visible_to(user=nil)
     if user && (user.draft_access || user.admin)
       self
     else

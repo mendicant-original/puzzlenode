@@ -2,13 +2,13 @@ class PuzzlesController < ApplicationController
   respond_to :html
 
   def index
-    @puzzles = Puzzle.published(current_user).order("created_at").all
+    @puzzles = Puzzle.visible_to(current_user)
 
     respond_with(@puzzles)
   end
 
   def tag
-    @puzzles = Puzzle.published(current_user).order("created_at").
+    @puzzles = Puzzle.visible_to(current_user).
                 tagged_with(params[:tag])
 
     respond_with(@puzzles) do |format|
