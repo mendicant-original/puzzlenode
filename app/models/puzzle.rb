@@ -31,11 +31,7 @@ class Puzzle < ActiveRecord::Base
   end
 
   def answered_correctly?(user)
-    if user && user.solution_for(self)
-      true
-    else
-      false
-    end
+    user && user.solution_for(self)
   end
 
   def solved_by
