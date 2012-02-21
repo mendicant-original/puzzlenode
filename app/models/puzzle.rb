@@ -11,11 +11,12 @@ class Puzzle < ActiveRecord::Base
   validates_uniqueness_of :slug
 
   def self.visible_to(user=nil)
-    if user && (user.draft_access || user.admin)
+    result_set = if user && (user.draft_access || user.admin)
       self
     else
       where(:published => true)
     end
+    result_set.order("created_at")
   end
 
   def to_param
