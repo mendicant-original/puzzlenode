@@ -8,6 +8,8 @@
     .puzzle
       - if puzzle.answered_correctly? current_user
         = image_tag "solved.png", :class => "solved"
+      - unless puzzle.published?
+        = image_tag "unpublished.png", :class => "unpublished"
       = link_to puzzle.name, puzzle_path(puzzle)
 
       .description
