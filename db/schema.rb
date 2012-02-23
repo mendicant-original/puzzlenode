@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120119073301) do
+ActiveRecord::Schema.define(:version => 20120222154408) do
 
   create_table "announcements", :force => true do |t|
     t.text     "body"
@@ -88,6 +88,18 @@ ActiveRecord::Schema.define(:version => 20120119073301) do
     t.boolean  "published",         :default => false
     t.string   "slug"
   end
+
+  create_table "ratings", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "puzzle_id"
+    t.string   "rate"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ratings", ["puzzle_id"], :name => "index_ratings_on_puzzle_id"
+  add_index "ratings", ["user_id", "puzzle_id"], :name => "index_ratings_on_user_id_and_puzzle_id", :unique => true
+  add_index "ratings", ["user_id"], :name => "index_ratings_on_user_id"
 
   create_table "submissions", :force => true do |t|
     t.integer  "user_id"

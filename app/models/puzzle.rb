@@ -4,6 +4,7 @@ class Puzzle < ActiveRecord::Base
   has_many :submissions, :dependent => :destroy
   has_many :comments,    :dependent => :destroy, :order => "created_at"
   has_many :attachments, :dependent => :destroy
+  has_many :ratings,     :dependent => :destroy
 
   accepts_nested_attributes_for :attachments, :allow_destroy => true
 
