@@ -1,5 +1,4 @@
 Puzzlenode::Application.routes.draw do
-
   root :to => 'puzzles#index'
 
   match '/auth/:provider/callback',      :to => 'sessions#create'
@@ -13,6 +12,7 @@ Puzzlenode::Application.routes.draw do
   resources :puzzles do
     resources :submissions, :controller => "Puzzles::Submissions"
     resources :comments,    :controller => "Puzzles::Comments"
+    post "ratings" => "puzzles/ratings#create"
   end
 
   match '/tags/:tag',                     :to => 'puzzles#tag',

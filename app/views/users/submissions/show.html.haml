@@ -19,7 +19,7 @@
       find help by checking out the #mendicant channel on Freenode.
 
   - if @submission.correct
-    - # render :partial => "source_url"
+    = render "puzzle_rating", :rating => @puzzle.ratings.build(:user => current_user)
 
   #action
     - if @submission.correct
