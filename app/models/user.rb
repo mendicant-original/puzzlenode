@@ -9,9 +9,9 @@ class User < ActiveRecord::Base
   scope :eligible_for_display, where(:admin => false, :draft_access => false)
 
   def self.create_from_hash!(hash)
-    create(:name     => hash['user_info']['name'],
-           :nickname => hash['user_info']['nickname'],
-           :email    => hash['user_info']['email'])
+    create(:name     => hash['info']['name'],
+           :nickname => hash['info']['nickname'],
+           :email    => hash['info']['email'])
   end
 
   def name
@@ -25,9 +25,9 @@ class User < ActiveRecord::Base
   def refresh_names(hash)
     return if nickname && email
 
-    update_attributes(:name     => hash['user_info']['name'],
-                      :nickname => hash['user_info']['nickname'],
-                      :email    => hash['user_info']['email'])
+    update_attributes(:name     => hash['info']['name'],
+                      :nickname => hash['info']['nickname'],
+                      :email    => hash['info']['email'])
   end
 
   def solution_for(puzzle)
