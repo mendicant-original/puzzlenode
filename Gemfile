@@ -5,7 +5,7 @@ source 'http://rubygems.org'
 ########
 
 gem 'rails',    '~> 3.1.1'
-gem 'omniauth', '~> 0.2.5'
+gem 'omniauth-github', '~> 1.0.1'
 gem 'rake',     '~> 0.9.2'
 
 ########
