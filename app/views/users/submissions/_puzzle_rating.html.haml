@@ -1,4 +1,4 @@
-= form_for [rating.puzzle, rating], :remote => true do |f|
+= form_for @rating, :url => rating_puzzle_submission_path(@puzzle, @submission), :remote => true do |f|
   = f.hidden_field :user_id
   = f.hidden_field :puzzle_id
   %p
@@ -6,6 +6,6 @@
     - Rating::DIFFICULTIES.each do |difficulty|
       %br
       = f.radio_button :rate, difficulty
-      = f.label "rate_#{difficulty.parameterize('_')}", difficulty
+      = f.label :rate, difficulty, :value => difficulty
   %p
-    = f.submit "Rate"
+    = f.submit "Rate It"

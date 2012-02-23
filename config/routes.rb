@@ -10,9 +10,10 @@ Puzzlenode::Application.routes.draw do
                                             :as => "attachment"
 
   resources :puzzles do
-    resources :submissions, :controller => "Puzzles::Submissions"
     resources :comments,    :controller => "Puzzles::Comments"
-    post "ratings" => "puzzles/ratings#create"
+    resources :submissions, :controller => "Puzzles::Submissions" do
+      match :rating, :on => :member, :via => [:put, :post]
+    end
   end
 
   match '/tags/:tag',                     :to => 'puzzles#tag',
