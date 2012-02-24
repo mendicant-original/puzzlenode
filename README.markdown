@@ -29,8 +29,8 @@ To install a development version of Puzzlenode, follow these steps:
 3. Run `bundle install` to install all of the dependencies
 4. Create a `database.yml` file in `config`. The `config` directory contains
    an example `database.yml` for PostgreSQL.
-5. Create an `omniauth.yml` file in `config`. The `config` directory contains
-   an example `omniauth.yml` file.
+5. Create an `omniauth.rb` file in `config/initializers`. The same directory contains
+   an example `omniauth.rb` file.
 6. Create a `config/initializers/secret_token.rb` file. The
    `config/initializers` directory contains an example `secret_token.rb` file
    with instructions for generating a secret token.
