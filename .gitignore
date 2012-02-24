@@ -8,8 +8,10 @@ tmp/**/*
 config/database.yml
 config/omniauth.yml
 public/attachments
+public/puzzles
 public/assets
 config/initializers/secret_token.rb
 config/initializers/setup_mail.rb
 lib/development_mail_interceptor.rb
 config/initializers/mail_settings.rb
+tests/temp

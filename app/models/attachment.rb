@@ -7,13 +7,19 @@ class Attachment < ActiveRecord::Base
   validates_presence_of   :file_name
   validates_uniqueness_of :file_name, :scope => :puzzle_id
 
+  # Sets the file_name attribute on the Attachment instance
+  #
+  # tempfile - An instance of ActionController::UploadedFile
+  #
+  # Returns the name of the attachment file including the extension, but
+  # not including the path
   def file=(tempfile)
     self.file_name = File.basename(tempfile.original_filename)
     @tempfile = tempfile
   end
 
   def file_path
-    File.join(Rails.root, 'public', 'attachments', puzzle.id.to_s, file_name)
+    File.join(directory, file_name)
   end
 
   def directory

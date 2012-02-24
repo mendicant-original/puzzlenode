@@ -16,6 +16,7 @@ gem 'pg'
 gem 'acts-as-taggable-on'
 gem 'jquery-rails'
 gem 'faker', :require => false
+gem 'rubyzip', '~> 0.9.5'
 
 ################
 # Mail #
@@ -55,6 +56,7 @@ group 'test' do
   gem 'factory_girl_rails'
   gem 'colorific', '~> 1.0.0'
   gem 'test_notifier', '~> 1.0.0'
+  gem 'mocha'
 end
 
 group :production do

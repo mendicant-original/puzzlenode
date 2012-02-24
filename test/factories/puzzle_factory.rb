@@ -6,5 +6,6 @@ Factory.define :puzzle do |p|
   p.tag_list          "Game, Graphics"
   p.file              Tempfile.new("test_tempfile")
   p.released_on       DateTime.yesterday
+  p.file_directory    File.expand_path(File.join(File.dirname(__FILE__), '..', 'temp')) + "/public/puzzles"
   p.published         true
 end

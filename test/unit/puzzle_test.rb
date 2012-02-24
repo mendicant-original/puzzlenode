@@ -82,12 +82,39 @@ class PuzzleTest < ActiveSupport::TestCase
     assert puzzle.valid_solution?(tempfile2)
 
     puzzle = Factory(:puzzle, :file => tempfile2)
-    assert puzzle.valid_solution?(tempfile1)    
+    assert puzzle.valid_solution?(tempfile1)
   end
 
   test "must be taggable" do
     puzzle = Factory(:puzzle, :tag_list => "Game, Graphics")
 
     assert_equal 2, puzzle.tags.count
+  end
+
+  test "deletes the old description file when the puzzle is updated if slug is changed" do
+    puzzle = Factory(:puzzle, :slug => "1-original-name")
+
+    des_path = puzzle.description_file.file_path
+    zip_path = puzzle.zip_file.file_path
+
+    FileUtils.expects(:rm).with(des_path).once
+    FileUtils.expects(:rm).with(zip_path).once
+
+    puzzle.slug = "1-new-name"
+    puzzle.save
+  end
+
+  test "saves the files to disk after save is called on the model" do
+    puzzle = Factory.build(:puzzle)
+    puzzle.description_file.expects(:save)
+    puzzle.zip_file.expects(:save)
+    puzzle.save
+  end
+
+  test "deletes the file when destroyed" do
+    puzzle = Factory(:puzzle)
+    puzzle.description_file.expects(:delete)
+    puzzle.zip_file.expects(:delete)
+    puzzle.destroy
   end
 end
