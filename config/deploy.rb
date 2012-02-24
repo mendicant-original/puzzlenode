@@ -23,7 +23,7 @@ end
 
 after 'deploy:update_code' do
   {"database.yml"    => "config/database.yml",
-   "omniauth.yml"    => "config/omniauth.yml",
+   "omniauth.rb"     => "config/initializers/omniauth.rb",
    "secret_token.rb" => "config/initializers/secret_token.rb",
    "setup_mail.rb"   => "config/initializers/setup_mail.rb",
    "attachments"     => "public/attachments"}.
