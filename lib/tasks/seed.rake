@@ -1,10 +1,11 @@
-require_relative '../puzzle_faker'
-require_relative '../date_faker'
+require 'faker'
+require_relative '../faker/puzzle'
+require_relative '../faker/date'
 
 namespace :db do
   namespace :seed do
-    include PuzzleFaker
-    include DateFaker
+    include Faker::Puzzle
+    include Faker::Date
 
     desc "Seed database with fake puzzle data"
     task :puzzles => :environment do
@@ -51,11 +52,9 @@ namespace :db do
     desc "Seed database with fake announcement data"
     task :announcements => :environment do
 
-      admins = User.where('admin = true')
+      admins = User.where(:admin => true)
 
-      if admins.empty?
-        fail "At least one admin user must exist before seeding announcements"
-      end
+      User.first.update_attribute(:admin, true) if admins.empty?
 
       10.times do
         date = sometime_last_year
