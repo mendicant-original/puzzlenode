@@ -20,11 +20,11 @@ class Puzzles::SubmissionsController < Puzzles::Base
 
   def rating
     submission = current_user.submissions.find(params[:id])
-    @rating = submission.rating 
-    if @rating.update_attributes(params[:rating])
+    @difficulty = submission.difficulty 
+    if @difficulty.update_attributes(:rating => params[:difficulty][:rating])
       head :ok
     else
-      render :json => {:errors => @rating.errors.full_messages}, :status => 422
+      render :json => {:errors => @difficulty.errors.full_messages}, :status => 422
     end
   end
 end

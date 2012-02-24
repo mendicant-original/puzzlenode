@@ -4,7 +4,7 @@ class Users::SubmissionsController < ApplicationController
   
   def show
     @puzzle = @submission.puzzle
-    @rating = @submission.rating if @submission.correct?
+    @difficulty = @submission.difficulty if @submission.correct?
   end
   
   def update
