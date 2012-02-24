@@ -1,7 +1,8 @@
 class SessionsController < ApplicationController
 
   def new
-
+    provider = Rails.env.production? ? "github" : "developer"
+    redirect_to("/auth/#{provider}")
   end
 
   def create
