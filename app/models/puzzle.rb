@@ -10,12 +10,13 @@ class Puzzle < ActiveRecord::Base
   validates_presence_of   :name, :short_description, :description, :slug
   validates_uniqueness_of :slug
 
-  def self.published(user=nil)
-    if user && (user.draft_access || user.admin)
+  def self.visible_to(user=nil)
+    result_set = if user && (user.draft_access || user.admin)
       self
     else
       where(:published => true)
     end
+    result_set.order("created_at")
   end
 
   def to_param
@@ -31,11 +32,7 @@ class Puzzle < ActiveRecord::Base
   end
 
   def answered_correctly?(user)
-    if user && user.solution_for(self)
-      true
-    else
-      false
-    end
+    user && user.solution_for(self)
   end
 
   def solved_by
