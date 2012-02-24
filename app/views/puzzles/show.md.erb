@@ -1,0 +1,5 @@
+# [<%= @puzzle.name %>](<%= puzzle_url(@puzzle) %>)
+
+_This puzzle was contributed by <%= @puzzle.created_by %> and published on <%= @puzzle.released_on.strftime("%B %e, %Y")%>_
+
+<%= @puzzle.description %>

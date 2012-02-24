@@ -16,7 +16,6 @@
     - if @puzzle.attachments.any?
       %h2 Files
       #files
+        = file_link "#{@puzzle.slug}.md", puzzle_path(@puzzle, :format => "md")
         - @puzzle.attachments.map do |file|
-          = link_to image_tag("icons/file_small.png") + file.file_name,
-            file.public_path,
-            :target => "_blank"
+          = file_link file.file_name, file.public_path
