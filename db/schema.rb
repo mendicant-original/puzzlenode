@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120119073301) do
+ActiveRecord::Schema.define(:version => 20120222154408) do
 
   create_table "announcements", :force => true do |t|
     t.text     "body"
@@ -60,6 +60,18 @@ ActiveRecord::Schema.define(:version => 20120119073301) do
   end
 
   add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
+
+  create_table "difficulties", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "puzzle_id"
+    t.string   "rating"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "difficulties", ["puzzle_id"], :name => "index_difficulties_on_puzzle_id"
+  add_index "difficulties", ["user_id", "puzzle_id"], :name => "index_difficulties_on_user_id_and_puzzle_id", :unique => true
+  add_index "difficulties", ["user_id"], :name => "index_difficulties_on_user_id"
 
   create_table "emails", :force => true do |t|
     t.string   "from_address",     :null => false

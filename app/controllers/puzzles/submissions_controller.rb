@@ -1,5 +1,4 @@
 class Puzzles::SubmissionsController < Puzzles::Base
-
   def new
     @submission = @puzzle.submissions.new
   end
@@ -16,6 +15,16 @@ class Puzzles::SubmissionsController < Puzzles::Base
         "#{field.to_s.humanize unless field == :base} #{message}"
       }.join("<br/>").html_safe
       render :action => :new
+    end
+  end
+
+  def rating
+    submission = current_user.submissions.find(params[:id])
+    @difficulty = submission.difficulty 
+    if @difficulty.update_attributes(:rating => params[:difficulty][:rating])
+      head :ok
+    else
+      render :json => {:errors => @difficulty.errors.full_messages}, :status => 422
     end
   end
 end
