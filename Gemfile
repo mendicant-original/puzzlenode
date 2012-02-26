@@ -57,6 +57,10 @@ group 'test' do
   gem 'test_notifier', '~> 1.0.0'
 end
 
+group :development do
+  gem 'rainbow'
+end
+
 group :production do
   gem 'therubyracer'
 end
