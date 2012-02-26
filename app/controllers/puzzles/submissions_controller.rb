@@ -22,7 +22,7 @@ class Puzzles::SubmissionsController < Puzzles::Base
     submission = current_user.submissions.find(params[:id])
     @difficulty = submission.difficulty 
     if @difficulty.update_attributes(:rating => params[:difficulty][:rating])
-      head :ok
+      flash.now[:notice] = "Thanks for your rating."
     else
       render :json => {:errors => @difficulty.errors.full_messages}, :status => 422
     end
