@@ -24,7 +24,7 @@ module Admin
     end
 
     def edit
-      @difficulties = @puzzle.difficulties.count(:group => :rating)
+      @ratings = @puzzle.ratings.count(:group => :difficulty)
     end
 
     def update
