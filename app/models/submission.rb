@@ -11,6 +11,11 @@ class Submission < ActiveRecord::Base
 
   attr_accessor :file
 
+  def difficulty
+    @difficulty ||= Difficulty.where(:puzzle_id => puzzle_id, :user_id => user_id)
+    @difficulty.first || @difficulty.new
+  end
+
   private
 
   def score!

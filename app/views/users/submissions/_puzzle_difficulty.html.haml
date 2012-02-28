@@ -1,0 +1,12 @@
+#puzzle-difficulty
+  = form_for @difficulty, :url => rating_puzzle_submission_path(@puzzle, @submission), :remote => true do |f|
+    = f.hidden_field :user_id
+    = f.hidden_field :puzzle_id
+    %p
+      Now that you've solved this puzzle, how would you rate its difficulty?
+    %ul
+      - Difficulty::DIFFICULTIES.each do |difficulty|
+        %li
+          = f.radio_button :rating, difficulty
+          = f.label :rating, difficulty, :value => difficulty
+    = f.submit "Rate It"

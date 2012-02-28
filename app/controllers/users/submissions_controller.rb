@@ -4,6 +4,7 @@ class Users::SubmissionsController < ApplicationController
   
   def show
     @puzzle = @submission.puzzle
+    @difficulty = @submission.difficulty if @submission.correct?
   end
   
   def update
