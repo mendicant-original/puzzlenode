@@ -11,9 +11,7 @@ Puzzlenode::Application.routes.draw do
 
   resources :puzzles do
     resources :comments,    :controller => "Puzzles::Comments"
-    resources :submissions, :controller => "Puzzles::Submissions" do
-      match :rating, :on => :member, :via => [:put, :post]
-    end
+    resources :submissions, :controller => "Puzzles::Submissions"
   end
 
   match '/tags/:tag',                     :to => 'puzzles#tag',
@@ -21,7 +19,9 @@ Puzzlenode::Application.routes.draw do
 
   match '/users/settings' => 'users#edit', :as => "user_settings"
   resources :users do
-    resources :submissions, :controller => "Users::Submissions"
+    resources :submissions, :controller => "Users::Submissions" do
+      match :rate, :on => :member, :via => [:put, :post]
+    end
   end
 
   resources :announcements

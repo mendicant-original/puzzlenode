@@ -11,9 +11,9 @@ class Submission < ActiveRecord::Base
 
   attr_accessor :file
 
-  def difficulty
-    @difficulty ||= Difficulty.where(:puzzle_id => puzzle_id, :user_id => user_id)
-    @difficulty.first || @difficulty.new
+  def rating
+    @rating ||= Rating.where(:puzzle_id => puzzle_id, :user_id => user_id)
+    @rating.first || @rating.new
   end
 
   private

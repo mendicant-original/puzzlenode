@@ -61,18 +61,6 @@ ActiveRecord::Schema.define(:version => 20120222154408) do
 
   add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
 
-  create_table "difficulties", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "puzzle_id"
-    t.string   "rating"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "difficulties", ["puzzle_id"], :name => "index_difficulties_on_puzzle_id"
-  add_index "difficulties", ["user_id", "puzzle_id"], :name => "index_difficulties_on_user_id_and_puzzle_id", :unique => true
-  add_index "difficulties", ["user_id"], :name => "index_difficulties_on_user_id"
-
   create_table "emails", :force => true do |t|
     t.string   "from_address",     :null => false
     t.string   "reply_to_address"
@@ -100,6 +88,18 @@ ActiveRecord::Schema.define(:version => 20120222154408) do
     t.boolean  "published",         :default => false
     t.string   "slug"
   end
+
+  create_table "ratings", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "puzzle_id"
+    t.string   "difficulty"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ratings", ["puzzle_id"], :name => "index_ratings_on_puzzle_id"
+  add_index "ratings", ["user_id", "puzzle_id"], :name => "index_ratings_on_user_id_and_puzzle_id", :unique => true
+  add_index "ratings", ["user_id"], :name => "index_ratings_on_user_id"
 
   create_table "submissions", :force => true do |t|
     t.integer  "user_id"

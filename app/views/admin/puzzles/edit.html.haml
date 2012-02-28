@@ -1,8 +1,9 @@
 = render :partial => "form",
   :locals => {:url => admin_puzzle_path(@puzzle)}
 
-#puzzle-difficulties
-  %ul
-    Difficulties
-    - @difficulties.each do |difficulty, count|
-      %li= "#{difficulty} (#{count})"
+- if @ratings.any?
+  #puzzle-ratings
+    %h3 Difficulty Ratings
+    %ul
+      - @ratings.each do |rating, count|
+        %li= "#{rating} (#{count})"

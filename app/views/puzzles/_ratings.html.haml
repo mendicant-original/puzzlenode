@@ -1,4 +1,0 @@
-%span.ratings
-  - puzzle.ratings.count(:group => :rate).each do |difficulty, count|
-    %a{:title => difficulty, :class => difficulty.parameterize}
-      = count
