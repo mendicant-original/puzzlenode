@@ -26,25 +26,16 @@ To install a development version of Puzzlenode, follow these steps:
 
 1. Fork our GitHub repository: <http://github.com/mendicant-university/puzzlenode>
 2. Clone the fork to your computer
-3. Run `bundle install` to install all of the dependencies
-4. Create a `database.yml` file in `config`. The `config` directory contains
-   an example `database.yml` for PostgreSQL.
-5. Create an `omniauth.rb` file in `config/initializers`. The same directory contains
-   an example `omniauth.rb` file.
-6. Create a `config/initializers/secret_token.rb` file. The
-   `config/initializers` directory contains an example `secret_token.rb` file
-   with instructions for generating a secret token.
-7. Create and initialize the database:
+3. If you don't already have bundler installed, get it by running `gem install bundler`
+4. Run `bundle install` to install all of the project's dependencies
+5. Finally, run `rake setup` to create the required config files, create the database, and seed it with data. Be sure to follow the onscreen prompts to complete the setup process.
 
-```bash
-$ rake db:create
-$ rake db:schema:load
+To make things even easier, you can copy and paste this into your terminal once you've got the project cloned to your computer
+
 ```
-
-Finally, run the test suite to make sure everything is working correctly:
-
-```bash
-$ rake test
+gem install bundler
+bundle install
+bundle exec rake setup
 ```
 
 ## Contributing
