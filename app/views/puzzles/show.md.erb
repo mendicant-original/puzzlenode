@@ -2,4 +2,4 @@
 
 _This puzzle was contributed by <%= @puzzle.created_by %> and published on <%= @puzzle.released_on.strftime("%B %e, %Y")%>_
 
-<%= @puzzle.description %>
+<%= @puzzle.description.html_safe %>
