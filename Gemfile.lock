@@ -224,6 +224,7 @@ DEPENDENCIES
   rainbow
   rake (~> 0.9.2)
   redcarpet (~> 2.0.0b3)
+  rubyzip
   sass
   sass-rails (~> 3.1.0)
   test_notifier (~> 1.0.0)

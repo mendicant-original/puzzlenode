@@ -1,3 +1,6 @@
+require 'zip/zip'
+require 'zip/zipfilesystem'
+
 class PuzzlesController < ApplicationController
   respond_to :html
 
@@ -29,8 +32,24 @@ class PuzzlesController < ApplicationController
     end
 
     respond_with(@puzzle) do |format|
-      format.md do
-        send_data render_to_string('show', :filename => "#{@puzzle.slug}.md")
+      format.md  { send_file description_as_markdown }
+      format.zip do
+        t = Tempfile.new("#{@puzzle.slug}-#{request.remote_ip}-#{Time.now}")
+
+        Zip::ZipOutputStream.open(t.path) do |zos|
+          zos.put_next_entry("#{@puzzle.slug}.md")
+          zos.puts description_as_markdown
+
+          @puzzle.attachments.each do |attachment|
+            zos.put_next_entry attachment.file_name
+            zos.puts File.read(attachment.file_path)
+          end
+        end
+
+        send_file t.path, :type        => 'application/zip',
+                          :disposition => 'attachment',
+                          :filename    => "#{@puzzle.slug}.zip"
+        t.close
       end
     end
   end
@@ -48,5 +67,10 @@ class PuzzlesController < ApplicationController
     else
       raise ActionController::RoutingError.new('Not Found')
     end
+  end
+
+  private
+  def description_as_markdown
+    render_to_string('show.md.erb', :filename => "#{@puzzle.slug}.md")
   end
 end
