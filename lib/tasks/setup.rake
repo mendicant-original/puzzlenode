@@ -30,13 +30,13 @@ task :setup do
     unless File.exists?(omniauth)
       create_file(omniauth, "Omniauth config")
     else
-      "Omniauth config file already exists"
+      puts "Omniauth config file already exists"
     end
 
     unless File.exists?(mail_settings)
       create_file(mail_settings, "Mail_settings config")
     else
-      "Mail_settings config file already exists"
+      puts "Mail_settings config file already exists"
     end
 
   end
