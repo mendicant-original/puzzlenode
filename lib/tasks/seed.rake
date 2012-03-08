@@ -7,6 +7,9 @@ namespace :db do
     include Faker::Puzzle
     include Faker::Date
 
+    desc "Seeds the database with fake puzzle, user, annoucenment, and submission data"
+    task :all => [:users, :puzzles, :announcements, :submissions, :comments]
+
     desc "Seed database with fake puzzle data"
     task :puzzles => :environment do
 
@@ -128,6 +131,8 @@ namespace :db do
           updated_at: submission.created_at
         )
       end
+
+      puts "20 comments made"
     end
 
   end
@@ -140,4 +145,6 @@ namespace :db do
     Submission.delete_all
     User.delete_all('admin = false')
   end
+
+
 end
