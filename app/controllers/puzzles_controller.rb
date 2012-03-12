@@ -29,9 +29,8 @@ class PuzzlesController < ApplicationController
     end
 
     respond_with(@puzzle) do |format|
-      format.md do
-        send_data render_to_string('show', :filename => "#{@puzzle.slug}.md")
-      end
+      format.md  { send_puzzle_as_markdown }
+      format.zip { send_puzzle_as_zip }
     end
   end
 
@@ -48,5 +47,22 @@ class PuzzlesController < ApplicationController
     else
       raise ActionController::RoutingError.new('Not Found')
     end
+  end
+
+  private
+  def send_puzzle_as_markdown
+    send_data puzzle_presenter.to_markdown, :filename => "#{@puzzle.slug}.md"
+  end
+
+  def send_puzzle_as_zip
+    puzzle_presenter.generate_zip_file do |zip|
+      send_file zip.path, :type        => 'application/zip',
+                          :disposition => 'attachment',
+                          :filename    => "#{@puzzle.slug}.zip"
+    end
+  end
+
+  def puzzle_presenter
+    PuzzlePresenter.new(@puzzle, puzzle_url(@puzzle))
   end
 end

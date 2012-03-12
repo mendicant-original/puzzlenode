@@ -13,7 +13,10 @@
 
   #description
     = md @puzzle.description
-    %h2 Files
+    #files-header
+      %h2 Files
+      %button.clean-gray{:'data-url' => puzzle_path(@puzzle, :format => "zip")}
+        Download All
     #files
       = file_link "#{@puzzle.slug}.md", puzzle_path(@puzzle, :format => "md")
       - @puzzle.attachments.map do |file|

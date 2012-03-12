@@ -16,6 +16,7 @@ gem 'pg'
 gem 'acts-as-taggable-on'
 gem 'jquery-rails'
 gem 'faker', :require => false
+gem 'rubyzip'
 
 ################
 # Mail #
