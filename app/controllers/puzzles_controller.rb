@@ -1,6 +1,3 @@
-require 'zip/zip'
-require 'zip/zipfilesystem'
-
 class PuzzlesController < ApplicationController
   respond_to :html
 
@@ -32,25 +29,8 @@ class PuzzlesController < ApplicationController
     end
 
     respond_with(@puzzle) do |format|
-      format.md  { send_file description_as_markdown }
-      format.zip do
-        t = Tempfile.new("#{@puzzle.slug}-#{request.remote_ip}-#{Time.now}")
-
-        Zip::ZipOutputStream.open(t.path) do |zos|
-          zos.put_next_entry("#{@puzzle.slug}.md")
-          zos.puts description_as_markdown
-
-          @puzzle.attachments.each do |attachment|
-            zos.put_next_entry attachment.file_name
-            zos.puts File.read(attachment.file_path)
-          end
-        end
-
-        send_file t.path, :type        => 'application/zip',
-                          :disposition => 'attachment',
-                          :filename    => "#{@puzzle.slug}.zip"
-        t.close
-      end
+      format.md  { send_puzzle_as_markdown }
+      format.zip { send_puzzle_as_zip }
     end
   end
 
@@ -70,7 +50,19 @@ class PuzzlesController < ApplicationController
   end
 
   private
-  def description_as_markdown
-    render_to_string('show.md.erb', :filename => "#{@puzzle.slug}.md")
+  def send_puzzle_as_markdown
+    send_data puzzle_presenter.to_markdown, :filename => "#{@puzzle.slug}.md"
+  end
+
+  def send_puzzle_as_zip
+    puzzle_presenter.generate_zip_file do |zip|
+      send_file zip.path, :type        => 'application/zip',
+                          :disposition => 'attachment',
+                          :filename    => "#{@puzzle.slug}.zip"
+    end
+  end
+
+  def puzzle_presenter
+    PuzzlePresenter.new(@puzzle, puzzle_url(@puzzle))
   end
 end
