@@ -4,7 +4,7 @@ source 'http://rubygems.org'
 # Core #
 ########
 
-gem 'rails',    '~> 3.1.1'
+gem 'rails',    '~> 3.1.3'
 gem 'omniauth-github', '~> 1.0.1'
 gem 'rake',     '~> 0.9.2'
 
@@ -35,6 +35,7 @@ gem 'redcarpet', '~> 2.0.0b3'
 gem 'will_paginate', '~> 3.0'
 gem 'cocoon'
 gem 'jquery-rails'
+gem 'md_preview'
 
 ###############
 # Maintenance #
