@@ -31,11 +31,12 @@ gem 'daemons', :require => false
 
 gem 'haml'
 gem 'sass'
-gem 'redcarpet', '~> 2.0.0b3'
+gem 'redcarpet', '2.1'
 gem 'will_paginate', '~> 3.0'
 gem 'cocoon'
 gem 'jquery-rails'
 gem 'md_preview'
+gem 'md_emoji'
 
 ###############
 # Maintenance #

@@ -1,67 +1,8 @@
-$tab_height: 32px
-
-.tab_container
-  border: 1px solid #999
-  border-top: none
-  overflow: hidden
-  background: #fff
-
-  .preview
-    min-height: 145px
-    background: $pn_blue
-    +markdown
-
-.tab_content
-  padding: 20px
-
-  textarea
-    width: 99% !important
-
-.tab_footer
-  padding: 0 20px
-  background-color: #eee
-  border-top: 1px solid #ddd
-
-ul.tabs
-  margin: 0
-  margin-top: 0.5em
-  padding: 0
-  list-style: none
-  height: $tab_height
-  border-bottom: 1px solid #999
-
-  li
-    float: left
-    margin: 0
-    padding: 0
-    height: $tab_height - 1
-    line-height: $tab_height - 1
-    border: 1px solid #999
-    margin-bottom: -1px
-    overflow: hidden
-    position: relative
-    background: #e0e0e0
-    +border-top-radius(8px)
-
-    a
-      text-decoration: none
-      color: #000
-      display: block
-      font-size: 1.2em
-      padding: 0 20px
-      border: 1px solid #fff
-      outline: none
-      +border-top-radius(8px)
-      &:hover
-        background: #ccc
-
-  .active
-    background: #fff
-    border-bottom: 1px solid #fff
-
-// prevent hover effect on active tab
-html
-  ul.tabs
-    li.active
-      a:hover
-        background: #fff
+div.markdown-preview
+  div.tab-container
+    background-color: #fff
+  div.tab-content.preview
+    +puzzle_description
+    background-color: $pn_blue
+    padding: 10px
+    +border-radius(5px)
