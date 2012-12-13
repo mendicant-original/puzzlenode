@@ -24,7 +24,7 @@ or SQLite are not officially supported.
 
 To install a development version of Puzzlenode, follow these steps:
 
-1. Fork our GitHub repository: <http://github.com/mendicant-university/puzzlenode>
+1. Fork our GitHub repository: <http://github.com/mendicant-original/puzzlenode>
 2. Clone the fork to your computer
 3. If you don't already have bundler installed, get it by running `gem install bundler`
 4. Run `bundle install` to install all of the project's dependencies
