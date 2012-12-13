@@ -1,4 +1,4 @@
-![PuzzleNode Logo](https://github.com/mendicant-university/puzzlenode/raw/master/doc/puzzlenode.png)
+![PuzzleNode Logo](https://github.com/mendicant-original/puzzlenode/raw/master/doc/puzzlenode.png)
 
 PuzzleNode is a site for coders who enjoy to work on challenging problems,
 and is inspired by similar efforts such as
@@ -40,7 +40,7 @@ bundle exec rake setup
 
 ## Contributing
 
-Features and bugs are tracked through [Github Issues](https://github.com/mendicant-university/puzzlenode/issues).
+Features and bugs are tracked through [Github Issues](https://github.com/mendicant-original/puzzlenode/issues).
 
 Contributors retain copyright to their work but must agree to release their
 contributions under the [Affero GPL version 3](http://www.gnu.org/licenses/agpl.html)
@@ -67,7 +67,7 @@ Our contact details are at the top of this file.
 Jordan Byron // [jordanbyron.com](http://jordanbyron.com) <br/>
 Gregory Brown // [majesticseacreature.com](http://majesticseacreature.com/)
 
-[Full List](https://github.com/mendicant-university/puzzlenode/contributors)
+[Full List](https://github.com/mendicant-original/puzzlenode/contributors)
 
 ------
 
