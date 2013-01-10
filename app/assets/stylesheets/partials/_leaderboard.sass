@@ -14,7 +14,7 @@
     margin-bottom: 0.25em
     padding-bottom: 0.5em
     font-family: "MonkirtaPursuitNCRegular"
-    +text-shadow(#222, 1px, 1px, 5px)
+    +single-text-shadow(#222, 1px, 1px, 5px)
     border-bottom: 5px solid #254980
     font-size: 3em
 
@@ -96,7 +96,7 @@
 
         &.current
           background: $pn_orange
-          +linear-gradient(color-stops(#FFA027,$pn_orange))
+          +background-image(linear-gradient(#FFA027,$pn_orange))
 
         img
           float: left

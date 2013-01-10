@@ -3,7 +3,7 @@ html
 
 body
   font: 13px/1.231 sans-serif
-  *font-size:small
+  *font-size: small
   color: #292929
   background-color: #333
   font-family: $pn_body_font
@@ -46,7 +46,7 @@ header
         display: block
   nav
     background: $pn_orange
-    +linear-gradient(color-stops(#FFA027,$pn_orange))
+    +background-image(linear-gradient(#FFA027,$pn_orange))
     color: #fff
     padding: 0.5em 1em
     margin-top: 0.5em
@@ -77,14 +77,14 @@ header
         a
           display: inline-block
           color: #fff
-          +text-shadow(#333, 1px, 0, 2px)
+          +single-text-shadow(#333, 1px, 0, 2px)
           font-family: "MonkirtaPursuitNCRegular"
           font-size: 1.5em
           margin-top: -0.15em
           &:hover
             color: #fff
             text-decoration: none
-            +text-shadow(#333, 1px, 1px, 4px)
+            +single-text-shadow(#333, 1px, 1px, 4px)
 
     div.clear
       clear: both
@@ -103,7 +103,7 @@ header
             font-weight: bold
             padding: 0.5em 1em
             +border-bottom-radius(10px)
-            +text-shadow(#DE8964, -1px, -1px)
+            +single-text-shadow(#DE8964, -1px, -1px)
           a
             font-family: $pn_body_font
             font-size: 1em
