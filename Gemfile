@@ -4,10 +4,10 @@ source 'http://rubygems.org'
 # Core #
 ########
 
-gem 'rails',    '~> 3.1.3'
+gem 'rails',    '~> 3.1.11'
 gem 'omniauth-github', '~> 1.0.1'
 gem 'rake',     '~> 0.9.2'
-
+gem 'json',     '~> 1.7.7'
 ########
 # Data #
 ########
