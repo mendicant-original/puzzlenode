@@ -8,6 +8,7 @@ gem 'rails',    '~> 3.2.11'
 gem 'omniauth-github', '~> 1.0.1'
 gem 'rake',     '~> 0.9.2'
 gem 'json',     '~> 1.7.7'
+
 ########
 # Data #
 ########
@@ -53,9 +54,8 @@ group :assets do
 end
 
 group 'test' do
-  gem 'sqlite3'
   gem 'capybara',  '~> 1.1.1'
-  gem 'factory_girl_rails', '4.1.0'
+  gem 'factory_girl_rails', '~> 4.1.0'
   gem 'colorific', '~> 1.0.0'
   gem 'test_notifier', '~> 1.0.0'
 end
