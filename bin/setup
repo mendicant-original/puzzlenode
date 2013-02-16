@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# Set up the PuzzleNode app. Run this script immediately after cloning the codebase.
+
+# Install bundler via RubyGems
+gem install bundler 
+
+# Set up Ruby dependencies
+bundle install
+
+# Set up upstream git remote
+git remote add upstream git://github.com/mendicant-original/puzzlenode.git
+
+# Set up config files and database
+bundle exec rake setup
+
+# Run the tests
+bundle exec rake test

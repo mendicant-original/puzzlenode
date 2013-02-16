@@ -28,17 +28,7 @@ To install a development version of Puzzlenode, follow these steps:
 
 1. Fork our GitHub repository: <http://github.com/mendicant-original/puzzlenode>
 2. Clone the fork to your computer
-3. If you don't already have bundler installed, get it by running `gem install bundler`
-4. Run `bundle install` to install all of the project's dependencies
-5. Finally, run `rake setup` to create the required config files, create the database, and seed it with data. Be sure to follow the onscreen prompts to complete the setup process.
-
-To make things even easier, you can copy and paste this into your terminal once you've got the project cloned to your computer
-
-```
-gem install bundler
-bundle install
-bundle exec rake setup
-```
+3. Finally, run `./bin/setup` to install all of the project's dependencies, create the required config files, create the database, and seed it with data. Be sure to follow the onscreen prompts to complete the setup process.
 
 ## Contributing
 
