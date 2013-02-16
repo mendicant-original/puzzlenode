@@ -4,7 +4,7 @@ class Puzzle
   class TitleTest < ActionDispatch::IntegrationTest
 
     setup do
-      @puzzle = Factory(:puzzle, :name => "Crazy Ups and Downs")
+      @puzzle = FactoryGirl.create(:puzzle, :name => "Crazy Ups and Downs")
     end
 
     test "title is set" do

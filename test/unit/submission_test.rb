@@ -2,12 +2,12 @@ require 'test_helper'
 
 class SubmissionTest < ActiveSupport::TestCase
   def setup
-    @user   = Factory(:user)
+    @user   = FactoryGirl.create(:user)
     @file   = Tempfile.new("test_tempfile")
     @file.write "SOLUTION!"
     @file.rewind
 
-    @puzzle = Factory(:puzzle, :file => @file)
+    @puzzle = FactoryGirl.create(:puzzle, :file => @file)
     @file.rewind
 
     @submission = @user.submissions.create(:puzzle => @puzzle, :file => @file)

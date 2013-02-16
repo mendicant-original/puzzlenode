@@ -3,8 +3,8 @@ require 'test_helper'
 class SubmissionsTest < ActionDispatch::IntegrationTest
 
   setup do
-    @user = Factory(:user)
-    @puzzle = Factory(:puzzle)
+    @user = FactoryGirl.create(:user)
+    @puzzle = FactoryGirl.create(:puzzle)
     @user.authorizations.create(:provider => "github", :uid => "12345")
   end
 

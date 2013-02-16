@@ -14,7 +14,7 @@ class ActiveSupport::TestCase
     test_tempfile << "Sample Text"
     test_tempfile.rewind
 
-    Factory(:puzzle, :file => test_tempfile)
+    FactoryGirl.create(:puzzle, :file => test_tempfile)
   end
 
   def create_submission(puzzle, user, correct)

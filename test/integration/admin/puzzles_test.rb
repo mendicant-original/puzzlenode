@@ -4,7 +4,7 @@ module Admin
   class PuzzlesTest < ActionDispatch::IntegrationTest
 
     setup do
-      @admin_user = Factory(:user, :admin => true)
+      @admin_user = FactoryGirl.create(:user, :admin => true)
       @admin_user.authorizations.create(:provider => "github", :uid => "12345")
     end
 
@@ -27,11 +27,11 @@ module Admin
     end
 
     test "Unpublished puzzles aren't visible to basic users but admins can see them" do
-      published_puzzle   = Factory(:puzzle, :name => "Published Puzzle",
+      published_puzzle   = FactoryGirl.create(:puzzle, :name => "Published Puzzle",
                                    :released_on => Date.yesterday,
                                    :published => true)
 
-      unpublished_puzzle = Factory(:puzzle, :name => "Unpublished Puzzle",
+      unpublished_puzzle = FactoryGirl.create(:puzzle, :name => "Unpublished Puzzle",
                                    :released_on => Date.yesterday,
                                    :published => false)
 

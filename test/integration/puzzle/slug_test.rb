@@ -2,7 +2,7 @@ require 'test_helper'
 
 class SlugTest < ActionDispatch::IntegrationTest
   test "access puzzle by slug" do
-    puzzle = Factory(:puzzle,
+    puzzle = FactoryGirl.create(:puzzle,
                      :name => "[#1] A regular puzzle",
                      :slug => "1-a-regular-puzzle")
 

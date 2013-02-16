@@ -4,11 +4,11 @@ class Puzzle
   class CommentsTest < ActionDispatch::IntegrationTest
 
     setup do
-      @user = Factory(:user, :name => "Normal User")
+      @user = FactoryGirl.create(:user, :name => "Normal User")
       @user.authorizations.create(:provider => "github", :uid => "12345")
-      @admin = Factory(:user, :name => "Admin User", :admin => true)
-      @draft_access = Factory(:user, :name => "Draft Access User", :draft_access => true)
-      @puzzle = Factory(:puzzle)
+      @admin = FactoryGirl.create(:user, :name => "Admin User", :admin => true)
+      @draft_access = FactoryGirl.create(:user, :name => "Draft Access User", :draft_access => true)
+      @puzzle = FactoryGirl.create(:puzzle)
     end
 
     test "only show normal user in the solved by list" do

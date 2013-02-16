@@ -4,13 +4,13 @@ class Puzzle
   class TagsTest < ActionDispatch::IntegrationTest
 
     setup do
-      @user = Factory(:user, :name => "Normal User")
+      @user = FactoryGirl.create(:user, :name => "Normal User")
       @user.authorizations.create(:provider => "github", :uid => "12345")
-      @puzzle = Factory(:puzzle, :name => "Puzzle Name", :tag_list => "Game, Graphics")
+      @puzzle = FactoryGirl.create(:puzzle, :name => "Puzzle Name", :tag_list => "Game, Graphics")
     end
 
     test "list puzzle by tag" do
-      invisible_puzzle = Factory(:puzzle, :name => "Invisible Puzzle", :tag_list => "Math, TDD")
+      invisible_puzzle = FactoryGirl.create(:puzzle, :name => "Invisible Puzzle", :tag_list => "Math, TDD")
 
       sign_user_in
 

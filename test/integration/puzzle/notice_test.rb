@@ -4,9 +4,9 @@ class Puzzle
   class NoticeTest < ActionDispatch::IntegrationTest
 
     setup do
-      @user = Factory(:user, :name => "Normal User")
+      @user = FactoryGirl.create(:user, :name => "Normal User")
       @user.authorizations.create(:provider => "github", :uid => "12345")
-      @puzzle = Factory(:puzzle)
+      @puzzle = FactoryGirl.create(:puzzle)
     end
 
     test "notice isn't displayed when not present" do

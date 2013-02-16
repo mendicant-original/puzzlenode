@@ -4,26 +4,26 @@ class CommentMailerTest < ActionMailer::TestCase
 
   context "comment_made" do
     setup do
-      @harry = Factory(:user,
+      @harry = FactoryGirl.create(:user,
         :admin    => false,
         :name     => "Harry Hacker",
         :nickname => "hh4x0r",
         :email    => "harry@hackers.org"
       )
-      @sally = Factory(:user,
+      @sally = FactoryGirl.create(:user,
         :admin    => false,
         :name     => "Sally Solid",
         :nickname => "sallys",
         :email    => "sallys@solid.com"
       )
-      @bill = Factory(:user,
+      @bill = FactoryGirl.create(:user,
         :admin    => false,
         :name     => "Bill Baxter",
         :nickname => "billyb",
         :email    => "billyb@baxter.com"
       )
 
-      @puzzle = Factory(:puzzle)
+      @puzzle = FactoryGirl.create(:puzzle)
 
       create_submission(@puzzle, @harry, true)
       create_submission(@puzzle, @sally, true)
@@ -48,7 +48,7 @@ class CommentMailerTest < ActionMailer::TestCase
     test "notifications are only sent to users who have solved the puzzle" do
       skip "Comment notification disabled"
 
-      new_puzzle = Factory(:puzzle)
+      new_puzzle = FactoryGirl.create(:puzzle)
       create_submission(new_puzzle, @harry, true)
       create_submission(new_puzzle, @bill, true)
 

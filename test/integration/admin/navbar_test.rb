@@ -4,7 +4,7 @@ module Admin
   class NavbarTest < ActionDispatch::IntegrationTest
 
     setup do
-      @admin_user = Factory(:user, :admin => true)
+      @admin_user = FactoryGirl.create(:user, :admin => true)
       @admin_user.authorizations.create(:provider => "github", :uid => "12345")
     end
 

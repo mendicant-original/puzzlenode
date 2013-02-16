@@ -4,12 +4,12 @@ module Admin
   class UsersTest < ActionDispatch::IntegrationTest
 
     setup do
-      @admin_user = Factory(:user, :admin => true)
+      @admin_user = FactoryGirl.create(:user, :admin => true)
       @admin_user.authorizations.create(:provider => "github", :uid => "12345")
     end
 
     test "Admin users can make other users admins" do
-      other_user = Factory(:user, :admin => false, :name => "Edit Me", :nickname => "Edit Me")
+      other_user = FactoryGirl.create(:user, :admin => false, :name => "Edit Me", :nickname => "Edit Me")
 
       sign_user_in
 
@@ -27,7 +27,7 @@ module Admin
     end
 
     test "Admin users can grant draft access to other users" do
-      other_user = Factory(:user, :draft_access => false, :name => "Edit Me", :nickname => "Edit Me")
+      other_user = FactoryGirl.create(:user, :draft_access => false, :name => "Edit Me", :nickname => "Edit Me")
 
       sign_user_in
 
