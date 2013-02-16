@@ -1,5 +1,6 @@
 require 'fileutils'
 require 'securerandom'
+require 'rainbow'
 
 namespace :setup do
   desc 'Create required initializers'

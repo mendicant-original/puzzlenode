@@ -60,9 +60,7 @@ group 'test' do
   gem 'test_notifier', '~> 1.0.0'
 end
 
-group :development do
-  gem 'rainbow'
-end
+gem 'rainbow', :require => false
 
 group :production do
   gem 'therubyracer'
