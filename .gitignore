@@ -14,3 +14,4 @@ config/initializers/setup_mail.rb
 lib/development_mail_interceptor.rb
 config/initializers/mail_settings.rb
 config/initializers/omniauth.rb
+bin/
