@@ -1,5 +1,7 @@
 ![PuzzleNode Logo](https://github.com/mendicant-original/puzzlenode/raw/master/doc/puzzlenode.png)
 
+[![Build Status](https://travis-ci.org/mendicant-original/puzzlenode.png?branch=master)](https://travis-ci.org/mendicant-original/puzzlenode)
+
 PuzzleNode is a site for coders who enjoy to work on challenging problems,
 and is inspired by similar efforts such as
 [Project Euler](http://projecteuler.net/) and the
