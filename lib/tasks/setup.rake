@@ -1,21 +1,12 @@
 require 'fileutils'
 require 'securerandom'
 
-desc 'Setup project for development / deploy'
-task :setup do
-
-  section "Configuration Files" do
-
-    database       = File.join(Rails.root, 'config', 'database.yml')
+namespace :setup do
+  desc 'Create required initializers'
+  task :initializers do
     secret_token   = File.join(Rails.root, 'config', 'initializers', 'secret_token.rb')
     omniauth       = File.join(Rails.root, 'config', 'initializers', 'omniauth.rb')
     mail_settings  = File.join(Rails.root, 'config', 'initializers', 'mail_settings.rb')
-
-    unless File.exists?(database)
-      create_file(database, "Database config", true)
-    else
-      puts "Database config file already exists"
-    end
 
     unless File.exists?(secret_token)
       secret   = SecureRandom.hex(64)
@@ -38,6 +29,24 @@ task :setup do
     else
       puts "Mail_settings config file already exists"
     end
+
+  end
+end
+
+desc 'Setup project for development / deploy'
+task :setup do
+
+  section "Configuration Files" do
+
+    database       = File.join(Rails.root, 'config', 'database.yml')
+
+    unless File.exists?(database)
+      create_file(database, "Database config", true)
+    else
+      puts "Database config file already exists"
+    end
+
+    Rake::Task["setup:initializers"].invoke
 
   end
 
