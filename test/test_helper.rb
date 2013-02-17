@@ -26,7 +26,7 @@ class ActiveSupport::TestCase
   end
 
   def cleanup_attachment(attachment)
-    FileUtils.rm_rf(attachment.directory)
+    FileUtils.rm_rf(attachment.file.path)
   end
 
 end
