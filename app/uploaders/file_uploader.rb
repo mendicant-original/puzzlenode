@@ -4,4 +4,8 @@ class FileUploader < CarrierWave::Uploader::Base
   else
     storage :file
   end
+
+  def store_dir
+    "attachments/#{model.id}"
+  end
 end
