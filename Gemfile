@@ -17,6 +17,8 @@ gem 'pg'
 gem 'acts-as-taggable-on'
 gem 'jquery-rails'
 gem 'faker', :require => false
+gem 'carrierwave'
+gem 'fog', "~> 1.3.1"
 
 ################
 # Mail #

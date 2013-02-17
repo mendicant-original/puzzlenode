@@ -16,5 +16,5 @@
     %h2 Files
     #files
       = file_link "#{@puzzle.slug}.md", puzzle_path(@puzzle, :format => "md")
-      - @puzzle.attachments.map do |file|
-        = file_link file.file_name, file.public_path
+      - @puzzle.attachments.map do |attachment|
+        = file_link attachment.file_name, attachment.file_url

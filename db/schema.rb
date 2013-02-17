@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120222154408) do
+ActiveRecord::Schema.define(:version => 20130216195839) do
 
   create_table "announcements", :force => true do |t|
     t.text     "body"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(:version => 20120222154408) do
 
   create_table "attachments", :force => true do |t|
     t.integer  "puzzle_id"
-    t.string   "file_name"
+    t.string   "file"
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"

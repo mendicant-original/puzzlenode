@@ -25,7 +25,7 @@ class AttachmentTest < ActiveSupport::TestCase
 
     attachment = puzzle.attachments.create(:file => @uploaded_file)
 
-    assert File.exists?(attachment.file_path),
+    assert File.exists?(attachment.file.path),
            "File was not written to public directory"
 
     cleanup_attachment(attachment)
@@ -36,12 +36,14 @@ class AttachmentTest < ActiveSupport::TestCase
 
     attachment = puzzle.attachments.create(:file => @uploaded_file)
 
-    assert File.exists?(attachment.file_path),
+    path = attachment.file.path
+
+    assert File.exists?(path),
            "File was not written to public directory"
 
     attachment.destroy
 
-    refute File.exists?(attachment.file_path),
+    refute File.exists?(path),
            "File was not removed from the public directory"
   end
 
@@ -50,7 +52,9 @@ class AttachmentTest < ActiveSupport::TestCase
 
     attachment = puzzle.attachments.create(:file => @uploaded_file)
 
-    assert File.exists?(attachment.file_path),
+    path = attachment.file.path
+
+    assert File.exists?(path),
            "File was not written to public directory"
 
     cleanup_attachment(attachment)
@@ -59,7 +63,7 @@ class AttachmentTest < ActiveSupport::TestCase
 
     assert attachment.destroyed?, "Attachment was not destroyed"
 
-    refute File.exists?(attachment.file_path),
+    refute File.exists?(path),
            "File was not removed from the public directory"
   end
 end
