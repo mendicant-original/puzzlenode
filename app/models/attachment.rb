@@ -5,7 +5,7 @@ class Attachment < ActiveRecord::Base
   before_destroy :remove_file!
 
   def file_name
-    file.file.filename.split('?')[0]
+    File.basename(file.to_s)
   end
 
 end

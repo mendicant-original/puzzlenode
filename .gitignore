@@ -19,3 +19,4 @@ config/initializers/omniauth.rb
 Vagrantfile
 .vagrant
 bin/
+public/uploads
