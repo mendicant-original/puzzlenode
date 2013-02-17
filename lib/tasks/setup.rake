@@ -4,39 +4,17 @@ require 'securerandom'
 desc 'Setup project for development / deploy'
 task :setup do
 
-  section "Configuration Files" do
-
-    database       = File.join(Rails.root, 'config', 'database.yml')
-    secret_token   = File.join(Rails.root, 'config', 'initializers', 'secret_token.rb')
-    omniauth       = File.join(Rails.root, 'config', 'initializers', 'omniauth.rb')
-    mail_settings  = File.join(Rails.root, 'config', 'initializers', 'mail_settings.rb')
+  section "Database configuration file" do
+    database = File.join(Rails.root, 'config', 'database.yml')
 
     unless File.exists?(database)
-      create_file(database, "Database config", true)
+      FileUtils.cp(database + '.example', database)
+      puts "Database config file created".color(:green)
+      puts "Update #{database} and run `bundle exec rake setup` to continue".color(:red)
+      system(ENV['EDITOR'], database) unless ENV['EDITOR'].blank?
+      exit
     else
       puts "Database config file already exists"
-    end
-
-    unless File.exists?(secret_token)
-      secret   = SecureRandom.hex(64)
-      template = ERB.new(File.read(secret_token + '.example'))
-
-      File.open(secret_token, 'w') {|f| f.write(template.result(binding)) }
-      puts "Secret Token Generated"
-    else
-      puts "Secret Token file already exists"
-    end
-
-    unless File.exists?(omniauth)
-      create_file(omniauth, "Omniauth config")
-    else
-      puts "Omniauth config file already exists"
-    end
-
-    unless File.exists?(mail_settings)
-      create_file(mail_settings, "Mail_settings config")
-    else
-      puts "Mail_settings config file already exists"
     end
 
   end
@@ -97,13 +75,3 @@ def silence
   return_value
 end
 
-def create_file(file, name, requires_edit=false)
-  FileUtils.cp(file + '.example', file)
-  puts "#{name} file created".color(:green)
-
-  if requires_edit
-    puts "Update #{file} and run `bundle exec rake setup` to continue".color(:red)
-    system(ENV['EDITOR'], file) unless ENV['EDITOR'].blank?
-    exit
-  end
-end
