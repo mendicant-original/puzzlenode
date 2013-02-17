@@ -31,7 +31,7 @@ To install a development version of Puzzlenode, follow these steps:
 5. Run `rake setup` to create the required config files, create the database, and seed it with data. Be sure to follow the onscreen prompts to complete the setup process.
 6. You will need to set the environment variables 'SMTP_ADDRESS', 'SMTP_DOMAIN', 'SMTP_USERNAME', and 'SMTP_PASSWORD' or modify config/initializers/mail_settings.rb
 7. Generate and set the app secret token by running `rake secret` and copying the output into the PN_SECRET_TOKEN environment variable.
-8. Finally, to run in production or on staging, you will need to set the 'github_consumer_key' and 'github_consumer_secret' environment variables.
+8. Finally, to run in production or on staging, you will need to set the 'GITHUB_CONSUMER_KEY' and 'GITHUB_CONSUMER_SECRET' environment variables.
 
 To make things even easier, you can copy and paste this into your terminal once you've got the project cloned to your computer
 
