@@ -28,7 +28,8 @@ To install a development version of Puzzlenode, follow these steps:
 
 1. Fork our GitHub repository: <http://github.com/mendicant-original/puzzlenode>
 2. Clone the fork to your computer
-3. Finally, run `./bin/setup` to install all of the project's dependencies, create the required config files, create the database, and seed it with data. Be sure to follow the onscreen prompts to complete the setup process.
+3. Setup database configuration in `config/database.yml` and environment variables configuration in `config/application.yml`.
+4. Finally, run `./bin/setup` to install all of the project's dependencies, create the required config files, create the database, and seed it with data. Be sure to follow the onscreen prompts to complete the setup process.
 
 ## Contributing
 

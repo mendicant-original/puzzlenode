@@ -6,6 +6,7 @@ tmp
 *.swp
 .sass-cache
 config/database.yml
+config/application.yml
 config/omniauth.yml
 public/attachments
 public/assets
