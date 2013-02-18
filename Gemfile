@@ -47,6 +47,7 @@ gem 'md_emoji'
 
 gem 'capistrano'
 gem 'exception_notification'
+gem 'figaro'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.0'
