@@ -7,3 +7,4 @@ before_script:
   - sh -e /etc/init.d/xvfb start
 notifications:
   email: jordan.byron@gmail.com
+env: PN_SECRET_TOKEN=4c21c1743d4a32270884037bf882f1a1246554776192c041ab4be535c79df8e4e46ab32698971657a6d37a08e1256e3fbe161020d494131410c9009bf49f7e21

@@ -5,4 +5,5 @@
 //= require puzzlenode.slugger
 //= require md_preview
 //= require_self
+//= require_tree ../../../vendor/assets/javascripts
 //= require_tree .
