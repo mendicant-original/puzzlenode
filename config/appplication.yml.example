@@ -1,0 +1,16 @@
+# s3 config
+S3_KEY:
+S3_SECRET:
+
+# mail config
+SMTP_ADDRESS:
+SMTP_DOMAIN:
+SMTP_USERNAME:
+SMTP_PASSWORD:
+
+# github setup
+GITHUB_CONSUMER_KEY:
+GITHUB_CONSUMER_SECRET:
+
+# app secret token
+PN_SECRET_TOKEN: ROyS0/vblalxo68IAjOwy3ObVnqDVMeMe7AT7vWwxw
