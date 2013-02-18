@@ -8,6 +8,7 @@ gem 'rails',    '~> 3.2.11'
 gem 'omniauth-github', '~> 1.0.1'
 gem 'rake',     '~> 0.9.2'
 gem 'json',     '~> 1.7.7'
+gem 'figaro'
 
 ########
 # Data #
@@ -20,9 +21,9 @@ gem 'faker', :require => false
 gem 'carrierwave'
 gem 'fog', "~> 1.3.1"
 
-################
+########
 # Mail #
-################
+########
 
 gem 'delayed_mailhopper'
 gem 'delayed_job_active_record'
@@ -47,7 +48,7 @@ gem 'md_emoji'
 
 gem 'capistrano'
 gem 'exception_notification'
-gem 'figaro'
+gem 'rainbow', :require => false
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.0'
@@ -62,8 +63,6 @@ group 'test' do
   gem 'colorific', '~> 1.0.0'
   gem 'test_notifier', '~> 1.0.0'
 end
-
-gem 'rainbow', :require => false
 
 group :production do
   gem 'therubyracer'

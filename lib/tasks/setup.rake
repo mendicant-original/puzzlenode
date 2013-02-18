@@ -2,6 +2,24 @@ require 'fileutils'
 require 'securerandom'
 require 'rainbow'
 
+namespace :setup do
+  desc 'Create application.yml file'
+  task :configuration do
+    application = File.join(Rails.root, 'config', 'application.yml')
+
+    unless File.exists?(application)
+      secret   = SecureRandom.hex(64)
+      template = ERB.new(File.read(application + '.example'))
+
+      File.open(application, 'w') {|f| f.write(template.result(binding)) }
+    end
+
+    puts "Configuration file created"
+  end
+end
+
+
+
 desc 'Setup project for development / deploy'
 task :setup do
 
@@ -13,8 +31,6 @@ task :setup do
     else
       puts "Database config file already exists"
     end
-
-    # TODO Editing of env variables
   end
 
   section "Database" do

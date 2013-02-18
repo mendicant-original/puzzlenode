@@ -11,11 +11,6 @@ Puzzlenode is developed, maintained, and supported by
 [Mendicant University](http://mendicantuniversity.org) students
 and staff.
 
-If you are not a member of Mendicant University, please get in touch through our public channels:
-
-- **IRC:** #mendicant on freenode.net
-- **Twitter:** #mendicant
-
 ## Installation
 
 Puzzlenode is a Ruby on Rails 3 application which runs on Ruby 1.9.2 and
@@ -28,8 +23,7 @@ To install a development version of Puzzlenode, follow these steps:
 
 1. Fork our GitHub repository: <http://github.com/mendicant-original/puzzlenode>
 2. Clone the fork to your computer
-3. Setup database configuration in `config/database.yml` and environment variables configuration in `config/application.yml`.
-4. Finally, run `./bin/setup` to install all of the project's dependencies, create the required config files, create the database, and seed it with data. Be sure to follow the onscreen prompts to complete the setup process.
+3. Finally, run `./bin/setup` to install all of the project's dependencies, create the required config files, create the database, and seed it with data. Be sure to follow the onscreen prompts to complete the setup process.
 
 ## Contributing
 
