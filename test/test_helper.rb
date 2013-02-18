@@ -7,6 +7,7 @@ require 'support/mini_contest'
 require 'test_notifier/runner/minitest'
 
 TestNotifier.silence_no_notifier_warning = true
+Turn.config.natural                      = true
 
 class ActiveSupport::TestCase
   def build_puzzle

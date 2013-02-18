@@ -1,4 +1,4 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
 ########
 # Core #
@@ -60,7 +60,7 @@ end
 group 'test' do
   gem 'capybara',  '~> 1.1.1'
   gem 'factory_girl_rails', '~> 4.1.0'
-  gem 'colorific', '~> 1.0.0'
+  gem 'turn'
   gem 'test_notifier', '~> 1.0.0'
 end
 
