@@ -31,6 +31,8 @@ task :setup do
     else
       puts "Database config file already exists"
     end
+
+    Rake::Task["setup:configuration"].invoke
   end
 
   section "Database" do
