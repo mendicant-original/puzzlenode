@@ -7,8 +7,8 @@ Puzzlenode::Application.routes.draw do
   match '/login' => 'sessions#new',      :as => 'login'
 
   resources :puzzles do
-    resources :comments,    :controller => "Puzzles::Comments"
-    resources :submissions, :controller => "Puzzles::Submissions"
+    resources :comments,    :module => "puzzles"
+    resources :submissions, :module => "puzzles"
   end
 
   match '/tags/:tag',                     :to => 'puzzles#tag',
