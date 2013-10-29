@@ -9,7 +9,7 @@ and is inspired by similar efforts such as
 
 Puzzlenode is developed, maintained, and supported by
 [Mendicant University](http://mendicantuniversity.org) students
-and staff.
+and staff. If you'd like to get involved join the conversation on our mailing list: <puzzlenode@librelist.com>
 
 ## Installation
 
