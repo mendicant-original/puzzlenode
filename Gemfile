@@ -9,6 +9,7 @@ gem 'omniauth-github', '~> 1.0.1'
 gem 'rake',     '~> 0.9.2'
 gem 'json',     '~> 1.7.7'
 gem 'figaro'
+gem 'nokogiri', '~> 1.5.11'
 
 ########
 # Data #
@@ -36,7 +37,7 @@ gem 'daemons', :require => false
 gem 'haml'
 gem 'sass'
 gem 'redcarpet', '2.1'
-gem 'will_paginate', '~> 3.0'
+gem 'will_paginate', '>= 3.0.5'
 gem 'cocoon'
 gem 'jquery-rails'
 gem 'md_preview'
