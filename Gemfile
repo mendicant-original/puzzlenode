@@ -17,7 +17,6 @@ gem 'nokogiri', '~> 1.5.11'
 
 gem 'pg'
 gem 'acts-as-taggable-on'
-gem 'jquery-rails'
 gem 'faker', :require => false
 gem 'carrierwave'
 gem 'fog', "~> 1.3.1"
