@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Core #
 ########
 
-gem 'rails',    '3.2.17'
+gem 'rails',    '3.2.19'
 gem 'omniauth-github', '~> 1.0.1'
 gem 'rake',     '~> 10.1.1'
 gem 'json',     '~> 1.7.7'
