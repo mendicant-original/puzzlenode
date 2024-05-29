@@ -6,7 +6,7 @@ source 'https://rubygems.org'
 
 gem 'rails',    '3.2.19'
 gem 'omniauth-github', '~> 1.0.1'
-gem 'rake',     '~> 10.1.1'
+gem 'rake',     '~> 12.3.3'
 gem 'json',     '~> 1.7.7'
 gem 'figaro'
 gem 'nokogiri', '~> 1.16.5'
