@@ -254,7 +254,7 @@ GEM
     jwt (0.1.5)
       multi_json (>= 1.0)
     libv8 (3.11.8.13)
-    mail (2.5.4)
+    mail (2.5.5)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mailhopper (0.2.0)
