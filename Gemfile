@@ -35,7 +35,7 @@ gem 'daemons', :require => false
 
 gem 'haml'
 gem 'sass'
-gem 'redcarpet', '2.1'
+gem 'redcarpet', '3.5.1'
 gem 'will_paginate', '>= 3.0.5'
 gem 'cocoon'
 gem 'jquery-rails'

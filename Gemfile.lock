@@ -332,7 +332,7 @@ GEM
       trollop
     rdoc (3.12.2)
       json (~> 1.4)
-    redcarpet (2.1.0)
+    redcarpet (3.5.1)
     ref (1.0.2)
     rest-client (2.1.0)
       http-accept (>= 1.7.0, < 2.0)
@@ -416,7 +416,7 @@ DEPENDENCIES
   rails (= 3.2.19)
   rainbow
   rake (~> 12.3.3)
-  redcarpet (= 2.1)
+  redcarpet (= 3.5.1)
   sass
   sass-rails (~> 3.2.0)
   test_notifier (~> 1.0.0)
