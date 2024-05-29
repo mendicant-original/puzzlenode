@@ -372,7 +372,7 @@ GEM
     trollop (2.9.10)
     turn (0.9.6)
       ansi
-    tzinfo (0.3.40)
+    tzinfo (0.3.62)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
     webrick (1.8.1)
