@@ -9,7 +9,7 @@ gem 'omniauth-github', '~> 1.0.1'
 gem 'rake',     '~> 10.1.1'
 gem 'json',     '~> 1.7.7'
 gem 'figaro'
-gem 'nokogiri', '~> 1.5.11'
+gem 'nokogiri', '~> 1.16.5'
 
 ########
 # Data #
@@ -19,7 +19,7 @@ gem 'pg'
 gem 'acts-as-taggable-on'
 gem 'faker', :require => false
 gem 'carrierwave'
-gem 'fog', "~> 1.3.1"
+gem 'fog', "~> 1.38.0"
 
 ########
 # Mail #
